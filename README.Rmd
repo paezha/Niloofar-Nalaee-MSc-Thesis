@@ -11,9 +11,4 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Stress and Travel
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-This is the repository with the M.Sc. thesis of Niloofar Nalaee.

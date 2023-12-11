@@ -254,10 +254,10 @@ $endif$
 \begin{center}
 
 \vfill
-\textsc{\Large \ttitle} \\
+\textsc{\Large \ttitle}\\[1 cm]
 
-\vfill
-{By \authorname\, \bdeg $if(mdegree)$\, \mdeg $endif$}
+By  \\[1 cm]
+{\authorname\, \bdeg $if(mdegree)$\, \mdeg $endif$}
 
 
  \vfill
@@ -267,42 +267,7 @@ $endif$
 {\large \univname\, \copyright\, Copyright by \authorname\, \today}\\[4cm] % replace \today with the submission date
 
 \end{center}
-\blankpage
 \clearpage
-
-%----------------------------------------------------------------------------------------
-%	QUOTATION PAGE
-%----------------------------------------------------------------------------------------
-
-$if(quotation)$
-\vspace*{0.2\textheight}
-
-\noindent{\itshape $quotation$}\bigbreak
-
-\hfill\textemdash $qauthor$
-$endif$
-
-\blankpage
-\clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% optional page stuff
-%----------------------------------------------------------------------------------------
-% can do physical constraints and symbols pages, see the original thesis example on overleaf if you want to include them at https://www.overleaf.com/latex/templates/template-for-a-masters-slash-doctoral-thesis/mkzrzktcbzfl#.VlPeicorpE4
-%----------------------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------------------
-%	DEDICATION
-%----------------------------------------------------------------------------------------
-
-$if(dedication)$
-    $dedication$
-$endif$
-
-\blankpage
-\clearpage
-
 
 %----------------------------------------------------------------------------------------
 %	Descriptive note numbered ii
@@ -333,7 +298,6 @@ NUMBER OF PAGES: \pageref{lastoffront}, \pageref{LastPage}  % put in iv and numb
 $if(lay_abstract)$
   $lay_abstract$
 $endif$
-\blankpage
 \clearpage
 
 
@@ -345,7 +309,6 @@ $endif$
 \addchaptertocentry{\abstractname}
 % Type your abstract here.
 $abstract$
-\blankpage
 \clearpage
 
 %----------------------------------------------------------------------------------------
@@ -358,7 +321,6 @@ $if(acknowledgements)$
     $acknowledgements$
   \end{acknowledgements}
 $endif$
-\blankpage
 \clearpage
 
 %----------------------------------------------------------------------------------------
@@ -371,36 +333,7 @@ $endif$
 
 \listoftables % Prints the list of tables
 
-%----------------------------------------------------------------------------------------
-%	ABBREVIATIONS
-%----------------------------------------------------------------------------------------
-% many theses don't use this section, as it will be declared at first use and again each chapter. Uncomment these four lines to activate if you want
-%\clearpage
-%\section*{\Huge Acronyms}
-%\addchaptertocentry{Acronyms}
-%\printacronyms[name] % name without an option stops the header
 
-%----------------------------------------------------------------------------------------
-%	DECLARATION PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{declaration}
-\addchaptertocentry{\authorshipname}
-
-\noindent I, \authorname, declare that this thesis titled, \emph{\ttitle} and the work presented in it are my own. I confirm that:
-
-$declarations$
-
-\end{declaration}
-
-
-%----------------------------------------------------------------------------------------
-% The following bit is just here to make sure we end up on a new page and get the total number of roman numeral
-\label{lastoffront}
-\clearpage
-% make sure this command is on the last of your frontmatter pages, i.e. only this command, a \clearpage then \mainmatter
-% should be fine without modification
-%----------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------------------
 %	THESIS MAIN BODY
