@@ -54,7 +54,8 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %
 \usepackage{siunitx} % for scientific units (micro-liter, etc)
 \setcounter{tocdepth}{2} % so that only section and sub sections appear in Table of Contents. Remove or set depth to 3 to include sub-sub-sections
-
+\usepackage{xcolor}
+\usepackage{titletoc}
 %----------------------------------------------------------------------------------------
 % Define a blank page
 %----------------------------------------------------------------------------------------
@@ -297,7 +298,7 @@ NUMBER OF PAGES: \pageref{lastoffront}, \pageref{LastPage}  % put in iv and numb
 %	ABSTRACT PAGE number iv
 %----------------------------------------------------------------------------------------
 
-\section*{\Huge Abstract}
+\section*{Abstract}
 \addchaptertocentry{\abstractname}
 % Type your abstract here.
 This research makes a two-fold contribution. First, it compiles an extensive array of data including socio-demographics, health metrics, feelings and emotions, built environment, and work commute-related details, all presented in a comprehensive and reproducible data package format. Subsequently, the study delves into the commuting stress analysis and identifying the various coping strategies employed by commuters. The data used for the analysis have been derived from the demographics and health information sections of the dataset. Serving as a reproducible data package, it provides a robust foundation for future research endeavors. Future researchers can have access to the data set as an open source data set allowing them to understand the representativeness of this data package and enable them to replicate various stages where needed.
@@ -312,45 +313,47 @@ The implications of these findings extend to the domain of transportation system
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
-  \begin{acknowledgements}
-  \addchaptertocentry{\acknowledgementname} % Add the acknowledgments to the table of contents
-    Through the completion of this research, I have acquired numerous invaluable skills and cherished attributes. The journey has granted me a deeper patience and a higher comprehension of the interaction between different scopes of research like psychology and travel behavior. This experience has significantly broadened my horizons specially to grasp the essential but neglected elements of transportation planning.
 
-    I would like to express my deepest gratitude to my supervisor, Dr.~Antonio Páez, for his endless encouragement, support, and for guiding me in the direction I needed to follow. His mentorship has been precious, and his insights have not only lightened my academic path, but also would be as a treasure for my future career. I am also extremely thankful to my esteemed committee members, Dr.~Scott, Dr.~Bernier, and Dr.~Padden, for their presence on my committee, thoughtful considerations and their constructive feedbacks on my master's proposal meeting. Their expertise and guidance have undoubtedly enhanced the quality of my research. My success would not have been possible without the support of, Dr.~Beatriz Mella-Lira who had a fundamental role in my research by providing the survey, endless support and patience while answering my questions.
+\section*{Acknowledgements}
+  Through the completion of this research, I have acquired numerous invaluable skills and cherished attributes. The journey has granted me a deeper patience and a higher comprehension of the interaction between different scopes of research like psychology and travel behavior. This experience has significantly broadened my horizons specially to grasp the essential but neglected elements of transportation planning.
 
-    I extend my sincere appreciation to my friends, with a special gratitude to Dr.~Shaila Jamal. Her consistent presence, insightful consultations, and valuable perspectives have been a constant source of support for me. Additionally, I would like to acknowledge Dr.~Samira Hamidi Tehrani for her boundless assistance, guidance, and remarkable patience and allocated time to me during the times when I reached out for help. My gratitude extends to my family, particularly my elder brother, Dr.~Keivan Nalaie. His support, assistance, and empathetic feelings towards me have been a driving force throughout my entire master's degree journey. His compassionate personality and willingness to help me whenever I was in need have made a significant influence on my academic pursuits and the life journey.
+  I would like to express my deepest gratitude to my supervisor, Dr.~Antonio Páez, for his endless encouragement, support, and for guiding me in the direction I needed to follow. His mentorship has been precious, and his insights have not only lightened my academic path, but also would be as a treasure for my future career. I am also extremely thankful to my esteemed examiners, Dr.~Scott, Dr.~Léa Ravensbergen, and Dr.~Luc Bernier as the chair of the Master's Defence Committee, for their presence on my committee, thoughtful considerations and their constructive feedbacks on my master's proposal meeting. Their expertise and guidance have undoubtedly enhanced the quality of my research. My success would not have been possible without the support of, Dr.~Beatriz Mella-Lira who had a fundamental role in my research by providing the survey, endless support and patience while answering my questions.
 
-    And finally, I am deeply thankful to those loved ones who played a role in my academic and personal journey. Undoubtedly, your support, encouragement, and understanding have been influential to what I have achieved so far, and I am truly grateful for your presence in my life.
-  \end{acknowledgements}
+  I extend my sincere appreciation to my friends, with a special gratitude to Dr.~Shaila Jamal. Her consistent presence, insightful consultations, and valuable perspectives have been a constant source of support for me. Additionally, I would like to acknowledge Dr.~Samira Hamidi Tehrani for her boundless assistance, guidance, and remarkable patience and allocated time to me during the times when I reached out for help. My gratitude extends to my family, particularly my elder brother, Dr.~Keivan Nalaie. His support, assistance, and empathetic feelings towards me have been a driving force throughout my entire master's degree journey. His compassionate personality and willingness to help me whenever I was in need have made a significant influence on my academic pursuits and the life journey.
+
+  And finally, I am deeply thankful to those loved ones who played a role in my academic and personal journey. Undoubtedly, your support, encouragement, and understanding have been influential to what I have achieved so far, and I am truly grateful for your presence in my life.
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	PREFACE 
+%----------------------------------------------------------------------------------------
+
+\section*{Preface}
+  This thesis includes four chapters that presents the research that I have conducted over my master's degree. The main goal of this thesis is to discuss commuting stress and identifying the coping strategies for motorized and active users. The case study for the middle chapters would be Santiago, Chile. This study contains some overlaps in terms of introduction, case study and some parts of data description as the focus of those chapters are active and motorized commuters in Santiago, Chile. The first chapter of the thesis could be considered as an introduction to give a broader viewpoint of research and its objectives for each of the two subsequent chapters. The last or forth chapter serves as a through conclusion of the research, how the study contributes to other various literature and policy implications as the summary of research findings.
+
+  As a notice to the reader, my supervisor, Dr.~Antonio Páez who provided me with his continuous contribution on research ideas, critical evaluations of manuscripts and editorial reviews. Dr.~Beatriz Mella-Lira conducted the survey, contributed to editorial review and let me use the data as a base for my research.
+
+  As main author of the whole research, I performed all of the fundamental research activities including the literature review, data preparation and cleaning, statistical analysis, model interpretation and writing of the all chapters.
 \clearpage
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
-
-\tableofcontents % Prints the main table of contents
+{
+\hypersetup{linkcolor=black}
+\tableofcontents % Prints the main table of contents 
 
 \listoffigures % Prints the list of figures
 
 \listoftables % Prints the list of tables
 
-
+}
 
 %----------------------------------------------------------------------------------------
 %	THESIS MAIN BODY
 %----------------------------------------------------------------------------------------
-
 \mainmatter % here the regular arabic numbering starts
 \pagestyle{thesis}
-\hypertarget{preface}{%
-\section{Preface}\label{preface}}
-
-This thesis includes four chapters that presents the research that I have conducted over my master's degree. The main goal of this thesis is to discuss commuting stress and identifying the coping strategies for motorized and active users. The case study for the middle chapters would be Santiago, Chile. This study contains some overlaps in terms of introduction, case study and some parts of data description as the focus of those chapters are active and motorized commuters in Santiago, Chile. The first chapter of the thesis could be considered as an introduction to give a broader viewpoint of research and its objectives for each of the two subsequent chapters. The last or forth chapter serves as a through conclusion of the research, how the study contributes to other various literature and policy implications as the summary of research findings.
-
-As a notice to the reader, my supervisor, Dr.~Antonio Páez who provided me with his continuous contribution on research ideas, critical evaluations of manuscripts and editorial reviews. Dr.~Beatriz Mella-Lira conducted the survey, contributed to editorial review and let me use the data as a base for my research.
-
-As main author of the whole research, I performed all of the fundamental research activities including the literature review, data preparation and cleaning, statistical analysis, model interpretation and writing of the all chapters.
-
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
@@ -445,9 +448,9 @@ Additionally, the survey (conducted in 2016) includes information about the resp
 \hypertarget{data-collection-materials-and-methods}{%
 \section{Data Collection, Materials and Methods}\label{data-collection-materials-and-methods}}
 
-The study is based on a paper-based survey conducted face-to-face in Santiago in 2016. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behaviour, travel choices and planning, social interaction factors, built environment, and so on).
+The study is based on a paper-based survey conducted face-to-face in Santiago in 2016 by Dr.~Beatriz Mella-Lira. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behaviour, travel choices and planning, social interaction factors, built environment, and so on).
 
-The data collection considered a quota-sampling method based on the information from the Pre-census of 2012, and in total, 451 persons validly completed the survey. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced while travelling.
+The data collection considered a quota-sampling method based on the information from the Pre-census of 2012, and with a total of 451 persons. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced while travelling.
 
 \hypertarget{data-cleaning-and-preprocessing}{%
 \section{Data Cleaning and Preprocessing}\label{data-cleaning-and-preprocessing}}
@@ -1400,6 +1403,13 @@ As it has been indicated, respondents in Santiago, Chile are mostly low-income a
 While normalization can be beneficial in terms of reducing stress, it could lead to making travel less exciting. In this study we focused mostly on commutes to regular destinations like work, school and so on, we analyzed that these travels come from instrumental motives in which commuters care about their professional goals more than leisure and spare time. For travel to work, people consider factors like environment, cost, health and fitness, convenience and predictability flexibility and obviously, they feel more stress than in recreational travel. So, normalization is going to distinguish between normal travel and fun travel. For fun travel, people tend to commute to longer and unusual trips which seem more exciting whereas for normal travel all activities may become routine and repetitive.
 
 This research demonstrates that the normalization processes possess the capability to moderate and reshape the stressful experiences of travel in various ways. This process can be used as a coping strategy for those who are low-income and have poor access to urban facilities, enough budget and lack of urban fairness in Santiago, Chile.
+
+In this research, our dependent variables which are stress experienced during commute and the importance of that negative feeling assigned by commuters contribute to the coping strategies used by commuters.
+\begin{verbatim}
+         Importance_LOW Importance_HIGH
+\end{verbatim}
+Stress\_LOW \ldots{} \ldots{}
+Stress\_HIGH \ldots{} \ldots{}
 
 \hypertarget{conclusion-1}{%
 \chapter{Conclusion}\label{conclusion-1}}

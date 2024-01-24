@@ -44,9 +44,9 @@ Additionally, the survey (conducted in 2016) includes information about the resp
 
 ## Data Collection, Materials and Methods
 
-The study is based on a paper-based survey conducted face-to-face in Santiago in 2016. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behaviour, travel choices and planning, social interaction factors, built environment, and so on). 
+The study is based on a paper-based survey conducted face-to-face in Santiago in 2016 by Dr. Beatriz Mella-Lira. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behaviour, travel choices and planning, social interaction factors, built environment, and so on). 
 
-The data collection considered a quota-sampling method based on the information from the Pre-census of 2012, and in total, 451 persons validly completed the survey. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced while travelling.
+The data collection considered a quota-sampling method based on the information from the Pre-census of 2012, and with a total of 451 persons. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced while travelling.
 
 ## Data Cleaning and Preprocessing
 

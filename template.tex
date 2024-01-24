@@ -54,7 +54,8 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %
 \usepackage{siunitx} % for scientific units (micro-liter, etc)
 \setcounter{tocdepth}{2} % so that only section and sub sections appear in Table of Contents. Remove or set depth to 3 to include sub-sub-sections
-
+\usepackage{xcolor}
+\usepackage{titletoc}
 %----------------------------------------------------------------------------------------
 % Define a blank page
 %----------------------------------------------------------------------------------------
@@ -305,7 +306,7 @@ $endif$
 %	ABSTRACT PAGE number iv
 %----------------------------------------------------------------------------------------
 
-\section*{\Huge Abstract}
+\section*{Abstract}
 \addchaptertocentry{\abstractname}
 % Type your abstract here.
 $abstract$
@@ -315,30 +316,38 @@ $abstract$
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
+\section*{Acknowledgements}
 $if(acknowledgements)$
-  \begin{acknowledgements}
-  \addchaptertocentry{\acknowledgementname} % Add the acknowledgments to the table of contents
-    $acknowledgements$
-  \end{acknowledgements}
+  $acknowledgements$
+$endif$
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	PREFACE 
+%----------------------------------------------------------------------------------------
+
+\section*{Preface}
+$if(preface)$
+  $preface$
 $endif$
 \clearpage
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
-
-\tableofcontents % Prints the main table of contents
+{
+\hypersetup{linkcolor=black}
+\tableofcontents % Prints the main table of contents 
 
 \listoffigures % Prints the list of figures
 
 \listoftables % Prints the list of tables
 
-
+}
 
 %----------------------------------------------------------------------------------------
 %	THESIS MAIN BODY
 %----------------------------------------------------------------------------------------
-
 \mainmatter % here the regular arabic numbering starts
 \pagestyle{thesis}
 $body$

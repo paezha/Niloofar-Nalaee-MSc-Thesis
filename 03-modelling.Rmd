@@ -1439,3 +1439,10 @@ While normalization can be beneficial in terms of reducing stress, it could lead
 
 This research demonstrates that the normalization processes possess the capability to moderate and reshape the stressful experiences of travel in various ways. This process can be used as a coping strategy for those who are low-income and have poor access to urban facilities, enough budget and lack of urban fairness in Santiago, Chile. 
 
+In this research, our dependent variables which are stress experienced during commute and the importance of that negative feeling assigned by commuters contribute to the coping strategies used by commuters.
+
+             Importance_LOW Importance_HIGH
+Stress_LOW          ...               ...
+Stress_HIGH         ...               ...
+
+
