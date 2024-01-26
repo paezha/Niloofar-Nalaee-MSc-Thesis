@@ -770,25 +770,25 @@ rownames(mod_theta1) <- NULL
 
 (mod_beta <- coef(summary(mod_bivariate)))
 
-
-# Define new variable names
-new_row_names <- c("Adults Stress","Adults Imp_stress",
-                   "Seniors Stress", "Seniors Imp_stress", 
-                   "Middle Income Stress","Middle Income Imp_stress", 
-                   "High Income Stress", "High Income Imp_stress", 
-                   "Private Transportation Stress","Private Transportation Imp_stress", 
-                   "Public Transportation Stress","Public Transportation Imp_stress",  
-                   "Higher Education Stress", "Higher Education Imp_stress", 
-                   "OccupationWorking Stress","OccupationWorking Imp_stress", 
-                   "OccupationStudent Stress", "OccupationStudent Imp_stress",
-                   "OccupationNon Professional Stress", "OccupationNon Professional Imp_stress")
-
-
-# Assign new names to the variables
-rownames(mod_beta) <- new_row_names
-
-# Print the modified coefficient summary
-print(mod_beta)
+# # Copy mod_beta to mod_beta2
+# mod_beta2 <- mod_beta
+# 
+# # Define new variable names
+# new_row_names <- c("Adults Imp_stress",
+#                    "Seniors Stress", 
+#                    "Middle Income Stress","Middle Income Imp_stress", 
+#                    "High Income Stress", 
+#                    "Private Transportation Stress", 
+#                    "Public Transportation Stress",  
+#                    "Higher Education Stress",  
+#                    "OccupationWorking Stress", 
+#                    "OccupationStudent Stress")
+# 
+# # Assign new names to the variables
+# rownames(mod_beta2) <- new_row_names
+# 
+# # Print the modified coefficient summary
+# print(mod_beta2)
 
 ```
 
@@ -875,8 +875,7 @@ mod_beta <- data.frame(Equation1 = c(NA,
                                             mod_bivariate[["sebeta"]][["IC_OccupationWorking 1"]],
                                             mod_bivariate[["sebeta"]][["IC_OccupationStudent 1"]]),
                        
-                       p_values_E1 = c (NA, p_Seniors, p_Middle_Income_Stress, NA,  p_High_Income, p_Private_T, p_Public_T, NA, p_Working,  
-                                        p_Student),
+                       p_values_E1 = c (NA, p_Seniors, p_Middle_Income_Stress, NA,  p_High_Income, p_Private_T, p_Public_T, NA, p_Working,p_Student),
                         
                         #  NA,
                         # p_Seniors = p_Seniors,
@@ -890,41 +889,40 @@ mod_beta <- data.frame(Equation1 = c(NA,
                         # p_Student = p_Student,
                 
                         
-                        
-                        
+                
                                
-                        Equation2 = c("IC_AgeAdults 2",
+                       Equation2 = c("IC_AgeAdults 1",
                                       NA,
                                       NA,
                                 "IC_IncomeMiddle Income 2",
                                 NA,
                                 NA,
                                 NA,
-                                "IC_EducationHigher Education 2",
+                                "IC_EducationHigher Education 1",
                                 NA,
                                 NA),
                                 
                               
-                        beta_equation2 = c (mod_bivariate[["beta"]][["IC_AgeAdults 2"]],
+                        beta_equation2 = c (mod_bivariate[["beta"]][["IC_AgeAdults 1"]],
                                             NA,
                                             NA,
                                             mod_bivariate[["beta"]][["IC_IncomeMiddle Income 2"]],
                                             NA,
                                             NA,
                                             NA,
-                                            mod_bivariate[["beta"]][["IC_EducationHigher Education 2"]],
+                                            mod_bivariate[["beta"]][["IC_EducationHigher Education 1"]],
                                             NA,
                                             NA),
                         
                         
-                        se_equation2 = c( mod_bivariate[["sebeta"]][["IC_AgeAdults 2"]],
+                        se_equation2 = c( mod_bivariate[["sebeta"]][["IC_AgeAdults 1"]],
                                          NA,
                                          NA,
                                          mod_bivariate[["sebeta"]][["IC_IncomeMiddle Income 2"]],
                                          NA,
                                          NA,
                                          NA,
-                                         mod_bivariate[["sebeta"]][["IC_EducationHigher Education 2"]],
+                                         mod_bivariate[["sebeta"]][["IC_EducationHigher Education 1"]],
                                          NA,
                                          NA),
                                         
@@ -939,7 +937,7 @@ mod_beta <- data.frame(Equation1 = c(NA,
                         # NA,
                         # NA)
                          
-                       p_values_E2 = c (p_Adults, NA, NA, p_Middle_Income_imp_Stress, NA, NA, NA, p_Higher_Education, NA, NA))
+                        p_values_E2 = c (p_Adults, NA, NA, p_Middle_Income_imp_Stress, NA, NA, NA, p_Higher_Education, NA, NA))
   
 ```
 

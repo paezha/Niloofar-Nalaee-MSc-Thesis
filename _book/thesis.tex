@@ -554,7 +554,7 @@ Theme
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Santiago\_IC & A table with 22 variables that describe the individual characteristics of respondents \\
+Santiago\_IC & A table with 31 variables that describe the individual characteristics of respondents \\
 Santiago\_TW & A table with 8 variables regarding the commuting behavior of respondents \\
 Santiago\_SI & A table with 5 variables about social interaction by mode of transportation \\
 Santiago\_IS & A table with 10 variables related to mode-shifting and use of information technologies \\
@@ -591,31 +591,41 @@ These variables provide insights about different segments of the population. In 
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & character.min & character.max & character.empty & character.n\_unique & character.whitespace & factor.ordered & factor.n\_unique & factor.top\_counts & numeric.mean & numeric.sd & numeric.p0 & numeric.p25 & numeric.p50 & numeric.p75 & numeric.p100\\
 \midrule
-character & r0A\_COMMUNE & 0 & 1.0000000 & 4 & 16 & 0 & 43 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
-character & r0B\_MACR\_ZONE & 0 & 1.0000000 & 3 & 12 & 0 & 7 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
-character & r0B\_STREET\_1 & 38 & 0.9157428 & 4 & 24 & 0 & 200 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
-character & r0B\_STREET\_2 & 108 & 0.7605322 & 1 & 23 & 0 & 211 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
-character & r0I\_WORK\_COM\_1 & 18 & 0.9600887 & 4 & 16 & 0 & 30 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IC\_Residence & 0 & 1.0000000 & 4 & 16 & 0 & 43 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IC\_Macro\_res & 0 & 1.0000000 & 3 & 12 & 0 & 7 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IC\_Home\_St & 38 & 0.9157428 & 4 & 24 & 0 & 200 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IC\_Home\_St2 & 108 & 0.7605322 & 1 & 23 & 0 & 211 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IC\_Work\_St & 18 & 0.9600887 & 4 & 16 & 0 & 30 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
 \addlinespace
-character & r0I\_WORK\_COM\_2 & 371 & 0.1773836 & 1 & 16 & 0 & 25 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
-character & r0O\_TYPE\_DIS & 440 & 0.0243902 & 5 & 19 & 0 & 10 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
-factor & r0C\_SEX & 0 & 1.0000000 & NA & NA & NA & NA & NA & FALSE & 2 & WOM: 242, MAN: 209 & NA & NA & NA & NA & NA & NA & NA\\
-factor & r0D\_AGE & 1 & 0.9977827 & NA & NA & NA & NA & NA & TRUE & 6 & 35 to 54: 135, 18 to 24: 134, 25 to 34: 125, 55 to 64: 44 & NA & NA & NA & NA & NA & NA & NA\\
-factor & r0G\_EDUCATION & 1 & 0.9977827 & NA & NA & NA & NA & NA & TRUE & 5 & COL: 223, SEC: 104, PRO: 84, POS: 29 & NA & NA & NA & NA & NA & NA & NA\\
+character & IC\_Work\_St2 & 371 & 0.1773836 & 1 & 16 & 0 & 25 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IC\_Dis\_type & 440 & 0.0243902 & 5 & 19 & 0 & 10 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IS\_Shiftmode & 11 & 0.9756098 & 1 & 1 & 0 & 2 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IS\_Waitingtime & 37 & 0.9179601 & 1 & 2 & 0 & 6 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IS\_Shift\_time & 93 & 0.7937916 & 1 & 2 & 0 & 6 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
 \addlinespace
-factor & r0H\_OCCUPATION & 1 & 0.9977827 & NA & NA & NA & NA & NA & FALSE & 9 & FUL: 257, STU: 101, SEL: 26, HOM: 19 & NA & NA & NA & NA & NA & NA & NA\\
-factor & r0J\_INCOME & 6 & 0.9866962 & NA & NA & NA & NA & NA & TRUE & 6 & 977 to 1,550: 90, 2,380 or more: 83, Less than 423: 71, 1,550 to 2,380: 68 & NA & NA & NA & NA & NA & NA & NA\\
-factor & r0N\_DRIVING\_LICENSE & 0 & 1.0000000 & NA & NA & NA & NA & NA & FALSE & 2 & YES: 260, NO: 191 & NA & NA & NA & NA & NA & NA & NA\\
-factor & r0M\_DISABILITY & 0 & 1.0000000 & NA & NA & NA & NA & NA & FALSE & 2 & NO: 435, YES: 16 & NA & NA & NA & NA & NA & NA & NA\\
-factor & r0P\_MODE1 & 0 & 1.0000000 & NA & NA & NA & NA & NA & FALSE & 8 & MET: 160, CAR: 115, BUS: 110, WAL: 22 & NA & NA & NA & NA & NA & NA & NA\\
+character & IS\_Travel\_time & 27 & 0.9401330 & 1 & 2 & 0 & 6 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IS\_Difficulty\_modechange & 59 & 0.8691796 & 1 & 4 & 0 & 17 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+character & IS\_Techtool & 8 & 0.9822616 & 1 & 1 & 0 & 2 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
+factor & IC\_Gender & 0 & 1.0000000 & NA & NA & NA & NA & NA & FALSE & 2 & WOM: 242, MAN: 209 & NA & NA & NA & NA & NA & NA & NA\\
+factor & IC\_Age & 1 & 0.9977827 & NA & NA & NA & NA & NA & TRUE & 6 & 35t: 135, 18t: 134, 25t: 125, 55t: 44 & NA & NA & NA & NA & NA & NA & NA\\
 \addlinespace
-factor & r0Q\_MODE2 & 15 & 0.9667406 & NA & NA & NA & NA & NA & FALSE & 8 & MET: 136, BUS: 131, CAR: 66, WAL: 32 & NA & NA & NA & NA & NA & NA & NA\\
-factor & r0R\_MODE3 & 92 & 0.7960089 & NA & NA & NA & NA & NA & FALSE & 8 & CAR: 74, WAL: 62, BUS: 59, TAX: 51 & NA & NA & NA & NA & NA & NA & NA\\
-numeric & r0E\_WEIGHT & 29 & 0.9356984 & NA & NA & NA & NA & NA & NA & NA & NA & 69.5995261 & 13.0912493 & 42 & 60 & 68 & 79.75 & 120\\
-numeric & r0F\_HEIGHT & 20 & 0.9556541 & NA & NA & NA & NA & NA & NA & NA & NA & 167.2111369 & 9.4617697 & 146 & 160 & 167 & 174.00 & 197\\
-numeric & r0K\_ADULTS & 5 & 0.9889135 & NA & NA & NA & NA & NA & NA & NA & NA & 2.8116592 & 1.2879558 & 1 & 2 & 3 & 4.00 & 7\\
+factor & IC\_Education & 1 & 0.9977827 & NA & NA & NA & NA & NA & TRUE & 5 & COL: 223, SEC: 104, PRO: 84, POS: 29 & NA & NA & NA & NA & NA & NA & NA\\
+factor & IC\_Occupation & 1 & 0.9977827 & NA & NA & NA & NA & NA & FALSE & 9 & FUL: 257, STU: 101, SEL: 26, HOM: 19 & NA & NA & NA & NA & NA & NA & NA\\
+factor & IC\_Income & 6 & 0.9866962 & NA & NA & NA & NA & NA & TRUE & 6 & 977: 90, 238: 83, Les: 71, 155: 68 & NA & NA & NA & NA & NA & NA & NA\\
+factor & IC\_Drv\_license & 0 & 1.0000000 & NA & NA & NA & NA & NA & FALSE & 2 & YES: 260, NO: 191 & NA & NA & NA & NA & NA & NA & NA\\
+factor & IC\_Disabil & 0 & 1.0000000 & NA & NA & NA & NA & NA & FALSE & 2 & NO: 435, YES: 16 & NA & NA & NA & NA & NA & NA & NA\\
 \addlinespace
-numeric & r0L\_CHILDREN & 6 & 0.9866962 & NA & NA & NA & NA & NA & NA & NA & NA & 0.6561798 & 0.9231696 & 0 & 0 & 0 & 1.00 & 6\\
+factor & IC\_Main\_mode & 0 & 1.0000000 & NA & NA & NA & NA & NA & FALSE & 8 & MET: 160, CAR: 115, BUS: 110, WAL: 22 & NA & NA & NA & NA & NA & NA & NA\\
+factor & IC\_Sec\_mode & 15 & 0.9667406 & NA & NA & NA & NA & NA & FALSE & 8 & MET: 136, BUS: 131, CAR: 66, WAL: 32 & NA & NA & NA & NA & NA & NA & NA\\
+factor & IC\_Other\_mode & 92 & 0.7960089 & NA & NA & NA & NA & NA & FALSE & 8 & CAR: 74, WAL: 62, BUS: 59, TAX: 51 & NA & NA & NA & NA & NA & NA & NA\\
+numeric & IC\_Weight & 29 & 0.9356984 & NA & NA & NA & NA & NA & NA & NA & NA & 69.5995261 & 13.0912493 & 42 & 60 & 68 & 79.75 & 120\\
+numeric & IC\_Height & 20 & 0.9556541 & NA & NA & NA & NA & NA & NA & NA & NA & 167.2111369 & 9.4617697 & 146 & 160 & 167 & 174.00 & 197\\
+\addlinespace
+numeric & IC\_Adults & 5 & 0.9889135 & NA & NA & NA & NA & NA & NA & NA & NA & 2.8116592 & 1.2879558 & 1 & 2 & 3 & 4.00 & 7\\
+numeric & IC\_Children & 6 & 0.9866962 & NA & NA & NA & NA & NA & NA & NA & NA & 0.6561798 & 0.9231696 & 0 & 0 & 0 & 1.00 & 6\\
+numeric & IS\_Qualityshift & 198 & 0.5609756 & NA & NA & NA & NA & NA & NA & NA & NA & 2.7430830 & 1.0356740 & 1 & 2 & 3 & 3.00 & 5\\
+numeric & IS\_Info\_techtool & 15 & 0.9667406 & NA & NA & NA & NA & NA & NA & NA & NA & 3.2362385 & 1.1393358 & 1 & 3 & 3 & 4.00 & 5\\
+numeric & IS\_Imp\_techtool & 10 & 0.9778271 & NA & NA & NA & NA & NA & NA & NA & NA & 4.0090703 & 1.1461038 & 1 & 3 & 4 & 5.00 & 5\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -665,14 +675,14 @@ The most common time of the day for commuting is between 7 am and 9 am, but ther
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
-factor & r8A\_ACCESSJOB & 15 & 0.9667406 & TRUE & 5 & SOME IMPACT: 124, NO IMPACT : 123, MINOR IMPACT: 66, MAJOR IMPACT: 64\\
-factor & r8B\_JOBOPP & 11 & 0.9756098 & TRUE & 5 & GOOD: 169, POOR: 86, FAIR: 85, VERY GOOD: 64\\
-factor & r8C\_ACC\_COM & 15 & 0.9667406 & TRUE & 5 & EXCELLENT: 184, VERY GOOD: 109, GOOD: 93, FAIR: 27\\
-factor & r8D\_EMPLSATISF & 37 & 0.9179601 & TRUE & 5 & HIGH SATISF: 135, VERY HIGH SATISF: 130, MEDIUM SATISF: 116, LOW SATISF: 20\\
-factor & r8E\_TIMECOMMUT & 10 & 0.9778271 & TRUE & 4 & 1h and more : 133, 40-60 min: 113, 20-40 min: 103, 0-20 min: 92\\
+factor & TW\_JobAccess & 15 & 0.9667406 & TRUE & 5 & SOME IMPACT: 124, NO IMPACT : 123, MINOR IMPACT: 66, MAJOR IMPACT: 64\\
+factor & TW\_Job\_Opportunity & 11 & 0.9756098 & TRUE & 5 & GOOD: 169, POOR: 86, FAIR: 85, VERY GOOD: 64\\
+factor & TW\_Interested\_Access & 15 & 0.9667406 & TRUE & 5 & EXCELLENT: 184, VERY GOOD: 109, GOOD: 93, FAIR: 27\\
+factor & TW\_Jobsatisfaction & 37 & 0.9179601 & TRUE & 5 & HIGH SATISF: 135, VERY HIGH SATISF: 130, MEDIUM SATISF: 116, LOW SATISF: 20\\
+factor & TW\_Commute\_duration & 10 & 0.9778271 & TRUE & 4 & 1h and more : 133, 40-60 min: 113, 20-40 min: 103, 0-20 min: 92\\
 \addlinespace
-factor & r8F\_SCHEDULE & 171 & 0.6208426 & TRUE & 6 & 7:00 - 9:00: 168, Others: 47, 9:00 - 13:00: 39, 18:00 - 21:00: 14\\
-factor & r8G\_SPENDING & 7 & 0.9844789 & TRUE & 4 & 35,000-75,000: 199, LESS THAN 35,000: 166, 75,000-125,000: 46, MORE THAN 125,000: 33\\
+factor & TW\_Commute\_schedule & 171 & 0.6208426 & TRUE & 6 & 7:00 - 9:00: 168, Others: 47, 9:00 - 13:00: 39, 18:00 - 21:00: 14\\
+factor & TW\_Commute\_monthlycost & 7 & 0.9844789 & TRUE & 4 & 35,000-75,000: 199, LESS THAN 35,000: 166, 75,000-125,000: 46, MORE THAN 125,000: 33\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -701,10 +711,10 @@ We can see in Table \ref{tab:Social-Interaction-Descriptives}, that slightly few
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
-factor & r4A\_INTERACC & 13 & 0.9711752 & TRUE & 5 & GOOD: 178, FAIR: 102, POOR: 85, VERY GOOD: 53\\
-factor & r4B\_PERSON & 12 & 0.9733925 & TRUE & 5 & MODERATELY IMPORTANT: 150, NOT IMPORTANT: 88, IMPORTANT: 83, SLIGHTLY IMPORTANT: 69\\
-factor & r4C\_DISCRIM & 4 & 0.9911308 & FALSE & 2 & NO: 338, YES: 109\\
-factor & r4D\_MODE & 377 & 0.1640798 & FALSE & 7 & BUS: 33, METRO: 15, CAR: 8, TAXI: 7\\
+factor & SI\_Interactionlevel & 13 & 0.9711752 & TRUE & 5 & GOOD: 178, FAIR: 102, POOR: 85, VERY GOOD: 53\\
+factor & SI\_Imp\_interaction & 12 & 0.9733925 & TRUE & 5 & MODERATELY IMPORTANT: 150, NOT IMPORTANT: 88, IMPORTANT: 83, SLIGHTLY IMPORTANT: 69\\
+factor & SI\_Discrimination & 4 & 0.9911308 & FALSE & 2 & NO: 338, YES: 109\\
+factor & SI\_Discrim\_mode & 377 & 0.1640798 & FALSE & 7 & BUS: 33, METRO: 15, CAR: 8, TAXI: 7\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -731,16 +741,16 @@ Following this, car-use deduction has been turned into the political agenda arou
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
-factor & r6A\_SHIFT & 11 & 0.9756098 & FALSE & 2 & YES: 247, NO: 193\\
-factor & r6B\_QUALITY\_SHIFT & 198 & 0.5609756 & TRUE & 5 & GOOD: 107, FAIR: 61, VERY GOOD: 38, POOR: 34\\
-factor & r6CA\_WAITING & 41 & 0.9090909 & TRUE & 5 & GOOD: 124, POOR: 101, FAIR: 94, VERY GOOD: 61\\
-factor & r6CB\_TIME\_SHIFT & 102 & 0.7738359 & TRUE & 5 & GOOD: 126, FAIR: 77, POOR: 62, VERY GOOD: 59\\
-factor & r6CC\_TOTALTIME & 28 & 0.9379157 & TRUE & 5 & GOOD: 138, POOR: 113, FAIR: 75, VERY GOOD: 54\\
+factor & IS\_Shiftmode & 11 & 0.9756098 & FALSE & 2 & YES: 247, NO: 193\\
+factor & IS\_Qualityshift & 198 & 0.5609756 & TRUE & 5 & GOOD: 107, FAIR: 61, VERY GOOD: 38, POOR: 34\\
+factor & IS\_Waitingtime & 41 & 0.9090909 & TRUE & 5 & GOOD: 124, POOR: 101, FAIR: 94, VERY GOOD: 61\\
+factor & IS\_Shift\_time & 102 & 0.7738359 & TRUE & 5 & GOOD: 126, FAIR: 77, POOR: 62, VERY GOOD: 59\\
+factor & IS\_Travel\_time & 28 & 0.9379157 & TRUE & 5 & GOOD: 138, POOR: 113, FAIR: 75, VERY GOOD: 54\\
 \addlinespace
-factor & r6D\_DIFFICULTY & 76 & 0.8314856 & FALSE & 7 & ALL THE PREVIOUS ONES: 107, TOO LONG SHIFTS: 89, UNCOMFORTABLE SHIFTING: 87, BAD INFRASTRUCTURE FOR WAITING TIMES: 33\\
-factor & r6E\_TOOL & 8 & 0.9822616 & FALSE & 2 & YES: 372, NO: 71\\
-factor & r6F\_INFO & 15 & 0.9667406 & TRUE & 5 & GOOD: 153, VERY GOOD: 118, FAIR: 63, EXCELLENT: 63\\
-factor & r6G\_IMP\_INFO & 10 & 0.9778271 & TRUE & 5 & VERY IMPORTANT: 198, IMPORTANT: 122, MODERATELY IMPORTANT: 68, SLIGHTLY IMPORTANT: 33\\
+factor & IS\_Difficulty\_modechange & 76 & 0.8314856 & FALSE & 7 & ALL THE PREVIOUS ONES: 107, TOO LONG SHIFTS: 89, UNCOMFORTABLE SHIFTING: 87, BAD INFRASTRUCTURE FOR WAITING TIMES: 33\\
+factor & IS\_Techtool & 8 & 0.9822616 & FALSE & 2 & YES: 372, NO: 71\\
+factor & IS\_Info\_techtool & 15 & 0.9667406 & TRUE & 5 & GOOD: 153, VERY GOOD: 118, FAIR: 63, EXCELLENT: 63\\
+factor & IS\_Imp\_techtool & 10 & 0.9778271 & TRUE & 5 & VERY IMPORTANT: 198, IMPORTANT: 122, MODERATELY IMPORTANT: 68, SLIGHTLY IMPORTANT: 33\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -767,32 +777,32 @@ The descriptive statistics suggest that most respondents have positive evaluatio
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
-factor & r7AA\_AUTOSPACE & 10 & 0.9778271 & TRUE & 5 & GOOD: 127, VERY GOOD: 117, FAIR: 72, EXCELLENT: 67\\
-factor & r7AB\_PARKING\_NUMB & 10 & 0.9778271 & TRUE & 5 & GOOD: 119, FAIR: 96, VERY GOOD: 88, POOR: 85\\
-factor & r7AC\_QHIWAY & 11 & 0.9756098 & TRUE & 5 & VERY GOOD: 142, GOOD: 141, FAIR: 67, EXCELLENT: 49\\
-factor & r7AD\_PEDESTRN & 10 & 0.9778271 & TRUE & 5 & GOOD: 141, VERY GOOD: 102, FAIR: 82, EXCELLENT: 68\\
-factor & r7AE\_QSIDEWA & 9 & 0.9800443 & TRUE & 5 & GOOD: 119, FAIR: 110, VERY GOOD: 99, POOR: 67\\
+factor & BE\_Autospace & 10 & 0.9778271 & TRUE & 5 & GOOD: 127, VERY GOOD: 117, FAIR: 72, EXCELLENT: 67\\
+factor & BE\_Parking\_num & 10 & 0.9778271 & TRUE & 5 & GOOD: 119, FAIR: 96, VERY GOOD: 88, POOR: 85\\
+factor & BE\_Quality\_highway & 11 & 0.9756098 & TRUE & 5 & VERY GOOD: 142, GOOD: 141, FAIR: 67, EXCELLENT: 49\\
+factor & BE\_Space\_pedestrian & 10 & 0.9778271 & TRUE & 5 & GOOD: 141, VERY GOOD: 102, FAIR: 82, EXCELLENT: 68\\
+factor & BE\_Quality\_sidewalk & 9 & 0.9800443 & TRUE & 5 & GOOD: 119, FAIR: 110, VERY GOOD: 99, POOR: 67\\
 \addlinespace
-factor & r7AF\_CLEAN\_STOP & 9 & 0.9800443 & TRUE & 5 & POOR: 129, FAIR: 108, GOOD: 102, VERY GOOD: 67\\
-factor & r7AG\_SEAT & 9 & 0.9800443 & TRUE & 5 & POOR: 142, FAIR: 122, GOOD: 94, VERY GOOD: 53\\
-factor & r7AH\_CLIMA & 10 & 0.9778271 & TRUE & 5 & POOR: 156, FAIR: 139, GOOD: 88, VERY GOOD: 36\\
-factor & r7AI\_CICLEWA\_NUMB & 9 & 0.9800443 & TRUE & 5 & POOR: 189, FAIR: 96, GOOD: 84, VERY GOOD: 37\\
-factor & r7AJ\_CICLEWA\_Q & 9 & 0.9800443 & TRUE & 5 & POOR: 171, FAIR: 96, GOOD: 96, VERY GOOD: 44\\
+factor & BE\_Clean\_busstop & 9 & 0.9800443 & TRUE & 5 & POOR: 129, FAIR: 108, GOOD: 102, VERY GOOD: 67\\
+factor & BE\_Seat\_busstop & 9 & 0.9800443 & TRUE & 5 & POOR: 142, FAIR: 122, GOOD: 94, VERY GOOD: 53\\
+factor & BE\_Climateprotection\_busstop & 10 & 0.9778271 & TRUE & 5 & POOR: 156, FAIR: 139, GOOD: 88, VERY GOOD: 36\\
+factor & BE\_cycloway\_num & 9 & 0.9800443 & TRUE & 5 & POOR: 189, FAIR: 96, GOOD: 84, VERY GOOD: 37\\
+factor & BE\_Quality\_cycloway & 9 & 0.9800443 & TRUE & 5 & POOR: 171, FAIR: 96, GOOD: 96, VERY GOOD: 44\\
 \addlinespace
-factor & r7AK\_BICSHARE & 9 & 0.9800443 & TRUE & 5 & POOR: 177, GOOD: 100, FAIR: 69, EXCELLENT: 49\\
-factor & r7BA\_IMPAUTOSPACE & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 140, MODERATELY IMPORTANT: 104, IMPORTANT: 95, SLIGHTLY IMPORTANT: 56\\
-factor & r7BB\_IMPPARKING\_NUMB & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 152, MODERATELY IMPORTANT: 102, IMPORTANT: 91, SLIGHTLY IMPORTANT: 51\\
-factor & r7BC\_IMPQHIWAY & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 214, IMPORTANT: 100, MODERATELY IMPORTANT: 82, NOT IMPORTANT: 23\\
-factor & r7BD\_IMPPEDESTRN & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 278, IMPORTANT: 103, MODERATELY IMPORTANT: 41, NOT IMPORTANT: 10\\
+factor & BE\_Bikeshare & 9 & 0.9800443 & TRUE & 5 & POOR: 177, GOOD: 100, FAIR: 69, EXCELLENT: 49\\
+factor & BE\_Imp\_Autospace & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 140, MODERATELY IMPORTANT: 104, IMPORTANT: 95, SLIGHTLY IMPORTANT: 56\\
+factor & BE\_Imp\_Parking\_num & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 152, MODERATELY IMPORTANT: 102, IMPORTANT: 91, SLIGHTLY IMPORTANT: 51\\
+factor & BE\_Imp\_Quality\_highway & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 214, IMPORTANT: 100, MODERATELY IMPORTANT: 82, NOT IMPORTANT: 23\\
+factor & BE\_Imp\_Space\_pedestrian & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 278, IMPORTANT: 103, MODERATELY IMPORTANT: 41, NOT IMPORTANT: 10\\
 \addlinespace
-factor & r7BE\_IMPQSIDEWA & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 297, IMPORTANT: 86, MODERATELY IMPORTANT: 35, SLIGHTLY IMPORTANT: 12\\
-factor & r7BF\_IMPCLEAN\_STOP & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 286, IMPORTANT: 92, MODERATELY IMPORTANT: 39, SLIGHTLY IMPORTANT: 13\\
-factor & r7BG\_IMPSEAT & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 92, MODERATELY IMPORTANT: 56, SLIGHTLY IMPORTANT: 19\\
-factor & r7BH\_IMPCLIMA & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 296, IMPORTANT: 83, MODERATELY IMPORTANT: 34, SLIGHTLY IMPORTANT: 14\\
-factor & r7BI\_IMPCICLEWA\_NUMB & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 296, IMPORTANT: 76, MODERATELY IMPORTANT: 42, SLIGHTLY IMPORTANT: 19\\
+factor & BE\_Imp\_Quality\_sidewalk & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 297, IMPORTANT: 86, MODERATELY IMPORTANT: 35, SLIGHTLY IMPORTANT: 12\\
+factor & BE\_Imp\_Clean\_busstop & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 286, IMPORTANT: 92, MODERATELY IMPORTANT: 39, SLIGHTLY IMPORTANT: 13\\
+factor & BE\_Imp\_Seat\_busstop & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 92, MODERATELY IMPORTANT: 56, SLIGHTLY IMPORTANT: 19\\
+factor & BE\_Imp\_Climateprotection\_busstop & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 296, IMPORTANT: 83, MODERATELY IMPORTANT: 34, SLIGHTLY IMPORTANT: 14\\
+factor & BE\_Imp\_cycloway\_num & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 296, IMPORTANT: 76, MODERATELY IMPORTANT: 42, SLIGHTLY IMPORTANT: 19\\
 \addlinespace
-factor & r7BJ\_IMPCICLEWA\_Q & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 308, IMPORTANT: 67, MODERATELY IMPORTANT: 44, NOT IMPORTANT: 11\\
-factor & r7BK\_IMPBICSHARE & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 259, IMPORTANT: 78, MODERATELY IMPORTANT: 66, SLIGHTLY IMPORTANT: 22\\
+factor & BE\_Imp\_Quality\_cycloway & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 308, IMPORTANT: 67, MODERATELY IMPORTANT: 44, NOT IMPORTANT: 11\\
+factor & BE\_Imp\_Bikeshare & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 259, IMPORTANT: 78, MODERATELY IMPORTANT: 66, SLIGHTLY IMPORTANT: 22\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -820,20 +830,20 @@ This aspect of the experience is rated as very important or important by a major
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
-factor & r1A\_STRESS & 2 & 0.9955654 & TRUE & 5 & MOD: 145, LOW: 107, HIGH: 92, VERY HIGH: 54\\
-factor & r1B\_EFFORT & 2 & 0.9955654 & TRUE & 5 & NEUTRAL: 152, POSITIVE: 117, VPOSITVE: 72, NEGATIVE: 67\\
-factor & r1C\_PROX & 8 & 0.9822616 & TRUE & 5 & POOR: 130, GOOD: 103, FAIR: 95, EXCELLENT: 60\\
-factor & r1D\_CONTAM & 4 & 0.9911308 & TRUE & 5 & VDISSATISFIEDISFIEDSATISFIEDISFIED: 149, DISSATISFIEDISFIED: 138, UNSURE: 107, SATISFIED: 33\\
-factor & r1E\_SAFETY & 1 & 0.9977827 & TRUE & 5 & UNSURE: 121, DISSATISFIEDISFIED: 110, VDISSATISFIEDISFIEDSATISFIEDISFIED: 97, SATISFIED: 84\\
+factor & H\_Stress & 2 & 0.9955654 & TRUE & 5 & MOD: 145, LOW: 107, HIGH: 92, VERY HIGH: 54\\
+factor & H\_Effort & 2 & 0.9955654 & TRUE & 5 & NEUTRAL: 152, POSITIVE: 117, VPOSITVE: 72, NEGATIVE: 67\\
+factor & H\_Proximity & 8 & 0.9822616 & TRUE & 5 & POOR: 130, GOOD: 103, FAIR: 95, EXCELLENT: 60\\
+factor & H\_Contam & 4 & 0.9911308 & TRUE & 5 & VDISSATISFIEDISFIEDSATISFIEDISFIED: 149, DISSATISFIEDISFIED: 138, UNSURE: 107, SATISFIED: 33\\
+factor & H\_Safety & 1 & 0.9977827 & TRUE & 5 & UNSURE: 121, DISSATISFIEDISFIED: 110, VDISSATISFIEDISFIEDSATISFIEDISFIED: 97, SATISFIED: 84\\
 \addlinespace
-factor & r1F\_COMFORT & 1 & 0.9977827 & TRUE & 5 & VDISSATISFIEDISFIEDSATISFIEDISFIED: 111, DISSATISFIEDISFIED: 109, UNSURE: 103, SATISFIED: 73\\
-factor & r1GA\_IMPSTRESS & 6 & 0.9866962 & TRUE & 5 & VERY IMPORTANT: 243, IMPORTANT: 108, MODERATELY IMPORTANT: 57, SLIGHTLY IMPORTANT: 26\\
-factor & r1GB\_IMPEFFORT & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 156, MODERATELY IMPORTANT: 121, IMPORTANT: 102, SLIGHTLY IMPORTANT: 46\\
-factor & r1GC\_IMPPROX & 7 & 0.9844789 & TRUE & 5 & VERY IMPORTANT: 169, IMPORTANT: 130, MODERATELY IMPORTANT: 97, SLIGHTLY IMPORTANT: 29\\
-factor & r1GD\_IMPCONTAM & 4 & 0.9911308 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 86, MODERATELY IMPORTANT: 64, SLIGHTLY IMPORTANT: 23\\
+factor & H\_Comfort & 1 & 0.9977827 & TRUE & 5 & VDISSATISFIEDISFIEDSATISFIEDISFIED: 111, DISSATISFIEDISFIED: 109, UNSURE: 103, SATISFIED: 73\\
+factor & H\_Imp\_stress & 6 & 0.9866962 & TRUE & 5 & VERY IMPORTANT: 243, IMPORTANT: 108, MODERATELY IMPORTANT: 57, SLIGHTLY IMPORTANT: 26\\
+factor & H\_Imp\_effort & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 156, MODERATELY IMPORTANT: 121, IMPORTANT: 102, SLIGHTLY IMPORTANT: 46\\
+factor & H\_Imp\_prox & 7 & 0.9844789 & TRUE & 5 & VERY IMPORTANT: 169, IMPORTANT: 130, MODERATELY IMPORTANT: 97, SLIGHTLY IMPORTANT: 29\\
+factor & H\_Imp\_contam & 4 & 0.9911308 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 86, MODERATELY IMPORTANT: 64, SLIGHTLY IMPORTANT: 23\\
 \addlinespace
-factor & r1GE\_IMPSAFETY & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 311, IMPORTANT: 80, MODERATELY IMPORTANT: 35, SLIGHTLY IMPORTANT: 13\\
-factor & r1GF\_IMPCOMFORT & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 216, IMPORTANT: 111, MODERATELY IMPORTANT: 91, SLIGHTLY IMPORTANT: 15\\
+factor & H\_Imp\_safety & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 311, IMPORTANT: 80, MODERATELY IMPORTANT: 35, SLIGHTLY IMPORTANT: 13\\
+factor & H\_Imp\_comfort & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 216, IMPORTANT: 111, MODERATELY IMPORTANT: 91, SLIGHTLY IMPORTANT: 15\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -858,32 +868,32 @@ Feelings and emotional information can be used to map and understand travel beha
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
-factor & r2AA\_FREEDOM & 218 & 0.5166297 & FALSE & 8 & WALK: 96, CAR: 79, BICYCLE: 43, MOTO: 8\\
-factor & r2AB\_UNSAFETY & 217 & 0.5188470 & FALSE & 8 & BUS: 94, MOTO: 73, WALK: 22, BICYCLE: 21\\
-factor & r2AC\_FUNCTIONALITY & 196 & 0.5654102 & FALSE & 8 & CAR: 90, MOTOO: 86, BICYCLE: 26, MOTO: 18\\
-factor & r2AD\_ENJOYMENT & 212 & 0.5299335 & FALSE & 8 & BICYCLE: 118, CAR: 42, WALK: 42, MOTO: 15\\
-factor & r2AE\_LOWCOST & 232 & 0.4855876 & FALSE & 8 & BICYCLE: 91, WALK: 84, BUS: 15, MOTO: 11\\
+factor & FE\_Freedom & 218 & 0.5166297 & FALSE & 8 & WALK: 96, CAR: 79, BICYCLE: 43, MOTO: 8\\
+factor & FE\_Unsafety & 217 & 0.5188470 & FALSE & 8 & BUS: 94, MOTO: 73, WALK: 22, BICYCLE: 21\\
+factor & FE\_Functionality & 196 & 0.5654102 & FALSE & 8 & CAR: 90, MOTOO: 86, BICYCLE: 26, MOTO: 18\\
+factor & FE\_Enjoyment & 212 & 0.5299335 & FALSE & 8 & BICYCLE: 118, CAR: 42, WALK: 42, MOTO: 15\\
+factor & FE\_Low\_cost & 232 & 0.4855876 & FALSE & 8 & BICYCLE: 91, WALK: 84, BUS: 15, MOTO: 11\\
 \addlinespace
-factor & r2AF\_POVERTY & 166 & 0.6319290 & FALSE & 8 & BUS: 139, WALK: 102, BICYCLE: 13, COLECTIVO: 10\\
-factor & r2AG\_SAFETY & 142 & 0.6851441 & FALSE & 8 & CAR: 199, METRO: 62, TAXI: 16, WALK: 15\\
-factor & r2AH\_WASTE\_OF\_TIME & 165 & 0.6341463 & FALSE & 8 & BUS: 222, METRO: 13, CAR: 12, WALK: 12\\
-factor & r2AI\_UNPUNCTUALITY & 139 & 0.6917960 & FALSE & 7 & BUS: 263, METRO: 13, WALK: 11, CAR: 10\\
-factor & r2AJ\_CONGEST & 233 & 0.4833703 & FALSE & 8 & BUS: 135, CAR: 52, METRO: 16, TAX: 5\\
+factor & FE\_Poverty & 166 & 0.6319290 & FALSE & 8 & BUS: 139, WALK: 102, BICYCLE: 13, COLECTIVO: 10\\
+factor & FE\_Safety\_mode & 142 & 0.6851441 & FALSE & 8 & CAR: 199, METRO: 62, TAXI: 16, WALK: 15\\
+factor & FE\_Waste\_time & 165 & 0.6341463 & FALSE & 8 & BUS: 222, METRO: 13, CAR: 12, WALK: 12\\
+factor & FE\_Unpunctuality & 139 & 0.6917960 & FALSE & 7 & BUS: 263, METRO: 13, WALK: 11, CAR: 10\\
+factor & FE\_Congestion & 233 & 0.4833703 & FALSE & 8 & BUS: 135, CAR: 52, METRO: 16, TAX: 5\\
 \addlinespace
-factor & r2AK\_EFFICIENCY & 196 & 0.5654102 & FALSE & 8 & METRO: 94, CAR: 63, BICYCLE: 37, MOTO: 17\\
-factor & r2AL\_LUXURY & 162 & 0.6407982 & FALSE & 7 & CAR: 200, TAXI: 66, BICYCLE: 8, MOTO: 6\\
-factor & r2AM\_ENVIRONMENT & 251 & 0.4434590 & FALSE & 8 & BICYCLE: 121, WAL: 52, METRO: 16, CAR: 4\\
-factor & r2AN\_HEALTH & 259 & 0.4257206 & FALSE & 7 & WAL: 94, BICYCLE: 76, CAR: 12, TAXI: 3\\
-factor & r2AO\_INTSOCI & 224 & 0.5033259 & FALSE & 8 & WAL: 84, BUS: 41, METRO: 30, BICYCLE: 27\\
+factor & FE\_Efficiency & 196 & 0.5654102 & FALSE & 8 & METRO: 94, CAR: 63, BICYCLE: 37, MOTO: 17\\
+factor & FE\_Luxury & 162 & 0.6407982 & FALSE & 7 & CAR: 200, TAXI: 66, BICYCLE: 8, MOTO: 6\\
+factor & FE\_Envrnmt\_care & 251 & 0.4434590 & FALSE & 8 & BICYCLE: 121, WAL: 52, METRO: 16, CAR: 4\\
+factor & FE\_Health & 259 & 0.4257206 & FALSE & 7 & WAL: 94, BICYCLE: 76, CAR: 12, TAXI: 3\\
+factor & FE\_Social\_Interaction & 224 & 0.5033259 & FALSE & 8 & WAL: 84, BUS: 41, METRO: 30, BICYCLE: 27\\
 \addlinespace
-factor & r2AP\_UNCOMFT & 221 & 0.5099778 & FALSE & 8 & BUS: 134, METRO: 51, COLECTIVO: 15, MOTO: 14\\
-factor & r2AQ\_HAPPINESS & 216 & 0.5210643 & FALSE & 8 & BICYCLE: 77, WALK: 77, CAR: 65, MOTO: 6\\
-factor & r2AR\_STATUS & 173 & 0.6164080 & FALSE & 7 & CAR: 219, TAXI: 28, BICYCLE: 10, WALK: 10\\
-factor & r2B\_DAILY\_ENJOY & 4 & 0.9911308 & TRUE & 5 & MEDIUM: 146, HIGH: 114, VERY High: 75, LOW: 72\\
-factor & r2C\_IMP\_QUALITY & 6 & 0.9866962 & TRUE & 5 & VERY LOW: 276, LOW: 99, MEDIUM: 46, HIGH: 14\\
+factor & FE\_Uncomfort & 221 & 0.5099778 & FALSE & 8 & BUS: 134, METRO: 51, COLECTIVO: 15, MOTO: 14\\
+factor & FE\_Happiness & 216 & 0.5210643 & FALSE & 8 & BICYCLE: 77, WALK: 77, CAR: 65, MOTO: 6\\
+factor & FE\_Status & 173 & 0.6164080 & FALSE & 7 & CAR: 219, TAXI: 28, BICYCLE: 10, WALK: 10\\
+factor & FE\_Daily\_enjoy & 4 & 0.9911308 & TRUE & 5 & MEDIUM: 146, HIGH: 114, VERY High: 75, LOW: 72\\
+factor & FE\_Imp\_quality & 6 & 0.9866962 & TRUE & 5 & VERY LOW: 276, LOW: 99, MEDIUM: 46, HIGH: 14\\
 \addlinespace
-factor & r2D\_AFFECT & 38 & 0.9157428 & FALSE & 8 & ALL OF THEM: 136, TRAVEL TIME: 89, CROWDNESS OF PASSENGERS: 87, COMFORT ABSENCE: 38\\
-factor & r2E\_FACILIT & 34 & 0.9246120 & FALSE & 8 & ALL OF THEM: 164, REDUCTION OF TIME TRAVEL: 82, LESS CROWDNESS OF PASSENGERS: 66, BETTER QULALITY ON STREETS: 36\\
+factor & FE\_Affect & 38 & 0.9157428 & FALSE & 8 & ALL OF THEM: 136, TRAVEL TIME: 89, CROWDNESS OF PASSENGERS: 87, COMFORT ABSENCE: 38\\
+factor & FE\_Facility & 34 & 0.9246120 & FALSE & 8 & ALL OF THEM: 164, REDUCTION OF TIME TRAVEL: 82, LESS CROWDNESS OF PASSENGERS: 66, BETTER QULALITY ON STREETS: 36\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -910,33 +920,33 @@ The most important role of the transportation network and public modes of travel
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
-factor & r3A\_ACCESS & 11 & 0.9756098 & TRUE & 5 & GOOD: 186, FAIR: 91, VERY GOOD: 63, POOR: 57\\
-factor & r3B\_ACC\_EM & 18 & 0.9600887 & TRUE & 5 & GOOD: 134, POOR: 108, VERY GOOD: 83, FAIR: 60\\
-factor & r3CA\_FAM & 11 & 0.9756098 & TRUE & 5 & SOMWTIMEs: 117, OFTEN: 105, ALWAYS: 100, NEVER: 60\\
-factor & r3CB\_REC & 15 & 0.9667406 & TRUE & 5 & SOMWTIMEs: 139, OFTEN: 103, ALWAYS: 72, RARELY: 65\\
-factor & r3CC\_CUL & 14 & 0.9689579 & TRUE & 5 & SOMWTIMEs: 129, RARELY: 123, NEVER: 94, OFTEN: 65\\
+factor & RPD\_Access & 11 & 0.9756098 & TRUE & 5 & GOOD: 186, FAIR: 91, VERY GOOD: 63, POOR: 57\\
+factor & RPD\_Acc\_Employment & 18 & 0.9600887 & TRUE & 5 & GOOD: 134, POOR: 108, VERY GOOD: 83, FAIR: 60\\
+factor & RPD\_Family\_vis & 11 & 0.9756098 & TRUE & 5 & SOMWTIMEs: 117, OFTEN: 105, ALWAYS: 100, NEVER: 60\\
+factor & RPD\_Rec\_activity & 15 & 0.9667406 & TRUE & 5 & SOMWTIMEs: 139, OFTEN: 103, ALWAYS: 72, RARELY: 65\\
+factor & RPD\_Cult\_activity & 14 & 0.9689579 & TRUE & 5 & SOMWTIMEs: 129, RARELY: 123, NEVER: 94, OFTEN: 65\\
 \addlinespace
-factor & r3CD\_SPO & 15 & 0.9667406 & TRUE & 5 & SOMWTIMEs: 112, NEVER: 106, RARELY: 93, OFTEN: 75\\
-factor & r3CE\_GROC & 14 & 0.9689579 & TRUE & 5 & OFTEN: 135, SOMWTIMEs: 112, ALWAYS: 83, RAR: 65\\
-factor & r3CF\_SOC & 13 & 0.9711752 & TRUE & 5 & OFTEN: 146, SOMWTIMEs: 107, ALWAYS: 84, RAR: 55\\
-factor & r3DA\_FAM & 45 & 0.9002217 & TRUE & 5 & MODERATELY IMPORTANT: 102, IMPORTANT: 85, NOT IMPORTANT: 79, VERY IMPORTANT: 74\\
-factor & r3DB\_REC & 47 & 0.8957871 & TRUE & 5 & MODERATELY IMPORTANT: 121, IMPORTANT: 91, SLIGHTLY IMPORTANT: 67, NOT IMPORTANT: 64\\
+factor & RPD\_Sport & 15 & 0.9667406 & TRUE & 5 & SOMWTIMEs: 112, NEVER: 106, RARELY: 93, OFTEN: 75\\
+factor & RPD\_Groc\_shopping & 14 & 0.9689579 & TRUE & 5 & OFTEN: 135, SOMWTIMEs: 112, ALWAYS: 83, RAR: 65\\
+factor & RPD\_Social\_activity & 13 & 0.9711752 & TRUE & 5 & OFTEN: 146, SOMWTIMEs: 107, ALWAYS: 84, RAR: 55\\
+factor & RPD\_Imp\_Family\_vis & 45 & 0.9002217 & TRUE & 5 & MODERATELY IMPORTANT: 102, IMPORTANT: 85, NOT IMPORTANT: 79, VERY IMPORTANT: 74\\
+factor & RPD\_Imp\_Rec\_activity & 47 & 0.8957871 & TRUE & 5 & MODERATELY IMPORTANT: 121, IMPORTANT: 91, SLIGHTLY IMPORTANT: 67, NOT IMPORTANT: 64\\
 \addlinespace
-factor & r3DC\_CUL & 52 & 0.8847007 & TRUE & 5 & MODERATELY IMPORTANT: 117, IMPORTANT: 87, SLIGHTLY IMPORTANT: 70, NOT IMPORTANT: 67\\
-factor & r3DD\_SPO & 50 & 0.8891353 & TRUE & 5 & MODERATELY IMPORTANT: 111, NOT IMPORTANT: 85, IMPORTANT: 77, SLIGHTLY IMPORTANT: 65\\
-factor & r3DE\_GROC & 46 & 0.8980044 & TRUE & 5 & MODERATELY IMPORTANT: 101, IMPORTANT: 91, NOT IMPORTANT: 75, VERY IMPORTANT: 70\\
-factor & r3DF\_SOC & 47 & 0.8957871 & TRUE & 5 & MODERATELY IMPORTANTORTANT: 124, IMPORTANT: 89, NOT IMPORTANT: 64, SLIGHTLY IMPORTANT: 64\\
-factor & r3E\_OPTIONS & 1 & 0.9977827 & TRUE & 5 & NOT IMPORTANT: 326, IMPORTANT: 75, MODERATELY IMPORTANT: 36, SLIGHTLY IMPORTANT: 8\\
+factor & RPD\_Imp\_Cult\_activity & 52 & 0.8847007 & TRUE & 5 & MODERATELY IMPORTANT: 117, IMPORTANT: 87, SLIGHTLY IMPORTANT: 70, NOT IMPORTANT: 67\\
+factor & RPD\_Imp\_Sport & 50 & 0.8891353 & TRUE & 5 & MODERATELY IMPORTANT: 111, NOT IMPORTANT: 85, IMPORTANT: 77, SLIGHTLY IMPORTANT: 65\\
+factor & RPD\_Imp\_Groc\_shopping & 46 & 0.8980044 & TRUE & 5 & MODERATELY IMPORTANT: 101, IMPORTANT: 91, NOT IMPORTANT: 75, VERY IMPORTANT: 70\\
+factor & RPD\_Imp\_Social\_activity & 47 & 0.8957871 & TRUE & 5 & MODERATELY IMPORTANTORTANT: 124, IMPORTANT: 89, NOT IMPORTANT: 64, SLIGHTLY IMPORTANT: 64\\
+factor & RPD\_Imp\_Options & 1 & 0.9977827 & TRUE & 5 & NOT IMPORTANT: 326, IMPORTANT: 75, MODERATELY IMPORTANT: 36, SLIGHTLY IMPORTANT: 8\\
 \addlinespace
-factor & r3F\_ACCESS\_DEPENDENCY & 3 & 0.9933481 & TRUE & 5 & VERY HIGH: 184, HIGH: 128, MEDIUM: 100, BELOW AVERAGE: 21\\
-factor & r3G\_QUALITY\_INCRS & 2 & 0.9955654 & TRUE & 5 & VERY HIGH: 267, HIGH: 97, MEDIUM: 54, BELOW AVERAGE: 18\\
-factor & r3H\_ECON & 339 & 0.2483370 & FALSE & 8 & CAR: 30, ALL: 30, METRO: 18, BUS: 18\\
-factor & r3I\_NOECON & 261 & 0.4212860 & FALSE & 9 & TAXI: 106, CAR: 39, MOTO: 29, COLECTIVO: 4\\
-factor & r3JA\_OFIC & 20 & 0.9556541 & TRUE & 5 & NOT IMPORTANT: 195, IMPORTANT: 109, MODERATELY IMPORTANT: 82, SLIGHTLY IMPORTANT: 34\\
+factor & RPD\_Trans\_Quality & 3 & 0.9933481 & TRUE & 5 & VERY HIGH: 184, HIGH: 128, MEDIUM: 100, BELOW AVERAGE: 21\\
+factor & RPD\_Inc\_Quality & 2 & 0.9955654 & TRUE & 5 & VERY HIGH: 267, HIGH: 97, MEDIUM: 54, BELOW AVERAGE: 18\\
+factor & RPD\_Affordable\_mode & 339 & 0.2483370 & FALSE & 8 & CAR: 30, ALL: 30, METRO: 18, BUS: 18\\
+factor & RPD\_Unaffordable\_mode & 261 & 0.4212860 & FALSE & 9 & TAXI: 106, CAR: 39, MOTO: 29, COLECTIVO: 4\\
+factor & RPD\_Imp\_commercial & 20 & 0.9556541 & TRUE & 5 & NOT IMPORTANT: 195, IMPORTANT: 109, MODERATELY IMPORTANT: 82, SLIGHTLY IMPORTANT: 34\\
 \addlinespace
-factor & r3JB\_MODES & 17 & 0.9623060 & TRUE & 5 & NOT IMPORTANT: 297, IMPORTANT: 91, MODERATELY IMPORTANT: 38, SLIGHTLY IMPORTANT: 6\\
-factor & r3JC\_COMFORT & 14 & 0.9689579 & TRUE & 5 & NOT IMPORTANT: 300, IMPORTANT: 96, MODERATELY IMPORTANT: 34, SLIGHTLY IMPORTANT: 6\\
-factor & r3JD\_OTHERS & 20 & 0.9556541 & TRUE & 5 & NOT IMPORTANT: 267, IMPORTANT: 82, MODERATELY IMPORTANT: 51, SLIGHTLY IMPORTANT: 16\\
+factor & RPD\_Imp\_dispon\_mode & 17 & 0.9623060 & TRUE & 5 & NOT IMPORTANT: 297, IMPORTANT: 91, MODERATELY IMPORTANT: 38, SLIGHTLY IMPORTANT: 6\\
+factor & RPD\_Imp\_imprv\_comfort & 14 & 0.9689579 & TRUE & 5 & NOT IMPORTANT: 300, IMPORTANT: 96, MODERATELY IMPORTANT: 34, SLIGHTLY IMPORTANT: 6\\
+factor & RPD\_Imp\_othermodes & 20 & 0.9556541 & TRUE & 5 & NOT IMPORTANT: 267, IMPORTANT: 82, MODERATELY IMPORTANT: 51, SLIGHTLY IMPORTANT: 16\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -961,17 +971,17 @@ Nature and sustainability information will help planners to provide people with 
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
-factor & r5A\_CHANGE & 6 & 0.9866962 & FALSE & 2 & NO: 256, YES: 189\\
-factor & r5B\_CHANGE\_MODE & 284 & 0.3702882 & FALSE & 8 & CAR: 79, METRO: 34, TAXI: 27, COLECTIVO: 13\\
-factor & r5C\_SUST & 7 & 0.9844789 & TRUE & 5 & POOR: 189, FAIR: 97, GOOD: 86, VERY GOOD: 42\\
-factor & r5D\_IMP\_SUST & 6 & 0.9866962 & TRUE & 5 & VERY IMPORTANT: 195, IMPORTANT: 115, MODERATELY IMPORTANT: 86, NOT IMPORTANT: 26\\
-factor & r5E\_PAYMENT & 6 & 0.9866962 & FALSE & 2 & YES: 228, NO: 217\\
+factor & NS\_Change\_mode & 6 & 0.9866962 & FALSE & 2 & NO: 256, YES: 189\\
+factor & NS\_Change\_type & 284 & 0.3702882 & FALSE & 8 & CAR: 79, METRO: 34, TAXI: 27, COLECTIVO: 13\\
+factor & NS\_Sustain\_mode & 7 & 0.9844789 & TRUE & 5 & POOR: 189, FAIR: 97, GOOD: 86, VERY GOOD: 42\\
+factor & NS\_Imp\_sustainmode & 6 & 0.9866962 & TRUE & 5 & VERY IMPORTANT: 195, IMPORTANT: 115, MODERATELY IMPORTANT: 86, NOT IMPORTANT: 26\\
+factor & NS\_Willing\_pay\_sustainmode & 6 & 0.9866962 & FALSE & 2 & YES: 228, NO: 217\\
 \addlinespace
-factor & r5F\_PAYMENTS & 236 & 0.4767184 & TRUE & 2 & 5-15\%: 144, 15-30\%-: 71, 30\% or more\%: 0\\
-factor & r5GA\_TREE & 16 & 0.9645233 & TRUE & 5 & VERY IMPORTANT: 236, IMPORTANT: 91, MODERATELY IMPORTANT: 74, NOT IMPORTANT: 19\\
-factor & r5GB\_PARK & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANTORTANT: 254, IMPORTANT: 106, MODERATELY IMPORTANT: 58, SLIGHTLY IMPORTANT: 11\\
-factor & r5GC\_MODE & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 236, IMPORTANT: 105, MODERATELY IMPORTANT: 63, SLIGHTLY IMPORTANT: 25\\
-factor & r5GD\_MODE & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 102, MODERATELY IMPORTANT: 48, SLIGHTLY IMPORTANT: 22\\
+factor & NS\_Pay\_sustaintype & 236 & 0.4767184 & TRUE & 2 & 5-15\%: 144, 15-30\%-: 71, 30\% or more\%: 0\\
+factor & NS\_Imp\_tree & 16 & 0.9645233 & TRUE & 5 & VERY IMPORTANT: 236, IMPORTANT: 91, MODERATELY IMPORTANT: 74, NOT IMPORTANT: 19\\
+factor & NS\_Imp\_park & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANTORTANT: 254, IMPORTANT: 106, MODERATELY IMPORTANT: 58, SLIGHTLY IMPORTANT: 11\\
+factor & NS\_Imp\_imprv\_sustainmode & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 236, IMPORTANT: 105, MODERATELY IMPORTANT: 63, SLIGHTLY IMPORTANT: 25\\
+factor & NS\_Imp\_increasesusmodes & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 102, MODERATELY IMPORTANT: 48, SLIGHTLY IMPORTANT: 22\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -1290,17 +1300,17 @@ In this condition commuters may experience a substantial amount of stress, and t
 \toprule
 Equation1 & beta\_equation1 & se\_equation1 & p\_values\_E1 & Equation2 & beta\_equation2 & se\_equation2 & p\_values\_E2\\
 \midrule
-- & - & - & - & r0D\_AGEAdults 1 & 0.5732 & 0.2105 & <0.0001\\
-r0D\_AGESeniors 1 & 0.5732 & 0.2105 & <0.0001 & - & - & - & -\\
-r0J\_INCOMEMiddle Income 1 & -0.9002 & 0.2245 & 1e-04 & - & - & - & -\\
-- & - & - & - & r0J\_INCOMEMiddle Income 2 & 0.3625 & 0.2049 & <0.0001\\
-r0J\_INCOMEHigh Income 1 & -0.6607 & 0.2248 & <0.0001 & - & - & - & -\\
+- & - & - & - & IC\_AgeAdults 1 & 0.5732 & 0.2105 & <0.0001\\
+IC\_AgeSeniors 1 & -0.5492 & 0.2625 & <0.0001 & - & - & - & -\\
+IC\_IncomeMiddle Income 1 & -0.9002 & 0.2245 & 1e-04 & - & - & - & -\\
+- & - & - & - & IC\_IncomeMiddle Income 2 & 0.3625 & 0.2049 & <0.0001\\
+IC\_IncomeHigh Income 1 & -0.6607 & 0.2248 & <0.0001 & - & - & - & -\\
 \addlinespace
-r0P\_MODE1Private Transportation 1 & 1.4984 & 0.3515 & 0 & - & - & - & -\\
-r0P\_MODE1Public Transportation 1 & 1.5199 & 0.3175 & 0 & - & - & - & -\\
-- & - & - & - & r0G\_EDUCATIONHigher Education 1 & 1.5149 & 0.7432 & <0.0001\\
-r0H\_OCCUPATIONWorking 1 & -0.9825 & 0.3217 & 0 & - & - & - & -\\
-r0H\_OCCUPATIONStudent 1 & -0.9821 & 0.3677 & <0.0001 & - & - & - & -\\
+IC\_Main\_modePrivate Transportation 1 & 1.4984 & 0.3515 & 0 & - & - & - & -\\
+IC\_Main\_modePublic Transportation 1 & 1.5199 & 0.3175 & 0 & - & - & - & -\\
+- & - & - & - & IC\_EducationHigher Education 1 & 1.5149 & 0.7432 & <0.0001\\
+IC\_OccupationWorking 1 & -0.9825 & 0.3217 & 0 & - & - & - & -\\
+IC\_OccupationStudent 1 & -0.9821 & 0.3677 & <0.0001 & - & - & - & -\\
 \addlinespace
 VLOW|LOW & -2.275 & 0.4221 & 0 & NOT IMPORTANT|SLIGHTLY IMPORTANT & -1.9388 & 0.7862 & <0.0001\\
 LOW|MODERATE & -0.7954 & 0.4246 & <0.0001 & SLIGHTLY IMPORTANT|MODERATELY IMPORTANT & -0.6362 & 0.7312 & <0.0001\\
