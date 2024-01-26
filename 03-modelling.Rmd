@@ -270,17 +270,17 @@ Based on findings of previous research on determinants of an individual's vulner
 df <- Santiago_H %>%
   left_join(Santiago_IC, by = "ID") %>%
   # Select columns from Santiago_H and Santiago_IC
-  select( r0D_AGE, r0J_INCOME, r0G_EDUCATION, r0P_MODE1, r0H_OCCUPATION, r1A_STRESS, r1GA_IMPSTRESS) %>%
-  drop_na(r0D_AGE,
-          r0J_INCOME,
-          r0G_EDUCATION,
-          r0P_MODE1,
-          r0H_OCCUPATION,
-          r1A_STRESS, 
-          r1GA_IMPSTRESS)
+  select( IC_Age, IC_Income, IC_Education, IC_Main_mode, IC_Occupation, H_Stress, H_Imp_stress) %>%
+  drop_na(IC_Age,
+          IC_Income,
+          IC_Education,
+          IC_Main_mode,
+          IC_Occupation,
+          H_Stress, 
+          H_Imp_stress)
 
 skim_HIC <- df |>
-  select(r0D_AGE, r0J_INCOME, r0G_EDUCATION, r0P_MODE1, r0H_OCCUPATION, r1A_STRESS, r1GA_IMPSTRESS) |>
+  select(IC_Age, IC_Income, IC_Education, IC_Main_mode, IC_Occupation, H_Stress, H_Imp_stress) |>
   skim()
 
 skim_HIC$factor.top_counts[1] <- skim_HIC$factor.top_counts[1] |>
@@ -317,63 +317,63 @@ skim_HIC  |>
 
 ```{r Preparing dummy variables for desctiptive statistics, echo=FALSE, include = FALSE}
 
-df$Less18 <- ifelse (df$r0D_AGE == "Less18", 1, 0)
-df$"18to24" <- ifelse (df$r0D_AGE == "18to24", 1, 0)
-df$"25to34" <- ifelse (df$r0D_AGE == "25to34", 1, 0)
-df$"35to54" <- ifelse (df$r0D_AGE == "35to54", 1, 0)
-df$"55to64" <- ifelse (df$r0D_AGE == "55to64", 1, 0)
-df$"65more" <- ifelse (df$r0D_AGE == "65more", 1, 0)
+df$Less18 <- ifelse (df$IC_Age == "Less18", 1, 0)
+df$"18to24" <- ifelse (df$IC_Age == "18to24", 1, 0)
+df$"25to34" <- ifelse (df$IC_Age == "25to34", 1, 0)
+df$"35to54" <- ifelse (df$IC_Age == "35to54", 1, 0)
+df$"55to64" <- ifelse (df$IC_Age == "55to64", 1, 0)
+df$"65more" <- ifelse (df$IC_Age == "65more", 1, 0)
 
 
 
-df$Less423 <- ifelse (df$r0J_INCOME == "Less423", 1, 0)
-df$"423to639" <- ifelse (df$r0J_INCOME == "423to639", 1, 0)
-df$"639to977" <- ifelse (df$r0J_INCOME == "639to977", 1, 0)
-df$"977to1550" <- ifelse (df$r0J_INCOME == "977to1550", 1, 0)
-df$"1550to2380" <- ifelse (df$r0J_INCOME == "1550to2380", 1, 0)
-df$"2380more" <- ifelse (df$r0J_INCOME == "2380more", 1, 0)
+df$Less423 <- ifelse (df$IC_Income == "Less423", 1, 0)
+df$"423to639" <- ifelse (df$IC_Income == "423to639", 1, 0)
+df$"639to977" <- ifelse (df$IC_Income == "639to977", 1, 0)
+df$"977to1550" <- ifelse (df$IC_Income == "977to1550", 1, 0)
+df$"1550to2380" <- ifelse (df$IC_Income == "1550to2380", 1, 0)
+df$"2380more" <- ifelse (df$IC_Income == "2380more", 1, 0)
 
 
-df$"ELEMENTARY" <- ifelse (df$r0G_EDUCATION == "ELEMENTARY", 1, 0)
-df$"SECUNDARY" <- ifelse (df$r0G_EDUCATION == "SECUNDARY", 1, 0)
-df$"PROFESS_TECH" <- ifelse (df$r0G_EDUCATION == "PROFESS_TECH", 1, 0)
-df$"COLLEGE" <- ifelse (df$r0G_EDUCATION == "COLLEGE", 1, 0)
-df$"POSTGRAD" <- ifelse (df$r0G_EDUCATION == "POSTGRAD", 1, 0)
+df$"ELEMENTARY" <- ifelse (df$IC_Education == "ELEMENTARY", 1, 0)
+df$"SECUNDARY" <- ifelse (df$IC_Education == "SECUNDARY", 1, 0)
+df$"PROFESS_TECH" <- ifelse (df$IC_Education == "PROFESS_TECH", 1, 0)
+df$"COLLEGE" <- ifelse (df$IC_Education == "COLLEGE", 1, 0)
+df$"POSTGRAD" <- ifelse (df$IC_Education == "POSTGRAD", 1, 0)
 
 
-df$"CAR" <- ifelse (df$r0P_MODE1 == "CAR", 1, 0)
-df$"TAXI" <- ifelse (df$r0P_MODE1 == "TAXI", 1, 0)
-df$"COLECTIVO" <- ifelse (df$r0P_MODE1 == "COLECTIVO", 1, 0)
-df$"MOTO" <- ifelse (df$r0P_MODE1 == "MOTO", 1, 0)
-df$"METRO" <- ifelse (df$r0P_MODE1 == "METRO", 1, 0)
-df$"BUS" <- ifelse (df$r0P_MODE1 == "BUS", 1, 0)
-df$"BICYCLE" <- ifelse (df$r0P_MODE1 == "BICYCLE", 1, 0)
-df$"WALK" <- ifelse (df$r0P_MODE1 == "WALK", 1, 0)
+df$"CAR" <- ifelse (df$IC_Main_mode == "CAR", 1, 0)
+df$"TAXI" <- ifelse (df$IC_Main_mode == "TAXI", 1, 0)
+df$"COLECTIVO" <- ifelse (df$IC_Main_mode == "COLECTIVO", 1, 0)
+df$"MOTO" <- ifelse (df$IC_Main_mode == "MOTO", 1, 0)
+df$"METRO" <- ifelse (df$IC_Main_mode == "METRO", 1, 0)
+df$"BUS" <- ifelse (df$IC_Main_mode == "BUS", 1, 0)
+df$"BICYCLE" <- ifelse (df$IC_Main_mode == "BICYCLE", 1, 0)
+df$"WALK" <- ifelse (df$IC_Main_mode == "WALK", 1, 0)
 
 
-df$"FULL_TIME" <- ifelse (df$r0H_OCCUPATION == "FULL_TIME", 1, 0)
-df$"PART_TIME" <- ifelse (df$r0H_OCCUPATION == "PART_TIME", 1, 0)
-df$"SELF_EMPLOYED" <- ifelse (df$r0H_OCCUPATION == "SELF_EMPLOYED", 1, 0)
-df$"UNEMPLOYED" <- ifelse (df$r0H_OCCUPATION == "UNEMPLOYED", 1, 0)
-df$"HOME_TAKER" <- ifelse (df$r0H_OCCUPATION == "HOME_TAKER", 1, 0)
-df$"STUDENT" <- ifelse (df$r0H_OCCUPATION == "STUDENT", 1, 0)
-df$"STUDENT_WORK" <- ifelse (df$r0H_OCCUPATION == "STUDENT_WORK", 1, 0)
-df$"RETIRED" <- ifelse (df$r0H_OCCUPATION == "RETIRED", 1, 0)
-df$"OTHER" <- ifelse (df$r0H_OCCUPATION == "OTHER", 1, 0)
+df$"FULL_TIME" <- ifelse (df$IC_Occupation == "FULL_TIME", 1, 0)
+df$"PART_TIME" <- ifelse (df$IC_Occupation == "PART_TIME", 1, 0)
+df$"SELF_EMPLOYED" <- ifelse (df$IC_Occupation == "SELF_EMPLOYED", 1, 0)
+df$"UNEMPLOYED" <- ifelse (df$IC_Occupation == "UNEMPLOYED", 1, 0)
+df$"HOME_TAKER" <- ifelse (df$IC_Occupation == "HOME_TAKER", 1, 0)
+df$"STUDENT" <- ifelse (df$IC_Occupation == "STUDENT", 1, 0)
+df$"STUDENT_WORK" <- ifelse (df$IC_Occupation == "STUDENT_WORK", 1, 0)
+df$"RETIRED" <- ifelse (df$IC_Occupation == "RETIRED", 1, 0)
+df$"OTHER" <- ifelse (df$IC_Occupation == "OTHER", 1, 0)
 
 
-df$"VLOW" <- ifelse (df$r1A_STRESS == "VLOW", 1, 0)
-df$"LOW" <- ifelse (df$r1A_STRESS == "LOW", 1, 0)
-df$"MODERATE" <- ifelse (df$r1A_STRESS == "MODERATE", 1, 0)
-df$"HIGH" <- ifelse (df$r1A_STRESS == "HIGH", 1, 0)
-df$"VHIGH" <- ifelse (df$r1A_STRESS == "VHIGH", 1, 0)
+df$"VLOW" <- ifelse (df$H_Stress == "VLOW", 1, 0)
+df$"LOW" <- ifelse (df$H_Stress == "LOW", 1, 0)
+df$"MODERATE" <- ifelse (df$H_Stress == "MODERATE", 1, 0)
+df$"HIGH" <- ifelse (df$H_Stress == "HIGH", 1, 0)
+df$"VHIGH" <- ifelse (df$H_Stress == "VHIGH", 1, 0)
 
 
-df$"NOT IMPORTANT" <- ifelse (df$r1GA_IMPSTRESS == "NOT IMPORTANT", 1, 0)
-df$"SLIGHTLY IMPORTANT" <- ifelse (df$r1GA_IMPSTRESS == "SLIGHTLY IMPORTANT", 1, 0)
-df$"MODERATELY IMPORTANT" <- ifelse (df$r1GA_IMPSTRESS == "MODERATELY IMPORTANT", 1, 0)
-df$"IMPORTANT" <- ifelse (df$r1GA_IMPSTRESS == "IMPORTANT", 1, 0)
-df$"VERY IMPORTANT" <- ifelse (df$r1GA_IMPSTRESS == "VERY IMPORTANT", 1, 0)
+df$"NOT IMPORTANT" <- ifelse (df$H_Imp_stress == "NOT IMPORTANT", 1, 0)
+df$"SLIGHTLY IMPORTANT" <- ifelse (df$H_Imp_stress == "SLIGHTLY IMPORTANT", 1, 0)
+df$"MODERATELY IMPORTANT" <- ifelse (df$H_Imp_stress == "MODERATELY IMPORTANT", 1, 0)
+df$"IMPORTANT" <- ifelse (df$H_Imp_stress == "IMPORTANT", 1, 0)
+df$"VERY IMPORTANT" <- ifelse (df$H_Imp_stress == "VERY IMPORTANT", 1, 0)
 
 ```
 
@@ -386,14 +386,14 @@ df <- Santiago_H |>
   left_join(Santiago_IC,
             by = "ID") |>
   as.data.frame() |>
-  drop_na(r0D_AGE,
-          r0J_INCOME,
-          r0G_EDUCATION,
-          r0P_MODE1,
-          r0H_OCCUPATION ) 
+  drop_na(IC_Age,
+          IC_Income,
+          IC_Education,
+          IC_Main_mode,
+          IC_Occupation ) 
   
 
-df <- df %>%  mutate(r0J_INCOME = recode_factor(r0J_INCOME,
+df <- df %>%  mutate(IC_Income = recode_factor(IC_Income,
                                   "Less423" = "Low Income",
                                   "423to639" = "Low Income",
                                   "639to977" = "Middle Income",
@@ -407,14 +407,14 @@ df <- df %>%  mutate(r0J_INCOME = recode_factor(r0J_INCOME,
   #                                 "35to54" = "Adults",
   #                                 "55to64" = "Adults",
   #                                 "65more" = "Adults"))  %>%
-    mutate(r0D_AGE = recode_factor(r0D_AGE,
+    mutate(IC_Age = recode_factor(IC_Age,
                                   "Less18" = "Youth",
                                   "18to24" = "Youth",
                                   "25to34" = "Youth",
                                   "35to54" = "Adults",
                                   "55to64" = "Seniors",
                                   "65more" = "Seniors"))  %>%
-  mutate(r0P_MODE1 = recode_factor(r0P_MODE1,
+  mutate(IC_Main_mode = recode_factor(IC_Main_mode,
                                   "CAR" = "Private Transportation",
                                   "MOTO" = "Private Transportation",
                                   "TAXI" = "Public Transportation",
@@ -438,14 +438,14 @@ df <- df %>%  mutate(r0J_INCOME = recode_factor(r0J_INCOME,
   #                                 "PROFESS_TECH" = "Middle Education",
   #                                 "COLLEGE" = "Middle Education",
   #                                 "POSTGRAD" = "Higher Education"))
-mutate(r0G_EDUCATION = recode_factor(r0G_EDUCATION,
+mutate(IC_Education = recode_factor(IC_Education,
                                   "ELEMENTARY" = "Elementary Education",
                                   "SECUNDARY" = "Higher Education",
                                   "COLLEGE" = "Higher Education",
                                   "PROFESS_TECH" = "Higher Education",
                                   "POSTGRAD" = "Higher Education"))  %>%
   
-mutate(r0H_OCCUPATION = recode_factor(r0H_OCCUPATION,
+mutate(IC_Occupation = recode_factor(IC_Occupation,
                                   "FULL_TIME" = "Working",
                                   "PART_TIME" = "Working",
                                   "SELF_EMPLOYED" = "Working",
@@ -457,12 +457,12 @@ mutate(r0H_OCCUPATION = recode_factor(r0H_OCCUPATION,
                                   "OTHER" = "Non Professional"))
 
    # df$r0C_SEX <- relevel(df$r0C_SEX, ref = "MAN")
-   df$r0P_MODE1 <- relevel(df$r0P_MODE1, ref = "Active Transportation")
-   df$r0D_AGE <- relevel(df$r0D_AGE, ref = "Youth")
-   df$r0J_INCOME <- relevel(df$r0J_INCOME, ref = "Low Income")
-   df$r0G_EDUCATION <- relevel(df$r0G_EDUCATION, ref = "Elementary Education")
-   df$r0M_DISABILITY <- relevel(df$r0M_DISABILITY, ref = "YES")
-   df$r0H_OCCUPATION <- relevel(df$r0H_OCCUPATION, ref = "Not Working")
+   df$IC_Main_mode <- relevel(df$IC_Main_mode, ref = "Active Transportation")
+   df$IC_Age <- relevel(df$IC_Age, ref = "Youth")
+   df$IC_Income <- relevel(df$IC_Income, ref = "Low Income")
+   df$IC_Education <- relevel(df$IC_Education, ref = "Elementary Education")
+   df$IC_Disabil <- relevel(df$IC_Disabil, ref = "YES")
+   df$IC_Occupation <- relevel(df$IC_Occupation, ref = "Not Working")
   
  
 ```
@@ -524,31 +524,31 @@ Note = c("Dummy variable: 1 if Age Less18 - 34 years",
          "Likert scale"
 ), 
 
-Percentage = c(paste(round(sum(df$r0D_AGE == "Youth")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0D_AGE == "Adults")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0D_AGE == "Seniors")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0J_INCOME == "Low Income")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0J_INCOME == "Middle Income")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0J_INCOME == "High Income")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0G_EDUCATION == "Elementary Education")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0G_EDUCATION == "Higher Education")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0P_MODE1 == "Private Transportation")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0P_MODE1 == "Public Transportation")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0P_MODE1 == "Active Transportation")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0H_OCCUPATION == "Working")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0H_OCCUPATION == "Not Working")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0H_OCCUPATION == "Student")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r0H_OCCUPATION == "Non Professional")/nrow(df)*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1A_STRESS == "VLOW", na.rm = TRUE)/length(df$r1A_STRESS[!is.na(df$r1A_STRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1A_STRESS == "LOW", na.rm = TRUE)/length(df$r1A_STRESS[!is.na(df$r1A_STRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1A_STRESS == "MODERATE", na.rm = TRUE)/length(df$r1A_STRESS[!is.na(df$r1A_STRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1A_STRESS == "HIGH", na.rm = TRUE)/length(df$r1A_STRESS[!is.na(df$r1A_STRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1A_STRESS == "VHIGH", na.rm = TRUE)/length(df$r1A_STRESS[!is.na(df$r1A_STRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1GA_IMPSTRESS == "NOT IMPORTANT", na.rm = TRUE)/length(df$r1GA_IMPSTRESS[!is.na(df$r1GA_IMPSTRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1GA_IMPSTRESS == "SLIGHTLY IMPORTANT", na.rm = TRUE)/length(df$r1GA_IMPSTRESS[!is.na(df$r1GA_IMPSTRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1GA_IMPSTRESS == "MODERATELY IMPORTANT", na.rm = TRUE)/length(df$r1GA_IMPSTRESS[!is.na(df$r1GA_IMPSTRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1GA_IMPSTRESS == "IMPORTANT", na.rm = TRUE)/length(df$r1GA_IMPSTRESS[!is.na(df$r1GA_IMPSTRESS)])*100, 1), "%", sep = " "),
-               paste(round(sum(df$r1GA_IMPSTRESS == "VERY IMPORTANT", na.rm = TRUE)/length(df$r1GA_IMPSTRESS[!is.na(df$r1GA_IMPSTRESS)])*100, 1), "%", sep = " ")
+Percentage = c(paste(round(sum(df$IC_Age == "Youth")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Age == "Adults")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Age == "Seniors")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Income == "Low Income")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Income == "Middle Income")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Income == "High Income")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Education == "Elementary Education")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Education == "Higher Education")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Main_mode == "Private Transportation")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Main_mode == "Public Transportation")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Main_mode == "Active Transportation")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Occupation == "Working")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Occupation == "Not Working")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Occupation == "Student")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$IC_Occupation == "Non Professional")/nrow(df)*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Stress == "VLOW", na.rm = TRUE)/length(df$H_Stress[!is.na(df$H_Stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Stress == "LOW", na.rm = TRUE)/length(df$H_Stress[!is.na(df$H_Stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Stress == "MODERATE", na.rm = TRUE)/length(df$H_Stress[!is.na(df$H_Stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Stress == "HIGH", na.rm = TRUE)/length(df$H_Stress[!is.na(df$H_Stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Stress == "VHIGH", na.rm = TRUE)/length(df$H_Stress[!is.na(df$H_Stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Imp_stress == "NOT IMPORTANT", na.rm = TRUE)/length(df$H_Imp_stress[!is.na(df$H_Imp_stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Imp_stress == "SLIGHTLY IMPORTANT", na.rm = TRUE)/length(df$H_Imp_stress[!is.na(df$H_Imp_stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Imp_stress == "MODERATELY IMPORTANT", na.rm = TRUE)/length(df$H_Imp_stress[!is.na(df$H_Imp_stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Imp_stress == "IMPORTANT", na.rm = TRUE)/length(df$H_Imp_stress[!is.na(df$H_Imp_stress)])*100, 1), "%", sep = " "),
+               paste(round(sum(df$H_Imp_stress == "VERY IMPORTANT", na.rm = TRUE)/length(df$H_Imp_stress[!is.na(df$H_Imp_stress)])*100, 1), "%", sep = " ")
 ))
 
 ```
@@ -597,7 +597,7 @@ Where "mod_bivariate" is the name of the model, "mvord" is the function for fitt
 
 ```{r bivariate ordinal modelling, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 
-mod_bivariate <- mvord(formula = MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION + r0H_OCCUPATION  ,
+mod_bivariate <- mvord(formula = MMO2(H_Stress, H_Imp_stress) ~ 0 + IC_Age + IC_Income + IC_Main_mode + IC_Education + IC_Occupation  ,
                        link = mvlogit(df = 8L),
                        # {mvord} does not like tbl or tbl_df objects:
                        # convert to plain data.frame
@@ -612,7 +612,7 @@ As the second step to make sure of the model's identifiability and reveal the la
 
 
 ```{r constraining the coefficients, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
-formula <- MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION + r0H_OCCUPATION  
+formula <- MMO2(H_Stress, H_Imp_stress) ~ 0 + IC_Age + IC_Income + IC_Main_mode + IC_Education + IC_Occupation  
 names_constraints(formula, data = df)
 coef.constraints = cbind(c(NA, 1), # Adults
                          c(1, NA), # Seniors
@@ -627,7 +627,7 @@ coef.constraints = cbind(c(NA, 1), # Adults
 # In this code 1 or 2 means yes to significant coefficient and doesn't matter if it refers to which equation. For specifying equation we have to consider which column is that.
 
 
-mod_bivariate <- mvord(formula = MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION + r0H_OCCUPATION  ,
+mod_bivariate <- mvord(formula = MMO2(H_Stress, H_Imp_stress) ~ 0 + IC_Age + IC_Income + IC_Main_mode + IC_Education + IC_Occupation  ,
                        link = mvlogit(df = 8L),
                        coef.constraints = coef.constraints,
                        # {mvord} does not like tbl or tbl_df objects:
@@ -662,6 +662,36 @@ Having a higher level of education has been found to be associated with a positi
 
 In terms of occupation, the current study has shown that experiencing stress among those who have a profession or students is significantly associated. A negative coefficient for both groups implies that their stress level has a decreasing trend compared to their counterparts. In addition, an increasing trend of stress levels has been indicated in some professions like construction due to different reasons like having an unsafe workplace or occupational tensions [@loosemore2004gender].
 
+In this research, our dependent variables which are stress experienced during commute and the importance of that negative feeling assigned by commuters contribute to the coping strategies used by commuters.
+      
+              
+
+
++--------+---------+---------+
+|        |         |         |
++--------+---------+---------+
+|Stress_LOW|         |         |
++--------+---------+---------+
+|Stress_HIGH|         |         |
++--------+---------+---------+
+In order to have a better understanding of coping strategies that commuter have used, if we consider four situations with different levels of experienced stress and the given importance to that, we can figure out the way of dealing with stress by commuters in Santiago.
+
+1-Low Stress, Low Importance:
+
+Individuals in this category experience relatively low stress during commute, and they also perceive this feeling as having low importance. It is going to be a situation where individuals are not heavily burdened by stressors, and they also don't attribute much significance to the minimal stress they experience. This group may have a generally positive outlook, low levels of anxiety, or a lifestyle that minimizes stressors. It could also indicate effective stress management strategies like using less stressful modes such as active ones helping them in having a less stressful trip.
+
+2-Low Stress, High Importance:
+
+Commuters in this condition may not be experiencing a significant amount of stress, but they attach a high level of importance to the stressors they do encounter. This could be due to the perceived significance or impact of specific stressors while commuting, even if the overall stress level is low. This kind of travelers might be particularly sensitive to certain stressors, possibly viewing them as crucial to their well-being. 
+
+3-High Stress, Low Importance:
+
+This situation might be stressful for commuters, but they don't perceive these stressors as critically important or impactful. This could be due to coping mechanisms such as normalization, resilience, or a belief that the stressors are temporary or manageable. It may indicate that although they are aware of stressors, they may not view them as significant contributors to their overall well-being. For example, this happens when people who are using public transport as one the stressful modes of transportation in Santiago according to the current research, continue using that even when feel high level of stress. This can be due to limited options for them to use for daily commute and they prefer stay with the same mode and at least reach to workplace, home and all the regular destinations. 
+
+4-High Stress, High Importance:
+
+In this condition commuters may experience a substantial amount of stress, and they also perceive this stress as highly important. This suggests that the stressors they face are not only impactful but are recognized and acknowledged as significant challenges during their commutes. This commuters might be dealing with major commuting stressors or facing situations that are emotionally, psychologically, or physically demanding.
+
 ```{r coefficients, echo=FALSE, include = FALSE}
 coef.constraints <- coef.constraints |>
   t() |>
@@ -688,15 +718,15 @@ mod_theta <- data.frame(thresholds1 = c("VLOW|LOW",
                                      "LOW|MODERATE",
                                      "MODERATE|HIGH",
                                      "HIGH|VHIGH"),
-                        theta1 = mod_bivariate$theta$r1A_STRESS, 
-                        setheta1 = mod_bivariate$setheta$r1A_STRESS,
+                        theta1 = mod_bivariate$theta$H_Stress, 
+                        setheta1 = mod_bivariate$setheta$H_Stress,
                         
                         thresholds2 = c("NOT IMPORTANT|SLIGHTLY IMPORTANT",
                                      "SLIGHTLY IMPORTANT|MODERATELY IMPORTANT",
                                      "MODERATELY IMPORTANT|IMPORTANT",
                                      "IMPORTANT|VERY IMPORTANT"),
-                        theta2 = mod_bivariate$theta$r1GA_IMPSTRESS,
-                        setheta2 = mod_bivariate$setheta$r1GA_IMPSTRESS)
+                        theta2 = mod_bivariate$theta$H_Imp_stress,
+                        setheta2 = mod_bivariate$setheta$H_Imp_stress)
 
 
 
@@ -716,8 +746,8 @@ mod_theta1 <- data.frame(thresholds1 = c("VLOW|LOW",
                                      "LOW|MODERATE",
                                      "MODERATE|HIGH",
                                      "HIGH|VHIGH"),
-                        theta1 = mod_bivariate$theta$r1A_STRESS, 
-                        setheta1 = mod_bivariate$setheta$r1A_STRESS,
+                        theta1 = mod_bivariate$theta$H_Stress, 
+                        setheta1 = mod_bivariate$setheta$H_Stress,
                         p1 = p1,
                         
                         
@@ -725,8 +755,8 @@ mod_theta1 <- data.frame(thresholds1 = c("VLOW|LOW",
                                      "SLIGHTLY IMPORTANT|MODERATELY IMPORTANT",
                                      "MODERATELY IMPORTANT|IMPORTANT",
                                      "IMPORTANT|VERY IMPORTANT"),
-                        theta2 = mod_bivariate$theta$r1GA_IMPSTRESS,
-                        setheta2 = mod_bivariate$setheta$r1GA_IMPSTRESS , 
+                        theta2 = mod_bivariate$theta$H_Imp_stress,
+                        setheta2 = mod_bivariate$setheta$H_Imp_stress , 
                         p2 = p2)
 
 ```
@@ -737,11 +767,21 @@ rownames(mod_theta1) <- NULL
 
 
 ```{r Storing coefficients for exploratory variables, echo=FALSE, include = FALSE}
+
 (mod_beta <- coef(summary(mod_bivariate)))
 
 
 # Define new variable names
-new_row_names <- c("r0D_AGEAdults 2", "r0D_AGESeniors 1", "r0J_INCOMEMiddle Income 1", "r0J_INCOMEMiddle Income 2", "r0J_INCOMEHigh Income 1", "r0P_MODE1Private Transportation 1", "r0P_MODE1Public Transportation 1", "r0G_EDUCATIONHigher Education 2", "r0H_OCCUPATIONWorking 1", "r0H_OCCUPATIONStudent 1")
+new_row_names <- c("Adults Stress","Adults Imp_stress",
+                   "Seniors Stress", "Seniors Imp_stress", 
+                   "Middle Income Stress","Middle Income Imp_stress", 
+                   "High Income Stress", "High Income Imp_stress", 
+                   "Private Transportation Stress","Private Transportation Imp_stress", 
+                   "Public Transportation Stress","Public Transportation Imp_stress",  
+                   "Higher Education Stress", "Higher Education Imp_stress", 
+                   "OccupationWorking Stress","OccupationWorking Imp_stress", 
+                   "OccupationStudent Stress", "OccupationStudent Imp_stress",
+                   "OccupationNon Professional Stress", "OccupationNon Professional Imp_stress")
 
 
 # Assign new names to the variables
@@ -749,13 +789,14 @@ rownames(mod_beta) <- new_row_names
 
 # Print the modified coefficient summary
 print(mod_beta)
+
 ```
+
 
 ```{r Calculating Z and P values for exploratory variables, echo=FALSE, include = FALSE}
 
 # data_ <- as.data.frame(t(mod_bivariate))
 # mod_bivariate[["beta"]][["r0D_AGEAdults 1"]]
-# 
 # z_Seniors <- 'beta'$'r0D_AGESeniors 1'/'sebeta'$'r0D_AGESeniors 1'
 # p_Seniors <- (1 - pnorm(abs(z_Seniors), 0, 1)) * 2
 
@@ -767,8 +808,8 @@ print(mod_beta)
 z_Seniors <- mod_bivariate$beta[2]/mod_bivariate$sebeta[2]
 p_Seniors <- (1 - pnorm(abs(z_Seniors), 0, 1)) * 2
 
-z_Middle_Income_1 <- mod_bivariate$beta[3]/mod_bivariate$sebeta[3]
-p_Middle_Income_1 <- (1 - pnorm(abs(z_Middle_Income_1), 0, 1)) * 2
+z_Middle_Income_Stress <- mod_bivariate$beta[3]/mod_bivariate$sebeta[3]
+p_Middle_Income_Stress <- (1 - pnorm(abs(z_Middle_Income_Stress), 0, 1)) * 2
 
 z_High_Income <-mod_bivariate$beta[5]/mod_bivariate$sebeta[5]
 p_High_Income <- (1 - pnorm(abs(z_High_Income), 0, 1)) * 2
@@ -791,8 +832,8 @@ p_Student <- (1 - pnorm(abs(z_Student), 0, 1)) * 2
 z_Adults <- mod_bivariate$beta[1]/mod_bivariate$sebeta[1]
 p_Adults <- (1 - pnorm(abs(z_Adults), 0, 1)) * 2
 
-z_Middle_Income_2 <-mod_bivariate$beta[4]/mod_bivariate$sebeta[4] 
-p_Middle_Income_2 <- (1 - pnorm(abs(z_Middle_Income_2), 0, 1)) * 2
+z_Middle_Income_imp_Stress <-mod_bivariate$beta[4]/mod_bivariate$sebeta[4] 
+p_Middle_Income_imp_Stress <- (1 - pnorm(abs(z_Middle_Income_imp_Stress), 0, 1)) * 2
 
 z_Higher_Education <- mod_bivariate$beta[8]/mod_bivariate$sebeta[8]
 p_Higher_Education <- (1 - pnorm(abs(z_Higher_Education), 0, 1)) * 2
@@ -801,40 +842,40 @@ p_Higher_Education <- (1 - pnorm(abs(z_Higher_Education), 0, 1)) * 2
 
 ```{r storing estimates and P values for exploratory variables, echo=FALSE, include = FALSE}
 mod_beta <- data.frame(Equation1 = c(NA,
-                                      "r0D_AGESeniors 1",
-                               "r0J_INCOMEMiddle Income 1",
+                                      "IC_AgeSeniors 1",
+                               "IC_IncomeMiddle Income 1",
                                NA,
-                               "r0J_INCOMEHigh Income 1", 
-                               "r0P_MODE1Private Transportation 1",
-                               "r0P_MODE1Public Transportation 1",
+                               "IC_IncomeHigh Income 1", 
+                               "IC_Main_modePrivate Transportation 1",
+                               "IC_Main_modePublic Transportation 1",
                                NA,
-                               "r0H_OCCUPATIONWorking 1", 
-                               "r0H_OCCUPATIONStudent 1"),
+                               "IC_OccupationWorking 1", 
+                               "IC_OccupationStudent 1"),
                         beta_equation1 = c( NA,
-                                            mod_bivariate[["beta"]][["r0D_AGEAdults 1"]],
-                                            mod_bivariate[["beta"]][["r0J_INCOMEMiddle Income 1"]],
+                                            mod_bivariate[["beta"]][["IC_AgeSeniors 1"]],
+                                            mod_bivariate[["beta"]][["IC_IncomeMiddle Income 1"]],
                                             NA,
-                                            mod_bivariate[["beta"]][["r0J_INCOMEHigh Income 1"]],
-                                            mod_bivariate[["beta"]][["r0P_MODE1Private Transportation 1"]],
-                                            mod_bivariate[["beta"]][["r0P_MODE1Public Transportation 1"]],
+                                            mod_bivariate[["beta"]][["IC_IncomeHigh Income 1"]],
+                                            mod_bivariate[["beta"]][["IC_Main_modePrivate Transportation 1"]],
+                                            mod_bivariate[["beta"]][["IC_Main_modePublic Transportation 1"]],
                                             NA,
-                                            mod_bivariate[["beta"]][["r0H_OCCUPATIONWorking 1"]],
-                                            mod_bivariate[["beta"]][["r0H_OCCUPATIONStudent 1"]]),
+                                            mod_bivariate[["beta"]][["IC_OccupationWorking 1"]],
+                                            mod_bivariate[["beta"]][["IC_OccupationStudent 1"]]),
                           
                           
                           
                         se_equation1 = c( NA,
-                                            mod_bivariate[["sebeta"]][["r0D_AGEAdults 1"]],
-                                            mod_bivariate[["sebeta"]][["r0J_INCOMEMiddle Income 1"]],
+                                            mod_bivariate[["sebeta"]][["IC_AgeSeniors 1"]],
+                                            mod_bivariate[["sebeta"]][["IC_IncomeMiddle Income 1"]],
                                             NA,
-                                            mod_bivariate[["sebeta"]][["r0J_INCOMEHigh Income 1"]],
-                                            mod_bivariate[["sebeta"]][["r0P_MODE1Private Transportation 1"]],
-                                            mod_bivariate[["sebeta"]][["r0P_MODE1Public Transportation 1"]],
+                                            mod_bivariate[["sebeta"]][["IC_IncomeHigh Income 1"]],
+                                            mod_bivariate[["sebeta"]][["IC_Main_modePrivate Transportation 1"]],
+                                            mod_bivariate[["sebeta"]][["IC_Main_modePublic Transportation 1"]],
                                             NA,
-                                            mod_bivariate[["sebeta"]][["r0H_OCCUPATIONWorking 1"]],
-                                            mod_bivariate[["sebeta"]][["r0H_OCCUPATIONStudent 1"]]),
+                                            mod_bivariate[["sebeta"]][["IC_OccupationWorking 1"]],
+                                            mod_bivariate[["sebeta"]][["IC_OccupationStudent 1"]]),
                        
-                       p_values_E1 = c (NA, p_Seniors, p_Middle_Income_1, NA,  p_High_Income, p_Private_T, p_Public_T, NA, p_Working,  
+                       p_values_E1 = c (NA, p_Seniors, p_Middle_Income_Stress, NA,  p_High_Income, p_Private_T, p_Public_T, NA, p_Working,  
                                         p_Student),
                         
                         #  NA,
@@ -852,38 +893,38 @@ mod_beta <- data.frame(Equation1 = c(NA,
                         
                         
                                
-                        Equation2 = c("r0D_AGEAdults 1",
+                        Equation2 = c("IC_AgeAdults 2",
                                       NA,
                                       NA,
-                                "r0J_INCOMEMiddle Income 2",
+                                "IC_IncomeMiddle Income 2",
                                 NA,
                                 NA,
                                 NA,
-                                "r0G_EDUCATIONHigher Education 1",
+                                "IC_EducationHigher Education 2",
                                 NA,
                                 NA),
                                 
                               
-                        beta_equation2 = c (mod_bivariate[["beta"]][["r0D_AGEAdults 1"]],
+                        beta_equation2 = c (mod_bivariate[["beta"]][["IC_AgeAdults 2"]],
                                             NA,
                                             NA,
-                                            mod_bivariate[["beta"]][["r0J_INCOMEMiddle Income 2"]],
+                                            mod_bivariate[["beta"]][["IC_IncomeMiddle Income 2"]],
                                             NA,
                                             NA,
                                             NA,
-                                            mod_bivariate[["beta"]][["r0G_EDUCATIONHigher Education 1"]],
+                                            mod_bivariate[["beta"]][["IC_EducationHigher Education 2"]],
                                             NA,
                                             NA),
                         
                         
-                        se_equation2 = c( mod_bivariate[["sebeta"]][["r0D_AGEAdults 1"]],
+                        se_equation2 = c( mod_bivariate[["sebeta"]][["IC_AgeAdults 2"]],
                                          NA,
                                          NA,
-                                         mod_bivariate[["sebeta"]][["r0J_INCOMEMiddle Income 2"]],
+                                         mod_bivariate[["sebeta"]][["IC_IncomeMiddle Income 2"]],
                                          NA,
                                          NA,
                                          NA,
-                                         mod_bivariate[["sebeta"]][["r0G_EDUCATIONHigher Education 1"]],
+                                         mod_bivariate[["sebeta"]][["IC_EducationHigher Education 2"]],
                                          NA,
                                          NA),
                                         
@@ -898,7 +939,7 @@ mod_beta <- data.frame(Equation1 = c(NA,
                         # NA,
                         # NA)
                          
-                       p_values_E2 = c (p_Adults, NA, NA, p_Middle_Income_2, NA, NA, NA, p_Higher_Education, NA, NA))
+                       p_values_E2 = c (p_Adults, NA, NA, p_Middle_Income_imp_Stress, NA, NA, NA, p_Higher_Education, NA, NA))
   
 ```
 
@@ -971,7 +1012,7 @@ Following this, the second popular mode of transportation can be assigned to pri
 ```{r , echo=FALSE, fig.align='center', fig.cap="\\label{fig:Modes of transport}Modes of transport"}
 
 
-ggplot(df, aes(x=as.factor(r0P_MODE1), fill=as.factor(r0P_MODE1) )) + 
+ggplot(df, aes(x=as.factor(IC_Main_mode), fill=as.factor(IC_Main_mode) )) + 
   geom_bar( ) +
   scale_fill_hue(c = 50) +
   theme(legend.position="none")+
@@ -1001,7 +1042,7 @@ Income also is one of the significant variables as it determines people's option
 ```{r , echo=FALSE, fig.align='center', fig.cap="\\label{fig:Income level}Income level"}
 
 
-ggplot(df, aes(x=as.factor(r0J_INCOME), fill=as.factor(r0J_INCOME) )) + 
+ggplot(df, aes(x=as.factor(IC_Income), fill=as.factor(IC_Income) )) + 
   geom_bar( ) +
   scale_fill_hue(c = 50) +
   theme(legend.position="none")+
@@ -1018,8 +1059,8 @@ ggplot(df, aes(x=as.factor(r0J_INCOME), fill=as.factor(r0J_INCOME) )) +
 So we are analyzing these items in terms of their effect on each other.
 
 ```{r display Age groupd by transportation modes, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
-xtab_age_transp <- sjPlot::tab_xtab(var.row = df$r0P_MODE1, 
-                 var.col = df$r0D_AGE, 
+xtab_age_transp <- sjPlot::tab_xtab(var.row = df$IC_Main_mode, 
+                 var.col = df$IC_Age, 
                  title = "Table Title", 
                  show.row.prc = TRUE,
                  encoding = "UTF-8")
@@ -1035,7 +1076,7 @@ Therefore as can be seen (see Figure \ref{fig:Transportation Mode by Age group})
 
 ```{r , echo=FALSE, warning=FALSE, fig.cap="\\label{fig:Transportation Mode by Age group}Transportation Mode by Age group"}
 ggplot(data = df) +
-  geom_mosaic(aes(x = product(r0D_AGE, r0P_MODE1), fill=r0D_AGE)) + 
+  geom_mosaic(aes(x = product(IC_Age, IC_Main_mode), fill=IC_Age)) + 
   labs(title = "Transportation Mode by Age group", y= "Age Groups", x = "Modes of Transportation") 
 
 
@@ -1046,7 +1087,7 @@ df %>%
   # # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r0P_MODE1, y = r1GA_IMPSTRESS, z = r1A_STRESS, weight = ID,
+  crosstab_3way(x = IC_Main_mode, y = H_Imp_stress, z = H_Stress, weight = ID,
                 remove = c("widow/divorced/sep"), 
                 n = FALSE) %>%
   kable(digits = 0, caption = "Experienced stress level by Mode",
@@ -1061,7 +1102,7 @@ library(gtsummary)
 
 # Run this line to execute the crosstab_3way part
 result <- df %>%
-  crosstab_3way(x = r0P_MODE1, y = r1GA_IMPSTRESS, z = r1A_STRESS, weight = ID,
+  crosstab_3way(x = IC_Main_mode, y = H_Imp_stress, z = H_Stress, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE)
 
@@ -1082,7 +1123,7 @@ df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r0P_MODE1, y = r1GA_IMPSTRESS, z = r1A_STRESS, weight = ID,
+  crosstab_3way(x = IC_Main_mode, y = H_Imp_stress, z = H_Stress, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE) %>%
   tab_cells(total(label = "Total")) %>%    # Add the total row
@@ -1100,11 +1141,11 @@ df %>%
 ```{r , echo=FALSE, fig.cap="\\label{fig:stress and importance of stress and mode}Conditional Mosaic Plot of Stress Level, Importance of Stress and Mode of Transport"}
 
 df|>
-  filter(!is.na(r1A_STRESS), !is.na(r1GA_IMPSTRESS), !is.na(r0P_MODE1)) |>
+  filter(!is.na(H_Stress), !is.na(H_Imp_stress), !is.na(IC_Main_mode)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(r1A_STRESS, r1GA_IMPSTRESS), fill = r1A_STRESS)) +
+  geom_mosaic(aes(x = product(H_Stress, H_Imp_stress), fill = H_Stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~r0P_MODE1)+
+  facet_wrap(~IC_Main_mode)+
   labs(title = "Conditional Mosaic Plot of Stress Level, Importance of Stress, and Mode",
        subtitle = "Faceted by Mode of Transport",
        x = "Importance of Stress", y = "Stress Level") 
@@ -1125,7 +1166,7 @@ df %>%
   # # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r0J_INCOME, y = r1GA_IMPSTRESS, z = r1A_STRESS, weight = ID,
+  crosstab_3way(x = IC_Income, y = H_Imp_stress, z = H_Stress, weight = ID,
                 remove = c("widow/divorced/sep"), 
                 n = FALSE) %>%
   kable(digits = 0, caption = "Experienced stress level by Income",
@@ -1142,7 +1183,7 @@ df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r0J_INCOME, y = r1GA_IMPSTRESS, z = r1A_STRESS, weight = ID,
+  crosstab_3way(x = IC_Income, y = H_Imp_stress, z = H_Stress, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE) %>%
   tab_cells(total(label = "Total")) %>%    # Add the total row
@@ -1157,11 +1198,11 @@ df %>%
 
 ```{r , echo=FALSE, fig.cap="\\label{fig:stress importance of stress and income}Conditional Mosaic Plot of Stress Level, Importance of Stress, and Income Level"}
 df|>
-  filter(!is.na(r1A_STRESS), !is.na(r1GA_IMPSTRESS), !is.na(r0J_INCOME)) |>
+  filter(!is.na(H_Stress), !is.na(H_Imp_stress), !is.na(IC_Income)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(r1A_STRESS, r1GA_IMPSTRESS), fill = r1A_STRESS)) +
+  geom_mosaic(aes(x = product(H_Stress, H_Imp_stress), fill = H_Stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~r0J_INCOME)+
+  facet_wrap(~IC_Income)+
   labs(title = "Conditional Mosaic Plot of Stress Level, Importance of Stress, and Income",
        subtitle = "Faceted by Income level",
        x = "Importance of Stress", y = "Stress Level") 
@@ -1179,7 +1220,7 @@ df %>%
   # # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r0D_AGE, y = r1GA_IMPSTRESS, z = r1A_STRESS, weight = ID,
+  crosstab_3way(x = IC_Age, y = H_Imp_stress, z = H_Stress, weight = ID,
                 remove = c("widow/divorced/sep"), 
                 n = FALSE) %>%
   kable(digits = 0, caption = "Experienced stress level by Income",
@@ -1193,7 +1234,7 @@ df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r0D_AGE, y = r1GA_IMPSTRESS, z = r1A_STRESS, weight = ID,
+  crosstab_3way(x = IC_Age, y = H_Imp_stress, z = H_Stress, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE) %>%
   tab_cells(total(label = "Total")) %>%    # Add the total row
@@ -1208,11 +1249,11 @@ df %>%
 
 ```{r , echo=FALSE, fig.cap="\\label{fig:stress importance of stress and age}Conditional Mosaic Plot of Stress Level and Importance of Stress and Age Groups"}
 df|>
-  filter(!is.na(r1A_STRESS), !is.na(r1GA_IMPSTRESS), !is.na(r0D_AGE)) |>
+  filter(!is.na(H_Stress), !is.na(H_Imp_stress), !is.na(IC_Age)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(r1A_STRESS, r1GA_IMPSTRESS), fill = r1A_STRESS)) +
+  geom_mosaic(aes(x = product(H_Stress, H_Imp_stress), fill = H_Stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~r0D_AGE)+
+  facet_wrap(~IC_Age)+
   labs(title = "Conditional Mosaic Plot of Stress Level, Importance of Stress, and Age",
        subtitle = "Faceted by Age groups",
        x = "Importance of Stress", y = "Stress Level") 
@@ -1226,7 +1267,7 @@ df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r0J_INCOME, y = r0D_AGE, z = r0P_MODE1, weight = ID,
+  crosstab_3way(x = IC_Income, y = IC_Age, z = IC_Main_mode, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE) %>%
   tab_cells(total(label = "Total")) %>%    # Add the total row
@@ -1243,11 +1284,11 @@ df %>%
 
 ```{r , echo=FALSE, fig.cap="\\label{fig:Income-mode-Age}Conditional Mosaic Plot of Mode,  Age and Income"}
 df|>
-  filter(!is.na(r0D_AGE), !is.na(r0P_MODE1), !is.na(r0J_INCOME)) |>
+  filter(!is.na(IC_Age), !is.na(IC_Main_mode), !is.na(IC_Income)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(r0D_AGE, r0J_INCOME), fill = r0D_AGE)) +
+  geom_mosaic(aes(x = product(IC_Age, IC_Income), fill = IC_Age)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~r0P_MODE1)+
+  facet_wrap(~IC_Main_mode)+
   labs(title = "Conditional Mosaic Plot of Mode, Age, and Income",
        subtitle = "Faceted by Mode of transport",
        x = "Income level", y = "Age group") 
@@ -1263,7 +1304,7 @@ df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r1A_STRESS, y = r0J_INCOME, z = r0P_MODE1, weight = ID,
+  crosstab_3way(x = H_Stress, y = IC_Income, z = IC_Main_mode, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE) %>%
   tab_cells(total(label = "Total")) %>%    # Add the total row
@@ -1281,11 +1322,11 @@ df %>%
 
 ```{r, echo=FALSE, fig.cap="\\label{fig:IMS}Conditional Mosaic Plot of Experienced Stress, Income, Mode"}
 df|>
-  filter(!is.na(r1A_STRESS), !is.na(r0P_MODE1), !is.na(r0J_INCOME)) |>
+  filter(!is.na(H_Stress), !is.na(IC_Main_mode), !is.na(IC_Income)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(r1A_STRESS, r0J_INCOME), fill = r1A_STRESS)) +
+  geom_mosaic(aes(x = product(H_Stress, IC_Income), fill = H_Stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~r0P_MODE1)+
+  facet_wrap(~IC_Main_mode)+
   labs(title = "Conditional Mosaic Plot of Stress level, Income, and Mode",
        subtitle = "Faceted by Mode of transport",
        x = "Income level", y = "Experienced Stress Level") 
@@ -1299,7 +1340,7 @@ df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r1GA_IMPSTRESS, y = r0J_INCOME, z = r0P_MODE1, weight = ID,
+  crosstab_3way(x = H_Imp_stress, y = IC_Income, z = IC_Main_mode, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE) %>%
   tab_cells(total(label = "Total")) %>%    # Add the total row
@@ -1314,11 +1355,11 @@ df %>%
 
 ```{r , echo=FALSE, fig.cap="\\label{fig:Income-mode-and-importance-stress}Conditional Mosaic Plot of Importance Stress and Income and Mode"}
 df|>
-  filter(!is.na(r1GA_IMPSTRESS), !is.na(r0P_MODE1), !is.na(r0J_INCOME)) |>
+  filter(!is.na(H_Imp_stress), !is.na(IC_Main_mode), !is.na(IC_Income)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(r1GA_IMPSTRESS, r0J_INCOME), fill = r1GA_IMPSTRESS)) +
+  geom_mosaic(aes(x = product(H_Imp_stress, IC_Income), fill = H_Imp_stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~r0P_MODE1)+
+  facet_wrap(~IC_Main_mode)+
   labs(title = "Conditional Mosaic Plot of Importance Stress, Income, and Mode",
        subtitle = "Faceted by Mode of transport",
        x = "Income level", y = "Importance of Stress Level") 
@@ -1334,7 +1375,7 @@ df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
-  crosstab_3way(x = r1GA_IMPSTRESS, y = r0J_INCOME, z = r0D_AGE, weight = ID,
+  crosstab_3way(x = H_Imp_stress, y = IC_Income, z = IC_Age, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE) %>%
   tab_cells(total(label = "Total")) %>%    # Add the total row
@@ -1350,11 +1391,11 @@ df %>%
 
 ```{r , echo=FALSE,  fig.cap="\\label{fig:Income Age and importance of stress}Conditional Mosaic Plot of Importance Stress, Age and Income"}
 df|>
-  filter(!is.na(r1GA_IMPSTRESS), !is.na(r0J_INCOME), !is.na(r0D_AGE)) |>
+  filter(!is.na(H_Imp_stress), !is.na(IC_Income), !is.na(IC_Age)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(r1GA_IMPSTRESS, r0D_AGE), fill = r1GA_IMPSTRESS)) +
+  geom_mosaic(aes(x = product(H_Imp_stress, IC_Age), fill = H_Imp_stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~r0J_INCOME)+
+  facet_wrap(~IC_Income)+
   labs(title = "Conditional Mosaic Plot of Importance Stress, Age, and Income",
        subtitle = "Faceted by Age",
        x = "Income level", y = "Importance of Stress Level") 
@@ -1371,7 +1412,7 @@ df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
   #        age > 39) %>%
- crosstab_3way(x = r1A_STRESS, y = r0J_INCOME, z = r0D_AGE, weight = ID,
+ crosstab_3way(x = H_Stress, y = IC_Income, z = IC_Age, weight = ID,
                 remove = c("widow/divorced/sep"),
                 n = FALSE) %>%
   tab_cells(total(label = "Total")) %>%    # Add the total row
@@ -1386,11 +1427,11 @@ df %>%
 
 ```{r , echo=FALSE, fig.cap="\\label{fig:Income-Age-stress}Conditional Mosaic Plot of Experienced Stress, Income and Age"}
 df|>
-  filter(!is.na(r1A_STRESS), !is.na(r0J_INCOME), !is.na(r0D_AGE)) |>
+  filter(!is.na(H_Stress), !is.na(IC_Income), !is.na(IC_Age)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(r1A_STRESS, r0D_AGE), fill = r1A_STRESS)) +
+  geom_mosaic(aes(x = product(H_Stress, IC_Age), fill = H_Stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~r0J_INCOME)+
+  facet_wrap(~IC_Income)+
   labs(title = "Conditional Mosaic Plot of Experienced Stress, Income, and Age",
        subtitle = "Faceted by Age",
        x = "Income level", y = "Experienced Stress Level") 
@@ -1439,10 +1480,9 @@ While normalization can be beneficial in terms of reducing stress, it could lead
 
 This research demonstrates that the normalization processes possess the capability to moderate and reshape the stressful experiences of travel in various ways. This process can be used as a coping strategy for those who are low-income and have poor access to urban facilities, enough budget and lack of urban fairness in Santiago, Chile. 
 
-In this research, our dependent variables which are stress experienced during commute and the importance of that negative feeling assigned by commuters contribute to the coping strategies used by commuters.
 
-             Importance_LOW Importance_HIGH
-Stress_LOW          ...               ...
-Stress_HIGH         ...               ...
+
+
+
 
 

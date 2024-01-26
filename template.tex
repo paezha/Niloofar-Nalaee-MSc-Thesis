@@ -274,10 +274,11 @@ By  \\[1 cm]
 %	Descriptive note numbered ii
 %----------------------------------------------------------------------------------------
 % Need to add below info
+{
 \newpage
 \pagenumbering{roman} % leave to turn numbering back on
 \setcounter{page}{2} % leave here to make this page numbered ii, a Grad School requirement
-
+\hypersetup{linkcolor=black}
 \noindent % stops indent on next line
 \univname \\
 \degreename\, (\the\year) \\
@@ -286,10 +287,10 @@ TITLE: \ttitle \\
 AUTHOR: \authorname\,  %list previous degrees
 (\univname)  \\
 SUPERVISOR: \supname\, \\
-NUMBER OF PAGES: \pageref{lastoffront}, \pageref{LastPage}  % put in iv and number
+NUMBER OF PAGES: \pageref{LastPage}  % put in iv and number
 
 \clearpage
-
+}
 %----------------------------------------------------------------------------------------
 %	Lay abstract number iii
 %----------------------------------------------------------------------------------------

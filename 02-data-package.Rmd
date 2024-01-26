@@ -1,5 +1,5 @@
 ```{r load-packages, include=FALSE}
-
+remotes::install_github("paezha/bSantiago")
 library(bSantiago) # A data package with the results of a travel and well-being survey conducted in Santiago in 2016
 library(dplyr) # A Grammar of Data Manipulation
 library(kableExtra)
@@ -181,13 +181,13 @@ knitr::kable(skim_IC,
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="\\label{fig:Education and age by gender}Age Groups by Gender and Education level by Gender"}
-Santiago_Ic_na <-Santiago_IC %>% drop_na(r0C_SEX, r0G_EDUCATION, r0D_AGE, r0H_OCCUPATION)
+Santiago_Ic_na <-Santiago_IC %>% drop_na(IC_Gender, IC_Education, IC_Age, IC_Occupation)
 
 
 par(mfrow=c(1,2))
 
 ggplot(Santiago_Ic_na,
-       aes(x = factor(r0D_AGE), fill=r0C_SEX))+
+       aes(x = factor(IC_Age), fill=IC_Gender))+
   geom_bar(position="dodge")+
   scale_x_discrete("Age Groups", 
                    labels=c("A"="Less18","B"="18-24","C"="25-34",
@@ -199,9 +199,9 @@ ggplot(Santiago_Ic_na,
   ylab('No. of People')
 
 # Education bar graph
-qplot(Santiago_Ic_na$r0G_EDUCATION,
+qplot(Santiago_Ic_na$IC_Education,
       geom='bar', 
-      fill=Santiago_Ic_na$r0C_SEX)+
+      fill=Santiago_Ic_na$IC_Gender)+
   coord_flip()+
   scale_x_discrete("Education Levels",
                    labels=c("A"="ELEMENTARY","B"="SECUNDARY",
@@ -217,8 +217,8 @@ qplot(Santiago_Ic_na$r0G_EDUCATION,
 ```{r , echo=FALSE, message=FALSE, fig.align='center', warning=FALSE, fig.cap="\\label{fig:Occupation type graph}Occupation Types"}
 #Employment Pie Chart
 ggplot(Santiago_Ic_na,
-       aes(x = r0H_OCCUPATION,
-                                   fill = r0H_OCCUPATION)) +
+       aes(x = IC_Occupation,
+                                   fill = IC_Occupation)) +
   geom_bar() +
   # scale_fill_discrete(name="Occupation",
   #                     breaks=c("A","B","C", "D", "E", "F", "G", "H"),
@@ -376,8 +376,8 @@ knitr::kable(skim_SSI,
 # THERE IS AN ERROR WITH n() NOT SURE WHAT IS CAUSING IT
 Santiago_IC |> 
   left_join(Santiago_SI, by = "ID") |>
-  select(r0C_SEX, r4C_DISCRIM, r0P_MODE1) |>
-  group_by(r0C_SEX, r4C_DISCRIM, r0P_MODE1) |>
+  select(IC_Gender, SI_Discrimination, IC_Main_mode) |>
+  group_by(IC_Gender, SI_Discrimination, IC_Main_mode) |>
   summarize(discrim = n())
 ```
 
