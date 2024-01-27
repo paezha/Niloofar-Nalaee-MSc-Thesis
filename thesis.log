@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.21)  26 JAN 2024 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.21)  27 JAN 2024 00:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1165,6 +1165,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 ] [31]
+Underfull \hbox (badness 2142) in paragraph at lines 993--994
+\T1/lmr/m/n/10.95 The current summary of Santiago dataset reflects a commitment to ensuring
+ []
+
+
 Underfull \hbox (badness 1365) in paragraph at lines 1005--1006
 []\T1/lmr/m/n/10.95 In conclusion, discussion on the value of the data emphasizes its potential
  []
@@ -1185,90 +1190,85 @@ Underfull \hbox (badness 1701) in paragraph at lines 1063--1064
  []
 
 [37] [38] [39] [40] [41] [42]
-<thesis_files/figure-latex/unnamed-chunk-20-1.pdf, id=626, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-20-1.pdf, id=627, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-20-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 1176.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 1174.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
 [43] [44 <./thesis_files/figure-latex/unnamed-chunk-20-1.pdf>] [45{c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Underfull \hbox (badness 1810) in paragraph at lines 1224--1226
+Underfull \hbox (badness 1810) in paragraph at lines 1222--1224
 \T1/lmr/m/n/10.95 ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION +
  []
 
 [46] [47] [48] [49] [50]
-Underfull \hbox (badness 1629) in paragraph at lines 1326--1327
+Underfull \hbox (badness 1629) in paragraph at lines 1340--1341
 []\T1/lmr/m/n/10.95 As can be seen (see Figure [][]3.2[][]), respondents mostly use public means of
  []
 
-<thesis_files/figure-latex/unnamed-chunk-23-1.pdf, id=682, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-23-1.pdf, id=684, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-23-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 1333.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 1347.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
 [51
 
 
  <./thesis_files/figure-latex/unnamed-chunk-23-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-24-1.pdf, id=694, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-24-1.pdf, id=696, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-24-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 1346.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 1360.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
 [52 <./thesis_files/figure-latex/unnamed-chunk-24-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-25-1.pdf, id=705, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-25-1.pdf, id=707, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-25-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 1358.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 1372.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
-<thesis_files/figure-latex/unnamed-chunk-26-1.pdf, id=706, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-26-1.pdf, id=708, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-26-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-26-1.pdf  used on input line 1361.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-26-1.pdf  used on input line 1375.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
-<thesis_files/figure-latex/unnamed-chunk-27-1.pdf, id=709, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-27-1.pdf, id=711, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-27-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 1371.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 1385.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
 [53 <./thesis_files/figure-latex/unnamed-chunk-25-1.pdf>] [54 <./thesis_files/figure-latex/unnamed-chunk-26-1.pdf> <./thesis_files/figure-latex/unnamed-chunk-27-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-28-1.pdf, id=746, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-28-1.pdf, id=748, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-28-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-28-1.pdf  used on input line 1379.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-28-1.pdf  used on input line 1393.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
-<thesis_files/figure-latex/unnamed-chunk-29-1.pdf, id=748, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-29-1.pdf, id=750, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-29-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-29-1.pdf  used on input line 1385.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-29-1.pdf  used on input line 1399.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
 [55 <./thesis_files/figure-latex/unnamed-chunk-28-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-30-1.pdf, id=764, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-30-1.pdf, id=766, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-30-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-30-1.pdf  used on input line 1391.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-30-1.pdf  used on input line 1405.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
-<thesis_files/figure-latex/unnamed-chunk-31-1.pdf, id=766, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-31-1.pdf, id=768, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-31-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-31-1.pdf  used on input line 1395.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-31-1.pdf  used on input line 1409.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
 [56 <./thesis_files/figure-latex/unnamed-chunk-29-1.pdf>] [57 <./thesis_files/figure-latex/unnamed-chunk-30-1.pdf> <./thesis_files/figure-latex/unnamed-chunk-31-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-32-1.pdf, id=803, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-32-1.pdf, id=805, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-32-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-32-1.pdf  used on input line 1401.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-32-1.pdf  used on input line 1415.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
-<thesis_files/figure-latex/unnamed-chunk-33-1.pdf, id=805, 469.755pt x 325.215pt>
+<thesis_files/figure-latex/unnamed-chunk-33-1.pdf, id=807, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-33-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-33-1.pdf  used on input line 1407.
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-33-1.pdf  used on input line 1421.
 (pdftex.def)             Requested size: 355.51967pt x 246.12883pt.
-[58 <./thesis_files/figure-latex/unnamed-chunk-32-1.pdf>] [59 <./thesis_files/figure-latex/unnamed-chunk-33-1.pdf>]
-Underfull \hbox (badness 2197) in paragraph at lines 1424--1425
-[]\T1/lmr/m/n/10.95 -Can commuters think of normalization and learned helplessness as coping
- []
-
-[60] [61] [62]
+[58 <./thesis_files/figure-latex/unnamed-chunk-32-1.pdf>] [59 <./thesis_files/figure-latex/unnamed-chunk-33-1.pdf>] [60] [61] [62]
 Chapter 4.
 --------------------
  M.Sc.-- Niloofar Nalaee; McMaster University-- School of Earth, Environment and Society
@@ -1276,7 +1276,7 @@ Chapter 4.
 [63
 
 ] [64]
-Underfull \hbox (badness 1895) in paragraph at lines 1499--1499
+Underfull \hbox (badness 1895) in paragraph at lines 1511--1511
 []\T1/lmr/bx/n/12 Exploring Cross-Cultural Impacts on Travel Patterns and
  []
 
@@ -1290,7 +1290,7 @@ Underfull \hbox (badness 1895) in paragraph at lines 1499--1499
 [70
 
 ] [71] [72] [73] [74]
-Underfull \hbox (badness 3872) in paragraph at lines 1709--1711
+Underfull \hbox (badness 3872) in paragraph at lines 1721--1723
  \T1/lmr/m/n/10.95 accessibility accounting for level of service and competition for urban
  []
 
@@ -1302,24 +1302,24 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A59DCA94834F3BA0D86FA0F501FFBBDC;10156.
+(rerunfilecheck)             Checksum: 5410AE55399650FC00148B045DD8DDE5;10156.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48123 strings out of 476126
- 1157215 string characters out of 5792979
- 2051221 words of memory out of 5000000
- 69237 multiletter control sequences out of 15000+600000
+ 48125 strings out of 476126
+ 1157275 string characters out of 5792979
+ 2051203 words of memory out of 5000000
+ 69239 multiletter control sequences out of 15000+600000
  635613 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,12n,115p,1630b,1155s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/nalaeen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on thesis.pdf (87 pages, 1263908 bytes).
+Output written on thesis.pdf (87 pages, 1265119 bytes).
 PDF statistics:
- 1106 PDF objects out of 1200 (max. 8388607)
- 945 compressed objects within 10 object streams
+ 1108 PDF objects out of 1200 (max. 8388607)
+ 947 compressed objects within 10 object streams
  276 named destinations out of 1000 (max. 500000)
  472 words of extra memory for PDF output out of 10000 (max. 10000000)
 

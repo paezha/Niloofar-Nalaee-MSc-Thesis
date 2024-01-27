@@ -593,7 +593,7 @@ mod_bivariate <- mvord (formula = MMO2(r1A_STRESS,r1GA_IMPSTRESS) ~ 0 + r0D_AGE 
 
 Where "mod_bivariate" is the name of the model, "mvord" is the function for fitting multivariate ordinal models, and "MMO2" is the data structure in accordance with the wide format of the data set. Predicators are demographic variables of the respondents namely their age, income, education and occupation level as well as their primary mode of commute.
 
-The correlation coefficient between H_Stress and H_Imp_stress represents the correlation between the error terms of the two dependent variables. In current as table (see Table \ref{tab:Bivariate ordered model}) reveals, the estimated correlation coefficient is 0.250344, indicating a positive correlation between the error terms. This positive correlation coefficient suggests that there may be shared or common unobserved factors influencing both stress levels and the importance of stress levels. 
+The correlation coefficient between H_Stress and H_Imp_stress represents the correlation between the error terms of the two dependent variables. In current study as table (see Table \ref{tab:Bivariate ordered model}) reveals, the estimated correlation coefficient is 0.250344, indicating a positive correlation between the error terms. This positive correlation coefficient suggests that there may be shared or common unobserved factors influencing both stress levels and the importance of stress levels. 
 Possibly, this phenomenon may be attributed to factors influencing stress levels and the perceived importance of stress that are not captured by the variables included in our model. These unobserved factors could be psychological, environmental, social, or other latent variables that affect individuals' perceptions of stress and its significance. Specifically, the presence of a positive correlation suggests that individuals who experience higher levels of stress may also perceive stress as more important or significant during their commutes. 
 
 In this research, our dependent variables which are stress experienced during commute and the importance of the negative feeling assigned by commuters contribute to the coping strategies used by commuters.
@@ -1389,14 +1389,14 @@ df %>%
 
 ```{r , echo=FALSE,  fig.cap="\\label{fig:Income Age and importance of stress}Conditional Mosaic Plot of Importance Stress, Age and Income"}
 df|>
-  filter(!is.na(H_Imp_stress), !is.na(IC_Income), !is.na(IC_Income)) |>
+  filter(!is.na(H_Imp_stress), !is.na(IC_Income), !is.na(IC_Age)) |>
   ggplot() +
   geom_mosaic(aes(x = product(H_Imp_stress, IC_Income), fill = H_Imp_stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
   facet_wrap(~IC_Age)+
   labs(title = "Conditional Mosaic Plot of Importance Stress, Age, and Income",
        subtitle = "Faceted by Age",
-       x = "Income level", y = "Importance of Stress Level") 
+       x = "Income", y = "Importance of Stress Level") 
 ```
 
 
@@ -1431,8 +1431,8 @@ df|>
   theme(axis.text = element_text(angle = 90, size = 5)) +
   facet_wrap(~IC_Income)+
   labs(title = "Conditional Mosaic Plot of Experienced Stress, Income, and Age",
-       subtitle = "Faceted by Age",
-       x = "Income level", y = "Experienced Stress Level") 
+       subtitle = "Faceted by Income",
+       x = "Age", y = "Experienced Stress Level") 
 ```
 
 
