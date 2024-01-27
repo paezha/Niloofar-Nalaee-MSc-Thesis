@@ -40,7 +40,7 @@ The data presented in this article result from an effort to purposefully collect
 
 The data set contains essential socio-economic and demographic information about the respondents, as well as their built environment and commuting behaviours to work. 
 
-Additionally, the survey (conducted in 2016) includes information about the respondents' feelings and emotions in relation to their commuting experience, the social experience of a variety of transportation modes, various self-assessed health questions, patterns of use of information and telecommunication technologies, and questions about sustainability and the environment. 
+Additionally, the survey (conducted during November and December 2016) includes information about the respondents' feelings and emotions in relation to their commuting experience, the social experience of a variety of transportation modes, various self-assessed health questions, patterns of use of information and telecommunication technologies, and questions about sustainability and the environment. 
 
 ## Data Collection, Materials and Methods
 
@@ -66,11 +66,11 @@ In terms of data documentation, some comprehensive measures were taken to ensure
 
 ## Data Storage, Data Availability and Version Control
 
-To foster collaboration and version control, a dedicated GitHub repository for the data set was established and the Santiago data set is securely stored and publicly available on that using https://paezha.github.io/bSantiago/. Researchers interested in using this data set for their own work can access it through the provided URL to the repository. For any inquiries or assistance related to data set access, please feel free to contact the data set creator at [Niloofar Nalaee](niloofar.nalaee@gmail.com). The version control using Git to track changes made to the data set and associated code. 
+To foster collaboration and version control, a dedicated GitHub repository for the data set was established and the Santiago data set is securely stored and publicly available on that using https://paezha.github.io/bSantiago/. The CSV format of survey is also available through the same link to the github repository. Researchers interested in using this data set for their own work can access it through the provided URL to the repository. For any inquiries or assistance related to data set access, please feel free to contact the data set creator at [Niloofar Nalaee](niloofar.nalaee@gmail.com). The version control using Git to track changes made to the data set and associated code. 
 
 ## Specifications Table
 
-See Table 3.1 for details of the data set.
+See Table 2.1 for details of the data set.
 
 | Items | Explanation |
 |:--------|:-----|
@@ -97,11 +97,11 @@ The data set provides a wide range of travel-related issues such as socio-demogr
 
 ## Data
  
-The data package described in this paper contains 9 data objects in tabular format, which are listed in Table 3.2. Each object corresponds to a theme and includes information about the individual characteristics, travel-to-work related information, and perceptions of the built environment. 
+The data package described in this paper contains 9 data objects in tabular format, which are listed in Table 2.2. Each object corresponds to a theme and includes information about the individual characteristics, travel-to-work related information, and perceptions of the built environment. 
 
 Furthermore, other themes include social interactions by mode of transportation, mode shifting and use of information technologies, a number of self-assessed health responses, feelings and emotions as they relate to the commute experience, attitudes with respect to how well transportation systems satisfy the needs of respondents, and attitudes about nature and sustainability. 
 
-As seen in table 3.2, the number of variables in these tables ranges from 5 to 24. The tables share a common unique identifier (`ID`) that can be used to link several tables in a consistent way for multi-theme analysis of the data.
+As seen in table 2.2, the number of variables in these tables ranges from 5 to 24. The tables share a common unique identifier (`ID`) that can be used to link several tables in a consistent way for multi-theme analysis of the data.
 
 \newpage
 \blandscape
@@ -127,11 +127,10 @@ As seen in table 3.2, the number of variables in these tables ranges from 5 to 2
 
 The theme of table `Santiago_IC` is the individual characteristics of respondents and includes several essential socio-economic and demographic attributes. (see Table \ref{tab:individual-characteristics-descriptive}) presents a summary of these variables, including information about the neighbourhood of residence of respondents. All respondents were successfully geo-located to the level of communes (large administrative partitions equivalent to municipalities) and macro zones (larger aggregations of communes used for descriptive purposes). The street address information is less complete. The place of work (geo-coded at the level of Communes) is missing only in a small number of cases (complete rate 0.96) and few respondents report a _second_ place of work/studies where they travel (`r01_WORK_COM_2`).
 
-As seen in the table (see Table \ref{tab:individual-characteristics-descriptive}), most respondents' information is quite complete. Only 16 respondents reported facing some disability, and of these, only 11 completed the section asking them about the type (`r0O_TYPE_DIS`). In terms of gender, the sample includes approximately 15.7% more women than men. 
+As seen in the table (see Table \ref{tab:individual-characteristics-descriptive}), most respondents' information is quite complete. Only 16 respondents reported facing some disability, and of these, only 11 completed the section asking them about the type (`r0O_TYPE_DIS`). In terms of gender, the sample includes approximately 15.7% more women than men. Distributions of age, education level and occupation can be seen through the following bar charts (see Figure \ref{fig:Age by gender}), (see Figure \ref{fig:Education by gender}), and (see Figure \ref{fig:Occupation type graph}).
 
 Other variables regarding the respondents include their height (cm) and weight (kg), and the household context in terms of the number of adults (between 1 and 7) and minors in the family (75% of respondents report no children, and of the remainder, the number of children varies between 1 and 6).
 
-These variables provide insights about different segments of the population. In terms of place of residence.
 
 ```{r  Summary-individual-characteristics, echo=FALSE, include=FALSE}
 #| tbl-cap: Variables regarding individual characteristics of respondents
@@ -180,7 +179,7 @@ knitr::kable(skim_IC,
 \newpage
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="\\label{fig:Education and age by gender}Age Groups by Gender and Education level by Gender"}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="\\label{fig:Age by gender}Age Groups by Gender"}
 Santiago_Ic_na <-Santiago_IC %>% drop_na(IC_Gender, IC_Education, IC_Age, IC_Occupation)
 
 
@@ -198,7 +197,11 @@ ggplot(Santiago_Ic_na,
   ggtitle("Age Groups by Gender")+
   ylab('No. of People')
 
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="\\label{fig:Education by gender}Education level by Gender"}
 # Education bar graph
+Santiago_Ic_na <-Santiago_IC %>% drop_na(IC_Gender, IC_Education, IC_Age, IC_Occupation)
 qplot(Santiago_Ic_na$IC_Education,
       geom='bar', 
       fill=Santiago_Ic_na$IC_Gender)+
@@ -241,7 +244,7 @@ This variable tracks to some extent with the responses to job opportunities in t
 
 In terms of the level of satisfaction with their current job, we see that almost 60\% of respondents are at least highly satisfied. We also see that long commutes are frequent in this sample, with about one-third or respondents spending 1 h or more travelling and about one-quarter of respondents spending between 40 minutes and one hour in their daily commute. This distribution is noteworthy because time spent commuting has been recognized as a factor that can affect physical and mental health and well-being in particular in association with motorized transportation [@brutus2017cycling].
 
-The most common time of the day for commuting is between 7 am and 9 am, but there are also 171 missing responses in this column, so not much can be read from it. Finally, we note that many people spend 35,000-75,000 monthly on their transportation expenditure.
+The most common time of the day for commuting is between 7 am and 9 am, but there are also 171 missing responses in this column, so not much can be read from it. Finally, we note that many people spend 35,000-75,000 peso monthly on their transportation expenditure.
 
 ```{r , echo=FALSE, include=FALSE }
 
@@ -458,7 +461,7 @@ knitr::kable(skim_SIS,
 \elandscape
 \newpage
 
-The theme of table `Santiago_BE` is perceptions of the built environment. The way environments are perceived, and not just their objective attributes has been shown to correlate with travel behaviour [e.g., @jamal2020perceptions]. Surveying perceptions is therefore a good remedy to the lack of canonical data sets in regions of the world where built environment attributes are not systematically collected. 
+The theme of table `Santiago_BE` is perceptions of the built environment. The way environments are perceived, and not just their objective attributes has been shown to correlate with travel behaviour [e.g., @jamal2020perceptions]. Surveying perceptions can be a valuable remedy for the lack of standardized or widely accepted canonical datasets serving as references, especially in regions of the world where attributes of the built environment are not systematically collected. 
 
 There are in total 22 variables in this table, and their descriptive statistics appear in (see Table \ref{tab:Built-Environment-Descriptives}). The variables are organized in pairs: one asks about the perception of an attribute and the second the importance of that attribute to the respondent. 
 
@@ -637,7 +640,7 @@ Similar to the set of questions about the built environment, these questions hav
 
 For example, variable `r1A_STRESS` refers to the level of stress that respondents experience in their usual trips; its companion variable is `r1GA_IMPSTRESS`, which refers to how important stress is to their experience. As seen in (see Table \ref{tab:Health-Information-Descriptives}), a majority of respondents rate the stress in their commutes as medium or lower. 
 
-This aspect of the experience is rated as very important or important by a majority of respondents. Other variables in this table contain information about the physical effort involved in their usual trips (`r1B_EFFORT` and `r1GB_IMPEFFORT`); proximity to other travellers in their usual trips (`r1C_PROX` and `r1GC_IMPPROX`); the environmental pollution they are exposed to in their usual trips (`r1D_CONTAM` and `r1GD_IMPCONTAM`); how safe they feel in their usual trips (`r1E_SAFETY` and `r1GE_IMPSAFETY`); and finally how comfortable their trips are (`r1F_COMFORT` and `r1GF_IMPCOMFORT`).
+This aspect of the experience is rated as very important or important by a majority of respondents. Other variables in this table contain information about the physical effort involved in their regular trips (to work or home) (`r1B_EFFORT` and `r1GB_IMPEFFORT`); proximity to other travellers in their usual trips (`r1C_PROX` and `r1GC_IMPPROX`); the environmental pollution they are exposed to in their usual trips (`r1D_CONTAM` and `r1GD_IMPCONTAM`); how safe they feel in their usual trips (`r1E_SAFETY` and `r1GE_IMPSAFETY`); and finally how comfortable their trips are (`r1F_COMFORT` and `r1GF_IMPCOMFORT`).
 
 
 ```{r summary-health-information, echo=FALSE, include=FALSE}
@@ -1146,17 +1149,17 @@ knitr::kable(skim_SNS,
 
 ## Discussion and Conclusion 
 
-The study reflects a commitment to ensuring reproducibility through various stages, including data collection, cleaning, preprocessing, documentation, storage, and version control. 
+The current summary of Santiago dataset reflects a commitment to ensuring reproducibility through various stages, including data collection, cleaning, preprocessing, documentation, storage, and version control. 
 
 First of all, the inclusion of a specifications table provides a concise summary of key details related to the dataset. This table serves as a quick reference for researchers interested in understanding the dataset's subject area, data format, collection parameters, and accessibility. Such documentation aids in reproducibility by offering a high-level overview of the dataset's characteristics.
 
-Data collection and material in the form of a quota-sampling method serve as an essential aspect of the dataset's reproducibility. In fact, clearly outlining the method by which the sample was obtained allows future researchers to understand the representativeness of the dataset concerning the population of Santiago in 2016. Therefore, replicating this sampling method in future studies or comparing it with alternative sampling strategies becomes feasible, contributing to the reproducibility of the research. Moreover, the detailed description of the paper-based survey, including associated content and focus areas such as demographics, health, feelings and emotions, and so on, enhances the reproducibility of the study. Researchers aiming to replicate or extend this work can gain insights into the survey structure, question types, and the breadth of topics covered. This transparency is crucial for ensuring that future studies can align with or build upon the original research structure.
+Data collection and material in the form of a quota-sampling method serve as an essential aspect of the dataset's reproducibility. In fact, expalining the method by which the sample was obtained allows future researchers to understand the representativeness of the dataset concerning the population of Santiago in 2016. Therefore, replicating this sampling method in future studies or comparing it with alternative sampling strategies becomes feasible, contributing to the reproducibility of the research. Moreover, the detailed description of the paper-based survey, including associated content and focus areas such as demographics, health, feelings and emotions, and so on, enhances the reproducibility of the study. Researchers aiming to replicate or extend this work can gain insights into the survey structure, question types, and the breadth of topics covered. This transparency is crucial for ensuring that future studies can align with or build upon the original research structure.
 
 The data cleaning process includes the rigorous data cleaning and preprocessing steps that play a pivotal role in reproducibility. By documenting the entire process, including the tools and packages used (such as the dplyr package in R), and addressing specific challenges like the translation of variables, the authors provide a roadmap for future researchers to follow. Replicating the same steps helps ensure that the processed dataset aligns with the intended quality standards.
 
 Another important part would be the data documentation including the use of a Quarto Markdown file, to provide a clear and concise reference for understanding the dataset's structure and content. The inclusion of informative tables and graphs generated using different packages such as skim, ggplot and qplot in R, contributes to transparency and facilitates the reproducibility of the analysis. Future researchers can refer to this documentation to comprehend the dataset, validate results, and explore potential extensions of the study.
 
-Furthermore, making the dataset publicly available on a dedicated GitHub repository is a commendable step toward enhancing reproducibility. The specified URL allows researchers to access the dataset, fostering transparency and openness. The use of version control with Git further ensures that changes made to the dataset are tracked over time, enabling a clear understanding of its evolution and facilitating reproducibility in subsequent analyses.
+Furthermore, making the dataset publicly available on a dedicated GitHub repository (https://paezha.github.io/bSantiago/) is a commendable step toward enhancing reproducibility. The specified URL allows researchers to access the dataset, fostering transparency and openness. The use of version control with Git further ensures that changes made to the dataset are tracked over time, enabling a clear understanding of its evolution and facilitating reproducibility in subsequent analyses.
 
 In conclusion, discussion on the value of the data emphasizes its potential contributions to various research areas, including transportation policies, public sector development, and health-related policies. By highlighting the effect of commuting stress on travelers and addressing diverse travel-related issues, the dataset becomes a valuable resource for researchers interested in these domains. This acknowledgement of the dataset's value encourages others to explore its applications and contribute to the reproducibility of findings. Generally, the presented dataset and the associated research demonstrate a strong commitment to reproducibility through transparent methodologies, comprehensive documentation, and open data practices. This approach not only ensures the reliability of the current study but also provides a foundation for future research endeavours and collaborations in the scientific community.
 

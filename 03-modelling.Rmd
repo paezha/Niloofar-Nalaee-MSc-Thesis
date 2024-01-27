@@ -55,7 +55,7 @@ library(sjPlot)
 
 Travel essentially could have an advantage which can be different from reaching a destination or achieving a goal. It has been suggested that travel does not necessarily belong exclusively to the second layer of activities; instead, it can form an activity of its own, as observed in undirected travels driven by a sense of speed, motion, and control. Moreover, people may undertake excess travel even combined with mandatory trips and do not try to make it reasonable in accordance with the target of travel. Other psychological aspects like joy and relaxation may have an important role from their viewpoint [@mokhtarian2001derived].
 
-According to people's target of travel, they assign importance to two types of psychological motives namely instrumental (environment, cost, health and fitness, convenience, predictability, flexibility) and affective (Relaxation, no stress, excitement, control, freedom). 
+According to people's purpose of travel, they assign importance to two types of psychological motives namely instrumental (environment, cost, health and fitness, convenience, predictability, flexibility) and affective (relaxation, no stress, excitement, control, freedom). 
 
 For instance, if they are travelling for leisure time, they expect more freedom, convenience and a low level of stress. For work trips, while active modes users were satisfied with these motives almost equally, users of motorised modes were satisfied with instrumental factors at a higher rate than affective factors. For these kinds of users, convenience and flexibility may outweigh affective factors such as stress as a previous study has shown [@anable2005all]. 
 
@@ -67,7 +67,7 @@ Individuals who perceived themselves as physically weak had higher rates of ment
 
 In some cases, the correlation between psychological resilience level and the perceived stress level is turned out to be reversed in a way that they may feel more resilient to the psychological effects like stress and they perceive less stress level. It can be seen in some positions Fear of labelling, stigmatization and discrimination potentially impede workers' intent to seek counselling and psycho-therapeutic interventions. Despite the common mental health problems and psycho-social issues among workers in such settings, most of them do not often seek or receive systematic mental health care. 
 
-According to a theory based on Lazarus and his colleagues, stress is perceived as a relationship between an individual and the environment relevant to its well-being in which they have positive or negative evaluations. Having this feeling, cognitive appraisal has two parts: first a person can decide whether the encounter is irrelevant, benign-positive or stressful. In the second part, the person will measure coping resources and alternatives, and try to address his/her question about what they should do in this situation. These parts work interdependently in a way that if coping strategies are considered as enough resources, the threat of the event will diminish and vice versa. 
+@folkman1985if mentioned that stress is perceived as a relationship between an individual and the environment relevant to its well-being in which they have positive or negative evaluations. Having this feeling, cognitive appraisal has two parts: first a person can decide whether the encounter is irrelevant, benign-positive or stressful. In the second part, the person will measure coping resources and alternatives, and try to address his/her question about what they should do in this situation. These parts work interdependently in a way that if coping strategies are considered as enough resources, the threat of the event will diminish and vice versa. 
 
 Emotions are important as people interpret their perceptions of what is going on in an environment. As a diagnostic tool, emotions are vital because their intensity and quality determine how people organize the feeling of importance to them and this has a direct relation with their evaluation of a happening. 
 
@@ -85,7 +85,7 @@ The last item as a salient statement of problem-based coping strategies would be
 
 Another coping strategy would be time allowing the individual to control stressors related to time components. Similarly, increasing control or predictability may be influential in this regard. If the commuter can be informed of special situations that exist on the way to work, such as traffic accidents or a closed road, both perception of control and predictability could be enhanced. Interestingly, with the aid of radio stations in the morning (in many communities today special radio frequencies in the morning and evening report on traffic patterns and even make recommendations on alternative routes) the expected negative effects of commuting can be mitigated. For example, flexitime, telecommuting, and subsidised carpooling are techniques for making the commute easier [@koslowsky1997commuting]. 
 
-The objective of this research is to investigate whether normalization/learned helplessness could be coping strategies, and if so for whom. Data for the research are drawn from a survey conducted in Santiago, Chile, based on a quota-sampling method based on the information from the Pre-census of 2012, and in total, 451 persons validly completed the survey.
+This research aims to investigate the perceived commuting stress among active and motorized commuters and the relevant coping strategies. Data for the research are drawn from a survey conducted in Santiago, Chile, based on a quota-sampling method based on the information from the Pre-census of 2012, with a total of 451 participants.
 
 The rest of the research is structured as follows.
 
@@ -99,7 +99,7 @@ As @koslowsky1997commuting has identified, the first group indicates objectives 
 
 The concept of commute impedance was specified as a behavioural control on movement or reaching a target. In other words, it contains anything that imposes frustration on the goal to be reached at a certain time at a particular place such as distance, slow speed or traffic congestion. Speed would not have a direct effect as an impedance, but some other extraneous factors may split from that. 
 
-To make a clarification on that we can assume two drivers first driving at 35 miles/hour and second driving at 50 miles/hour. The former one may be driving on local roads, at the maximum possible speed and without experiencing any barrier while the former one may be driving on a highway, facing congestion (on superhighways like German autobahn) and finding negative stimuli on the road. In the current study identifying these, help us understand how stressors affect commuters' feeling and mode selection mostly for daily routines. 
+To make a clarification on that we can assume two drivers first driving at 56 km/hour and second driving at 80 km/hour. The former one may be driving on local roads, at the maximum possible speed and without experiencing any barrier while the former one may be driving on a highway, facing congestion (on superhighways like German autobahn) and finding negative stimuli on the road. In the current study identifying these, help us understand how stressors affect commuters' feeling and mode selection mostly for daily routines. 
  
 Based on the findings of @koslowsky1997commuting, the second cluster contains subjective variables like the perception of control over the commute (commuting mode), predictability of commuting conditions and personal characteristics namely gender or family specifications.  
 
@@ -135,7 +135,7 @@ Based on commuting stress research as @koslowsky2013commuting has also mentioned
 
 As @koslowsky2013commuting a typical commuter may experience a wide variety of stressors on the way to and from work such as physiological stressors which also include environmental factors such as noise, and crowding. heat and noxious fumes. Other stressors can be time pressures and aggressive or reckless behaviours. These are just a few examples of the effect of commuting stress on commuters. 
 
-The inevitable role of human beings in the general chain of traffic issues is taken into consideration as it leads to stress, accidents and aberrant behaviours. @westerman2000individual have revealed that there would be two predominant classifications of Driver Behavior Inventory (DBI) assessing driver stress and Driver Behavior Questionnaire (DBQ) investigating aberrant driver behaviour. 
+The inevitable role of human beings in the general chain of traffic issues is taken into consideration as it leads to stress, accidents and aberrant behaviours. @westerman2000individual have revealed that there would be two predominant self-reported measures of Driver Behavior Inventory (DBI) assessing driver stress and Driver Behavior Questionnaire (DBQ) investigating aberrant driver behaviour. 
 
 Unsatisfying traffic conditions may aggravate the situation and increase frustration on the road leading to a high level of stress. Some people would underestimate the risk of confrontation with an accident and tend to overrate their capabilities while driving. While this high level of confidence in vehicle control decreases driver stress levels, it would lead people to adopt dangerous attitudes and driving manoeuvres requiring specific skills. (beneficial level of stress because it can mediate the risk of stress. Stress is generally bad when it is excessive.)
 
@@ -153,7 +153,7 @@ According to DBI, there would be two additional categories of driver stress irri
 
 An interesting relation exists between confidence and violation (aberrant behaviour: leading to accidents and caused by stress) as people with a high record of violations felt more confident about vehicle control which is maybe related to the relation among, underrated risk of accident, overrate driving skills, high level of confidence, high possibility of undertaking driving manoeuvres. 
 
-Finally, new factors of "fatigue" and "thrill-seeking" have been revealed followed by an administration of a questionnaire. Studies within the context of real-world behaviour, have revealed high aggression related to faster driving and more risky overtaking. While the dislike scale was associated with weaker vehicle control. An interesting study has found men reported higher aggression and comparatively lower overtaking tension. The relationship between age and driver stress has indicated older drivers due to a declining trend of cognitive capacities experienced high stress and were less alert [@westerman2000individual].
+Finally, new factors of "fatigue" and "thrill-seeking" have been revealed followed by an administration of a questionnaire by Matthews et al. (1997, as cited in Westerman & Haigney, 2000). Studies within the context of real-world behaviour, have revealed high aggression related to faster driving and more risky overtaking. While the dislike scale was associated with weaker vehicle control. An interesting study has found men reported higher aggression and comparatively lower overtaking tension. The relationship between age and driver stress has indicated older drivers due to a declining trend of cognitive capacities experienced high stress and were less alert [@westerman2000individual].
 
 #### Coping Strategies
 
@@ -200,11 +200,9 @@ Furthermore, health information can be useful in understanding the effects of tr
 
 ### Data Preparation
 
-Collect the data on the two ordinal variables of interest and check for any missing data or outliers. If necessary, clean the data and re-code it into ordinal categories.
-
 The case study for this research covered the Santiago Metropolitan as Chile's capital and largest city containing various communes as shown (see Figure \ref{fig:study boundaries}). The data set used in the current study was obtained from a paper-based survey conducted face-to-face in Santiago in 2016. 
 
-The data set contains essential socio-economic and demographic information about the respondents, as well as their built environment and commuting behaviours to work. In addition, the survey (conducted between DATE-DATE, 2016) includes information about the respondents' feelings and emotions in relation to their commuting experience, the social experience of a variety of transportation modes, various self-assessed health questions, patterns of use of information and telecommunication technologies, and questions about sustainability and the environment. 
+The data set contains essential socio-economic and demographic information about the respondents, as well as their built environment and commuting behaviours to work. In addition, the survey (conducted during November and December 2016) includes information about the respondents' feelings and emotions in relation to their commuting experience, the social experience of a variety of transportation modes, various self-assessed health questions, patterns of use of information and telecommunication technologies, and questions about sustainability and the environment. 
 
 The data collection conducted a quota-sampling method based on the information from the Pre-census of 2012, and in total, 451 participants took part in the survey. This study considers the first two parts of the survey including individual characteristics and health information to figure out the relationship between personal attributes and stress-related variables. 
 
@@ -378,7 +376,7 @@ df$"VERY IMPORTANT" <- ifelse (df$H_Imp_stress == "VERY IMPORTANT", 1, 0)
 ```
 
 
-In order to reach the more efficient model we used re-code_factor() argument which requires the dplyr R package to be loaded, and the function takes the original factor variable as the first argument, followed by the re-coding rules. The re-coding rules in this study are specified using a set of named character vectors to aggregate or disperse the original levels of the factor and the values represent the new levels.
+In order to reach a more efficient model we used re-code_factor() argument which requires the dplyr R package to be loaded, and the function takes the original factor variable as the first argument like main mode, followed by the re-coding rules and then combines car and motor into private mode, taxi, collective, metro, and bus into public mode and bicycle and walk into active mode of transportation. The re-coding rules in this study are specified using a set of named character vectors to aggregate or disperse the original levels of the factor and the values represent the new levels.
 
 ```{r resetting the outcomes of each variable to see the efficient result, echo=FALSE, include = FALSE}
 
@@ -583,6 +581,7 @@ In this study, we implement a bivariate logit link for the class of multivariate
 [Fixing the intercept $\beta_{j0}$ (e.g., to zero), using flexible thresholds $\theta_j$ and fixing $\sigma_{ij}$ (e.g., to unity) $\forall j \in J_i$ and $forall i \in (1, \cdots, n)$].
 [@hirk2020mvord]
 
+
 ## Analysis and Results
 
 In order to fit our bivariate ordinal regression model, we can use the mvord R package which has two different data structures of MMO and MMO2. As we are working with a wide data format and the covariates stored in different columns of the data set do not change during multiple measurements, using the MMO2 data structure is an appropriate way. In this data structure, each subject i refers to one row of the data frame and all the covariates are stored in different columns.
@@ -594,6 +593,36 @@ mod_bivariate <- mvord (formula = MMO2(r1A_STRESS,r1GA_IMPSTRESS) ~ 0 + r0D_AGE 
 
 Where "mod_bivariate" is the name of the model, "mvord" is the function for fitting multivariate ordinal models, and "MMO2" is the data structure in accordance with the wide format of the data set. Predicators are demographic variables of the respondents namely their age, income, education and occupation level as well as their primary mode of commute.
 
+The correlation coefficient between H_Stress and H_Imp_stress represents the correlation between the error terms of the two dependent variables. In current as table (see Table \ref{tab:Bivariate ordered model}) reveals, the estimated correlation coefficient is 0.250344, indicating a positive correlation between the error terms. This positive correlation coefficient suggests that there may be shared or common unobserved factors influencing both stress levels and the importance of stress levels. 
+Possibly, this phenomenon may be attributed to factors influencing stress levels and the perceived importance of stress that are not captured by the variables included in our model. These unobserved factors could be psychological, environmental, social, or other latent variables that affect individuals' perceptions of stress and its significance. Specifically, the presence of a positive correlation suggests that individuals who experience higher levels of stress may also perceive stress as more important or significant during their commutes. 
+
+In this research, our dependent variables which are stress experienced during commute and the importance of the negative feeling assigned by commuters contribute to the coping strategies used by commuters.
+      
++-----------+---------------+---------------+
+|           |Importance_Low |Importance_High|     
++-----------+---------------+---------------+
+|Stress_Low |      1        |        2      |
++-----------+---------------+---------------+
+|Stress_High|      3        |        4      |
++-----------+---------------+---------------+
+
+In order to have a better understanding of coping strategies that commuter have used, if we consider four situations with different levels of experienced stress and the given importance to that, we can figure out the way of dealing with stress by commuters in Santiago.
+
+1-Low Stress, Low Importance:
+
+Individuals in this category experience relatively low stress during commute, and they also perceive this feeling as having low importance. It is going to be a situation where individuals are not heavily burdened by stressors, and they also don't attribute much significance to the minimal stress they experience. This group may have a generally positive outlook, low levels of anxiety, or a lifestyle that minimizes stressors. It could also indicate effective stress management strategies like using less stressful modes such as active ones helping them in having a less stressful trip.
+
+2-Low Stress, High Importance:
+
+Commuters in this condition may not be experiencing a significant amount of stress, but they attach a high level of importance to the stressors they do encounter. This could be due to the perceived significance or impact of specific stressors while commuting, even if the overall stress level is low. This kind of travelers might be particularly sensitive to certain stressors, possibly viewing them as crucial to their well-being. 
+
+3-High Stress, Low Importance:
+
+This situation might be stressful for commuters, but they don't perceive these stressors as critically important or impactful. This could be due to coping mechanisms such as normalization, resilience, or a belief that the stressors are temporary or manageable. It may indicate that although they are aware of stressors, they may not view them as significant contributors to their overall well-being. For example, this happens when people who are using public transport as one the stressful modes of transportation in Santiago according to the current research, continue using that even when feel high level of stress. This can be due to limited options for them to use for daily commute and they prefer stay with the same mode and at least reach to workplace, home and all the regular destinations. 
+
+4-High Stress, High Importance:
+
+In this condition commuters may experience a substantial amount of stress, and they also perceive this stress as highly important. This suggests that the stressors they face are not only impactful but are recognized and acknowledged as significant challenges during their commutes. This commuters might be dealing with major commuting stressors or facing situations that are emotionally, psychologically, or physically demanding.
 
 ```{r bivariate ordinal modelling, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 
@@ -640,9 +669,9 @@ summary(mod_bivariate)
 
 ## Discussion
 
-The results of the model analysis can be seen in table (see Table \ref{tab:Bivariate ordered model}). The analysis reveals that adult individuals aged between 35 to 54 are the most affected category when it comes to rating the importance of stress during commuting. There is a positive correlation indicating that adults within this age range are more likely to assign importance to stress while commuting. 
+The results of the model analysis can be seen in table (see Table \ref{tab:Bivariate ordered model}). The analysis reveals that adult individuals aged between 35 to 54 are the most affected category when it comes to rating the importance of stress during commuting. There is a positive relation indicating that adults within this age range are more likely to assign importance to stress while commuting. 
 
-This trend holds until the age of 54, after which seniors aged 55 and above are significantly related to experiencing stress. The negative coefficient for this age group suggests that their stress level is decreasing compared to their younger counterparts. 
+This trend holds until the age of 54, after which seniors aged 55 and above are significantly related to experiencing stress. The positive coefficient for this age group suggests that their stress level is decreasing compared to their younger counterparts. 
 
 This finding may seem incompatible with some previous research claiming that as people get older, they tend to avoid risks and tensions, especially while driving. However, it is important to consider that older individuals may also suffer from cognitive limitations as @westerman2000individual mentioned and have difficulties remembering their lapses, leading to potentially dangerous and stressful situations. This may put them at a higher risk of accidents or unpleasant commuting experiences with more stressful moments. The declining ability to self-monitor and remember specific errors could contribute to this phenomenon [@rabbitt1990age].
 
@@ -662,35 +691,6 @@ Having a higher level of education has been found to be associated with a positi
 
 In terms of occupation, the current study has shown that experiencing stress among those who have a profession or students is significantly associated. A negative coefficient for both groups implies that their stress level has a decreasing trend compared to their counterparts. In addition, an increasing trend of stress levels has been indicated in some professions like construction due to different reasons like having an unsafe workplace or occupational tensions [@loosemore2004gender].
 
-In this research, our dependent variables which are stress experienced during commute and the importance of that negative feeling assigned by commuters contribute to the coping strategies used by commuters.
-      
-              
-
-
-+--------+---------+---------+
-|        |         |         |
-+--------+---------+---------+
-|Stress_LOW|         |         |
-+--------+---------+---------+
-|Stress_HIGH|         |         |
-+--------+---------+---------+
-In order to have a better understanding of coping strategies that commuter have used, if we consider four situations with different levels of experienced stress and the given importance to that, we can figure out the way of dealing with stress by commuters in Santiago.
-
-1-Low Stress, Low Importance:
-
-Individuals in this category experience relatively low stress during commute, and they also perceive this feeling as having low importance. It is going to be a situation where individuals are not heavily burdened by stressors, and they also don't attribute much significance to the minimal stress they experience. This group may have a generally positive outlook, low levels of anxiety, or a lifestyle that minimizes stressors. It could also indicate effective stress management strategies like using less stressful modes such as active ones helping them in having a less stressful trip.
-
-2-Low Stress, High Importance:
-
-Commuters in this condition may not be experiencing a significant amount of stress, but they attach a high level of importance to the stressors they do encounter. This could be due to the perceived significance or impact of specific stressors while commuting, even if the overall stress level is low. This kind of travelers might be particularly sensitive to certain stressors, possibly viewing them as crucial to their well-being. 
-
-3-High Stress, Low Importance:
-
-This situation might be stressful for commuters, but they don't perceive these stressors as critically important or impactful. This could be due to coping mechanisms such as normalization, resilience, or a belief that the stressors are temporary or manageable. It may indicate that although they are aware of stressors, they may not view them as significant contributors to their overall well-being. For example, this happens when people who are using public transport as one the stressful modes of transportation in Santiago according to the current research, continue using that even when feel high level of stress. This can be due to limited options for them to use for daily commute and they prefer stay with the same mode and at least reach to workplace, home and all the regular destinations. 
-
-4-High Stress, High Importance:
-
-In this condition commuters may experience a substantial amount of stress, and they also perceive this stress as highly important. This suggests that the stressors they face are not only impactful but are recognized and acknowledged as significant challenges during their commutes. This commuters might be dealing with major commuting stressors or facing situations that are emotionally, psychologically, or physically demanding.
 
 ```{r coefficients, echo=FALSE, include = FALSE}
 coef.constraints <- coef.constraints |>
@@ -1389,11 +1389,11 @@ df %>%
 
 ```{r , echo=FALSE,  fig.cap="\\label{fig:Income Age and importance of stress}Conditional Mosaic Plot of Importance Stress, Age and Income"}
 df|>
-  filter(!is.na(H_Imp_stress), !is.na(IC_Income), !is.na(IC_Age)) |>
+  filter(!is.na(H_Imp_stress), !is.na(IC_Income), !is.na(IC_Income)) |>
   ggplot() +
-  geom_mosaic(aes(x = product(H_Imp_stress, IC_Age), fill = H_Imp_stress)) +
+  geom_mosaic(aes(x = product(H_Imp_stress, IC_Income), fill = H_Imp_stress)) +
   theme(axis.text = element_text(angle = 90, size = 5)) +
-  facet_wrap(~IC_Income)+
+  facet_wrap(~IC_Age)+
   labs(title = "Conditional Mosaic Plot of Importance Stress, Age, and Income",
        subtitle = "Faceted by Age",
        x = "Income level", y = "Importance of Stress Level") 
@@ -1445,13 +1445,12 @@ This study has been conducted to investigate the effect of commuting stress on t
 
 Measuring stress entails an individual self-evaluation of a wide variety of variables when commuting preferably while commuting. There is a link between stress and commuting in the literature, which takes into account factors such as time commute as @evans2006rail mentioned, control and predictability according to @gottholmseder2009stress, as already has been found according to the previous studies about travel motives, especially instrumental ones. The component of stress level has a negative connotation in the context of this research (as no one would prefer to be stressed) and investigates the internal mental reaction of the traveller based on their commuting journeys. 
 
-In this research, we aimed to understand how stress affects active and motorized travellers' choice of modes by investigating their stress levels. Furthermore, we look into the significance that travellers place on their stress levels. This allows us to investigate the concept of "limited horizons," or how those who are less adaptable normalize subpar experiences. The current study on commuting stress is going to address the following questions: 
+In this research, we aimed to to investigate the perceived commuting stress among active and motorized commuters and the relevant coping strategies. Furthermore, we look into the significance that travellers place on their stress levels. This allows us to investigate the concept of "limited horizons," or how those who are less adaptable normalize subpar experiences. The current study on commuting stress focused on addressing the following questions: 
 
 -How crucial it is for respondents to make a journey while feeling a sense of stress and to what scale they are going to evaluate this feeling?
 
 -What elements go into determining how stressed active and motorized travellers are when travelling?
 
--Can commuters think of normalization and learned helplessness as coping mechanisms? If yes, which category of people?
 
 In order to find out how people feel stress while commuting, the association between some key exploratory variables and our income variables has been assessed. The study found that while public users assume the least importance level, they feel the highest level of stress. When we consider a three-way association among active, public and private users, we can see first public and then private users as the more populated groups feel more stress and do not care as much as active users. This result is on the same page with previous work as @brutus2017cycling found those who cycled to work felt less stress than others who commute by motorized modes. 
 
