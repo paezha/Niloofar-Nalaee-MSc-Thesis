@@ -49,7 +49,7 @@ library(sjPlot)
 # install.packages("htmltools", update = TRUE)
 ```
 
-# Is Your Commute Like a Bad Boss? Learned Helplessness and Normalization of Stress in the Commute Experience in Santiago
+# Inferring Coping Strategies from Self-reported Stress and Importance of Stress in the Commute Experience in Santiago
 
 ## Introduction
 
@@ -184,6 +184,41 @@ Furthermore, studies about chronic stress (DBI scale) and coping behaviours have
 To improve the distinction between problem-focused versus emotion-focused coping skills, it is vital to define specific road scenarios and observe how drivers respond to them rather than considering a general form of driving which is not enlightening (like slow-driving: someone is driving in front of you making overtaking hard, and discourtesy scenarios: someone is driving behind you near to your rear bumper beeping. In addition, diversity and socio-cultural backgrounds around the world would affect the factor structure of driver stress and its correlation to coping styles.
 
 Previous research has shown that professional drivers chose a group of both problem-based and emotion-based strategies. This selection may change regarding the level of frustration and anger felt in various road scenarios.
+
+### Hypotheses
+
+Coping strategies are not directly observed. Instead, we have data on self-reported stress levels, and the importance that respondents assign to feelings of stress. We hypothesize that various combinations of these two variables map to coping strategies as discussed next and shown in Table \ref{tab:hypotheses}.
+
+In order to have a better understanding of coping strategies that commuter have used, if we consider four situations with different levels of experienced stress and the given importance to that, we can figure out the way of dealing with stress by commuters in Santiago.
+
+1-Low Stress, Low Importance:
+
+Individuals in this category experience relatively low stress during commute, and they also perceive this feeling as having low importance. It is going to be a situation where individuals are not heavily burdened by stressors, and they also don't attribute much significance to the minimal stress they experience. This group may have a generally positive outlook, low levels of anxiety, or a lifestyle that minimizes stressors. It could also indicate effective stress management strategies like using less stressful modes such as active ones helping them in having a less stressful trip.
+
+2-Low Stress, High Importance:
+
+Commuters in this condition may not be experiencing a significant amount of stress, but they attach a high level of importance to the stressors they do encounter. This could be due to the perceived significance or impact of specific stressors while commuting, even if the overall stress level is low. This kind of travelers might be particularly sensitive to certain stressors, possibly viewing them as crucial to their well-being. 
+
+3-High Stress, Low Importance:
+
+This situation might be stressful for commuters, but they don't perceive these stressors as critically important or impactful. This could be due to coping mechanisms such as normalization, resilience, or a belief that the stressors are temporary or manageable. It may indicate that although they are aware of stressors, they may not view them as significant contributors to their overall well-being. For example, this happens when people who are using public transport as one the stressful modes of transportation in Santiago according to the current research, continue using that even when feel high level of stress. This can be due to limited options for them to use for daily commute and they prefer stay with the same mode and at least reach to workplace, home and all the regular destinations. 
+
+4-High Stress, High Importance:
+
+In this condition commuters may experience a substantial amount of stress, and they also perceive this stress as highly important. This suggests that the stressors they face are not only impactful but are recognized and acknowledged as significant challenges during their commutes. This commuters might be dealing with major commuting stressors or facing situations that are emotionally, psychologically, or physically demanding, and there are no coping strategies available to them to reduce the effect of stress.
+
+```{r echo=FALSE}
+data.frame(stress = c("Stress: Low", "Stress: Low", "Stress: High", "Stress: High"),
+           importance = c("Low", "High", "Low", "High"),
+           case = c("1", "2", "3", "4")) |>
+  pivot_wider(names_from = "importance", values_from = "case") |>
+  kable("latex",
+        booktabs = TRUE,
+        caption = "\\label{tab:hypotheses}Dependent variables and hypothesized coping strategies",
+        col.names = c("", "Low", "High")) |>
+  add_header_above(c("", "Importance of Stress" = 2)) %>%
+  kable_styling(latex_options = "hold_position")
+```
 
 ## Materials and Methods
 
@@ -551,16 +586,16 @@ Percentage = c(paste(round(sum(df$IC_Age == "Youth")/nrow(df)*100, 1), "%", sep 
 
 ```
 
-```{r new tabulate-descriptive-statisticss, echo=FALSE}
-tableout2 <- kable(example_3.df,
-      "latex", 
-      caption = "\\label{tab:descriptive-statisticss}Summary statistics of the sample", 
+```{r new tabulate-descriptive-statistics, echo=FALSE}
+kable(example_3.df,
+      "latex",
+      caption = "\\label{tab:descriptive-statistics}Descriptive statistics of variables", 
       booktabs = T,
       digits = 1) %>%
   kable_styling(latex_options = c("scale_down")) %>%
   pack_rows("Socio-Economic and Demographic Attributes", 1, 15) %>%
-  pack_rows("Stress Characteristics", 16, 25) %>%
-  row_spec(c(1, 16) - 1, extra_latex_after = "\\rowcolor{gray!20}") 
+  pack_rows("Stress Characteristics", 16, 25)# %>%
+  #row_spec(c(1, 16) - 1, extra_latex_after = "\\rowcolor{gray!20}") 
 
 ```
 
@@ -594,35 +629,8 @@ mod_bivariate <- mvord (formula = MMO2(r1A_STRESS,r1GA_IMPSTRESS) ~ 0 + r0D_AGE 
 Where "mod_bivariate" is the name of the model, "mvord" is the function for fitting multivariate ordinal models, and "MMO2" is the data structure in accordance with the wide format of the data set. Predicators are demographic variables of the respondents namely their age, income, education and occupation level as well as their primary mode of commute.
 
 The correlation coefficient between H_Stress and H_Imp_stress represents the correlation between the error terms of the two dependent variables. In current study as table (see Table \ref{tab:Bivariate ordered model}) reveals, the estimated correlation coefficient is 0.250344, indicating a positive correlation between the error terms. This positive correlation coefficient suggests that there may be shared or common unobserved factors influencing both stress levels and the importance of stress levels. 
+
 Possibly, this phenomenon may be attributed to factors influencing stress levels and the perceived importance of stress that are not captured by the variables included in our model. These unobserved factors could be psychological, environmental, social, or other latent variables that affect individuals' perceptions of stress and its significance. Specifically, the presence of a positive correlation suggests that individuals who experience higher levels of stress may also perceive stress as more important or significant during their commutes. 
-
-In this research, our dependent variables which are stress experienced during commute and the importance of the negative feeling assigned by commuters contribute to the coping strategies used by commuters.
-      
-+-----------+---------------+---------------+
-|           |Importance_Low |Importance_High|     
-+-----------+---------------+---------------+
-|Stress_Low |      1        |        2      |
-+-----------+---------------+---------------+
-|Stress_High|      3        |        4      |
-+-----------+---------------+---------------+
-
-In order to have a better understanding of coping strategies that commuter have used, if we consider four situations with different levels of experienced stress and the given importance to that, we can figure out the way of dealing with stress by commuters in Santiago.
-
-1-Low Stress, Low Importance:
-
-Individuals in this category experience relatively low stress during commute, and they also perceive this feeling as having low importance. It is going to be a situation where individuals are not heavily burdened by stressors, and they also don't attribute much significance to the minimal stress they experience. This group may have a generally positive outlook, low levels of anxiety, or a lifestyle that minimizes stressors. It could also indicate effective stress management strategies like using less stressful modes such as active ones helping them in having a less stressful trip.
-
-2-Low Stress, High Importance:
-
-Commuters in this condition may not be experiencing a significant amount of stress, but they attach a high level of importance to the stressors they do encounter. This could be due to the perceived significance or impact of specific stressors while commuting, even if the overall stress level is low. This kind of travelers might be particularly sensitive to certain stressors, possibly viewing them as crucial to their well-being. 
-
-3-High Stress, Low Importance:
-
-This situation might be stressful for commuters, but they don't perceive these stressors as critically important or impactful. This could be due to coping mechanisms such as normalization, resilience, or a belief that the stressors are temporary or manageable. It may indicate that although they are aware of stressors, they may not view them as significant contributors to their overall well-being. For example, this happens when people who are using public transport as one the stressful modes of transportation in Santiago according to the current research, continue using that even when feel high level of stress. This can be due to limited options for them to use for daily commute and they prefer stay with the same mode and at least reach to workplace, home and all the regular destinations. 
-
-4-High Stress, High Importance:
-
-In this condition commuters may experience a substantial amount of stress, and they also perceive this stress as highly important. This suggests that the stressors they face are not only impactful but are recognized and acknowledged as significant challenges during their commutes. This commuters might be dealing with major commuting stressors or facing situations that are emotionally, psychologically, or physically demanding.
 
 ```{r bivariate ordinal modelling, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 
@@ -1070,7 +1078,6 @@ xtab_age_transp$page.content <- str_replace(xtab_age_transp$page.content, "&chi"
 According to the results from the cross-tabulation of modes of transport by age groups youth as the most populated age group were interested in using active and more public transport with more than 60% of each. Following this, adults as the second most populated age group were also interested in using more private and afterwards active mode with almost half of the private mode users and 23% of active mode users, respectively. Apart from this, seniors were mostly interested in private transport with around 15 % of whole private users and fewer tend to use active and public with about 10 % for each of them.
 
 Therefore as can be seen (see Figure \ref{fig:Transportation Mode by Age group}) youth respondents tend to use public and active modes, adults are more interested in private and active, and seniors use almost all modes in a similar way but more interested in private mode.
-
 
 ```{r , echo=FALSE, warning=FALSE, fig.cap="\\label{fig:Transportation Mode by Age group}Transportation Mode by Age group"}
 ggplot(data = df) +

@@ -3,7 +3,8 @@
 
 # A Study on Commuting-Induced Stress and Coping Strategies in Santiago, Chile
 
-This is the repository with the M.Sc. thesis of Niloofar Nalaee.
+This is the repository with the M.Sc. thesis of Niloofar Nalaee. Written
+using [{macdown}](https://paezha.github.io/macdown/)
 
 ## Abstract
 

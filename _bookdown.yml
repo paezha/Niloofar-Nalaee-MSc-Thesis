@@ -6,3 +6,10 @@ download: [
     ["thesis.docx", "Word"]
   ]
 delete_merged_file: true
+rmd_files:
+  - "index.Rmd"
+  - "01-introduction.Rmd"
+  - "02-data-package.Rmd"
+  - "03-modelling.Rmd"
+  - "04-conclusion.Rmd"
+  - "99-references.Rmd"

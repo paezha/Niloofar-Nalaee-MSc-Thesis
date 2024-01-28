@@ -103,7 +103,7 @@ version automatically by inputting them in the YAML at the top of this file.
 
 BEGINNING HERE ADD THE DOCUMENTS THAT CONFORM THE MAIN BODY OF THE THESIS
 
--->
+Instead the files and their order are defined in `_bookdown.yml`. This prevents the README.Rmd file from being picked up when rendering.
 
 ```{r eval=!knitr::is_latex_output(), child=here::here("01-introduction.Rmd")}
 
@@ -124,3 +124,7 @@ BEGINNING HERE ADD THE DOCUMENTS THAT CONFORM THE MAIN BODY OF THE THESIS
 ```{r eval=!knitr::is_latex_output(), child=here::here("99-references.Rmd")}
 
 ```
+
+
+-->
+

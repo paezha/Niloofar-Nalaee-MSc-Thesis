@@ -14,9 +14,10 @@ knitr::opts_chunk$set(
 
 # A Study on Commuting-Induced Stress and Coping Strategies in Santiago, Chile
 
-This is the repository with the M.Sc. thesis of Niloofar Nalaee.
+This is the repository with the M.Sc. thesis of Niloofar Nalaee. Written using [{macdown}](https://paezha.github.io/macdown/)
 
 ## Abstract
+
   This research makes a two-fold contribution. First, it compiles an extensive array of data including socio-demographics, health metrics, feelings and emotions, built environment, and work commute-related details, all presented in a comprehensive and reproducible data package format.  Subsequently, the study delves into the commuting stress analysis and identifying the various coping strategies employed by commuters. The data used for the analysis have been derived from the demographics and health information sections of the dataset. Serving as a reproducible data package, it provides a robust foundation for future research endeavors. Future researchers can have access to the data set as an open source data set allowing them to understand the representativeness of this data package and enable them to replicate various stages where needed.
    
   The research examines the effect of commuting on stress for both motorized and non motorized commuters and understanding how they cope with it. Understanding this effect can be helpful for decision makers in economy, transportation planning, and demographics studies to promote a safe and peaceful experience of travel for all the commuters in community. Moreover, understanding the emotional states of individuals   during their journeys and how they navigate and manage the negative feelings of commuting can be beneficial for decision makers to enhance commuting experiences and feelings.
