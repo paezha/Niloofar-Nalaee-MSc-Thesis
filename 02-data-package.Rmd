@@ -103,6 +103,23 @@ Furthermore, other themes include social interactions by mode of transportation,
 
 As seen in table 2.2, the number of variables in these tables ranges from 5 to 24. The tables share a common unique identifier (`ID`) that can be used to link several tables in a consistent way for multi-theme analysis of the data.
 
+## How data preprocessing contributes to reproducibility?
+
+As mentioned earlier, the current study is based on a survey. In data preprocessing step we went through addressing some issues such as splitting multiple answers in a single cell of the survey. Having the answers separated into distinct columns, let future researchers gain flexibility in analyzing the data and generating tables tailored to their research questions or goals. The specific analyses and tables created will depend on the nature of the data and the research objectives. 
+
+When starting from scratch after splitting and reshaping the data, researchers can use various techniques for a more granular analysis of individual responses and choosing the specific answer among multiple ones in a single cell.
+
+One idea is using frequency tables as they can observe the occurrences of each response for each split variable useful in understanding the distribution of the response.
+
+The second approach way is to take advantage of cross-tabulations for split variables against each other, as it gives insights about relationships and patterns in the data.
+
+Also calculating summary statistics for each split variable allows us to understand central tendency and variability. There are many other ways, such as visualization, comparisons, tests, and data exploration, to specify the appropriate answer out of multiple ones.
+
+When starting from the raw data and following the same preprocessing and analysis steps, researchers could generally end up with similar tables and results. However, several factors can influence whether the results are exactly the same such as differences in data cleaning and handling missing data, parameters or thresholds according to the analysis, random sampling (if applicable).
+
+In summary, while exact replication is not always guaranteed, careful documentation, consistency in preprocessing, and transparent reporting of analysis steps contribute to the reproducibility of results. Additionally, using a GitHub repository and sharing code can facilitate collaboration and make it easier for future researchers to reproduce the results.
+
+
 \newpage
 \blandscape
 

@@ -280,11 +280,65 @@ San_area_plot
 ```
 
 
-### Variables
+### Descriptive Analysis
 
-As mentioned earlier in the study, previous researchers have applied various variables for implementing the ordinal regression model. In this study, we employ a group of dependent and independent variables extracted from individual characteristics and health information parts of the surveys. As dependent variables, we chose the stress indicator of the level of stress experienced by respondents while commuting and another stress criterion revealing the importance level of stress experienced when travelling by participants. For independent variables, we selected respondents age and income level, occupation, and their primary mode of transportation while regular commuting. 
+As mentioned earlier in the study, previous researchers have applied various variables for implementing the ordinal regression model. In this study, we employ a group of dependent and independent variables extracted from individual characteristics and health information parts of the surveys. According to Table \ref{tab:Definitions} for dependent variables, we chose the stress indicator of the level of stress experienced by respondents while commuting and another stress criterion revealing the importance level of stress experienced when travelling by participants. For independent variables, we selected respondents age and income level, occupation, and their primary mode of transportation while regular commuting. As can be seen in the Table \ref{tab:Definitions} there are multiple subcategories for each variable. Furthermore, there would be a regrouping process for the subcategories to reach a more efficient bivariate ordinal model.
 
-To initialize our bivariate ordinal model, we took advantage of previous studies about the importance of different independent variables within individual characteristics.
+
+```{r echo=FALSE}
+
+definitions <- data.frame(Variable = c ("Age",
+                                        "Income",
+                                        "Main_mode",
+                                        "Education",
+                                        "Occupation",
+                                        "Stress",
+                                        "Importance_Stress"
+),
+
+Note = c("Age of respondents in Santiago in 2016",
+         "Level of income of respondents in Santiago in 2016",
+         "Main transport mode used by respondents in Santiago in 2016 with eight levels: Car, Taxi, Collective, Motor, Metro, Bus, Bicycle, Walk",
+         "Level of education of respondents in Santiago in 2016",
+         "Occupation of respondents in Santiago in 2016",
+         "How do respondents assess the level of stress they experience on their usual trips? On Likert scale",
+         "What is the importance respondents assign to these aspects? On Likert scale"),
+
+Subcategory = c ("[Less18], [from18to24years], [from25to34years], [from35to54years], [55to64year], [from65more]",
+                                        "[Less423], [423to639], [639to977], [977to1550], [1550to2380], [2380more]pesos",
+                                        "Car, Taxi, Collective, Motor, Metro, Bus, Bicycle, Walk",
+                                        "Elementary, Secondary, Professor, College, Postgrad",
+                                        "Full time, Part time, Self employed, Unemployed, Home taker, Student, Student work, Retired, other",
+                                        "Very low feeling of stress, Low feeling of stresS, Moderate feeling of stress, High feeling of stress, Very high feeling of stress",
+                                        "No importance feeling of stress, Slightly important feeling of stress,  Moderately important feeling of stress, Important feeling of stress, Very important feeling of stress")
+         
+)
+                                        
+```
+
+\newpage
+\blandscape
+
+```{r echo=FALSE}
+kable(definitions,
+      "latex",
+      caption = "\\label{tab:Definitions}Definitions of variables", 
+      booktabs = T,
+      digits = 1) %>%
+  kable_styling(latex_options = c("scale_down")) %>%
+  pack_rows("Socio-Economic and Demographic Attributes", 1, 5) %>%
+  pack_rows("Stress Characteristics", 6, 7) 
+  # pack_rows("Stress Characteristics", 8, 13)
+  
+  #row_spec(c(1, 16) - 1, extra_latex_after = "\\rowcolor{gray!20}") 
+
+```
+
+
+\elandscape
+\newpage
+
+To initialize our bivariate ordinal model, we took advantage of previous studies about the importance of different independent variables within individual characteristics as can be seen in Table \ref{tab:Descriptive statistics of variables}.
 
 Although gender looked effective on some of the driver stress scales like confidence and alertness, it was rather weak to indicate gender difference in terms of coping strategies. Previous studies revealed men feel more confident and alert than their counterparts. Regarding coping strategies, women seemed to score higher in cognitive strategies despite men who tend to use behavioural strategies. [@kontogiannis2006patterns]. Although it has been found that women were more likely to feel stress and anxiety than men, some studies have shown that women and men in rather similar conditions felt the same level of stress (Hill and Ng Boyle, 2007).
 
@@ -411,7 +465,7 @@ df$"VERY IMPORTANT" <- ifelse (df$H_Imp_stress == "VERY IMPORTANT", 1, 0)
 ```
 
 
-In order to reach a more efficient model we used re-code_factor() argument which requires the dplyr R package to be loaded, and the function takes the original factor variable as the first argument like main mode, followed by the re-coding rules and then combines car and motor into private mode, taxi, collective, metro, and bus into public mode and bicycle and walk into active mode of transportation. The re-coding rules in this study are specified using a set of named character vectors to aggregate or disperse the original levels of the factor and the values represent the new levels.
+In order to achieve a more efficient model, we capitalized on recoding to amalgamate several subcategories within each independent variable into broader categories, thus enhancing the model's efficiency. This approach proves useful in simplifying the model and improving interpretability, particularly in cases where certain subcategories exhibit low frequencies and when our focus lies on identifying higher-level patterns. Furthermore, certain variables, such as the main mode of transportation, have been grouped into new categories, including public, private, and active modes, as opposed to the previous eight categories in Table \ref{tab:Definitions}. 
 
 ```{r resetting the outcomes of each variable to see the efficient result, echo=FALSE, include = FALSE}
 
@@ -503,58 +557,58 @@ mutate(IC_Occupation = recode_factor(IC_Occupation,
 
 
 ```{r new desctiptive statisticss, echo=FALSE}
-example_3.df <- data.frame(Variable = c("Age 1",
-                                        "Age 2",
-                                        "Age 3",
-                                        "Income 1",
-                                        "Income 2",
-                                        "Income 3",
-                                        "Education 1",
-                                        "Education 2",
-                                        "Primary Mode 1",
-                                        "Primary Mode 2",
-                                        "Primary Mode 3", 
-                                        "Occupation 1",
-                                        "Occupation 2",
-                                        "Occupation 3",
-                                        "Occupation 4",
-                                        "Experienced Stress 1",
-                                        "Experienced Stress 2",
-                                        "Experienced Stress 3",
-                                        "Experienced Stress 4",
-                                        "Experienced Stress 5",
-                                        "Importance of Stress 1",
-                                        "Importance of Stress 2",
-                                        "Importance of Stress 3",
-                                        "Importance of Stress 4",
-                                        "Importance of Stress 5"
+example_3.df <- data.frame(Variable = c("AgeYouth",
+                                        "AgeAdults",
+                                        "AgeSeniors",
+                                        "IncomeLow Income",
+                                        "IncomeMiddle Income",
+                                        "IncomeHigh Income",
+                                        "EducationElementary Education",
+                                        "EducationHigher Education",
+                                        "Main_modePrivate Transportation",
+                                        "Main_modePublic Transportation",
+                                        "Main_modeActive Transportation", 
+                                        "OccupationWorking",
+                                        "OccupationNon Professional",
+                                        "OccupationStudent",
+                                        "OccupationWorkingOther",
+                                        "Stress",
+                                        "Stress",
+                                        "Stress",
+                                        "Stress",
+                                        "Stress",
+                                        "Importance_Stress",
+                                        "Importance_Stress",
+                                        "Importance_Stress",
+                                        "Importance_Stress",
+                                        "Importance_Stress"
                                     
 ), 
-Note = c("Dummy variable: 1 if Age Less18 - 34 years",
-         "Dummy variable: 1 if Age 35-54 years",
-         "Dummy variable: 1 if Age 55 to 65 and more years",
-         "Dummy variable: 1 if Income 423to639",
-         "Dummy variable: 1 if Income 639to1550",
-         "Dummy variable: 1 if Income 1550to2380 more",
-         "Dummy variable: 1 if Education ELEMENTARY",
-         "Dummy variable: 1 if Education SECUNDARY to POSTGRAD",
-         "Dummy variable: 1 if Primary Mode CAR and MOTO",
-         "Dummy variable: 1 if Primary Mode TAXI, COLECTIVO, METRO, BUS",
-         "Dummy variable: 1 if Primary Mode BICYCLE, WALK",
-         "Dummy variable: 1 if Occupation FULL_TIME, PART_TIME, SELF_EMPLOYED, STUDENT_WORK",
-         "Dummy variable: 1 if Occupation UNEMPLOYED, HOME_TAKER, RETIRED",
-         "Dummy variable: 1 if Occupation STUDENT",
-         "Dummy variable: 1 if Occupation OTHER",
-         "Likert scale",
-         "Likert scale",
-         "Likert scale",
-         "Likert scale",
-         "Likert scale",
-         "Likert scale",
-         "Likert scale",
-         "Likert scale",
-         "Likert scale",
-         "Likert scale"
+Note = c("Age Less18 - 34 years",
+         "Age 35-54 years",
+         "Age 55 to 65 and more years",
+         "Income 423to639",
+         "Income 639to1550",
+         "Income 1550to2380 more",
+         "Education Elementary",
+         "Education Secondary to Postgrad",
+         "Primary Mode Car and Metro",
+         "Primary Mode Taxi, Collective, Metro, Bus",
+         "Primary Mode Bicycle, Walk",
+         "Occupation Full time, Part time, Self-employed, Student work",
+         "Occupation Unemployed, Home taker, Retired",
+         "Occupation Student",
+         "Occupation Other",
+         "Likert scale: Very low feeling of stress",
+         "Likert scale: Low feeling of stress",
+         "Likert scale: Moderate feeling of stress",
+         "Likert scale: High feeling of stress",
+         "Likert scale: Very high feeling of stress",
+         "Likert scale: No importance feeling of stress",
+         "Likert scale: Slightly important feeling of stress",
+         "Likert scale: Moderately important feeling of stress",
+         "Likert scale: Important feeling of stress",
+         "Likert scale: Very important feeling of stress"
 ), 
 
 Percentage = c(paste(round(sum(df$IC_Age == "Youth")/nrow(df)*100, 1), "%", sep = " "),
@@ -586,10 +640,10 @@ Percentage = c(paste(round(sum(df$IC_Age == "Youth")/nrow(df)*100, 1), "%", sep 
 
 ```
 
-```{r new tabulate-descriptive-statistics, echo=FALSE}
+```{r, echo=FALSE}
 kable(example_3.df,
       "latex",
-      caption = "\\label{tab:descriptive-statistics}Descriptive statistics of variables", 
+      caption = "\\label{tab:Descriptive statistics of variables}Descriptive statistics of variables", 
       booktabs = T,
       digits = 1) %>%
   kable_styling(latex_options = c("scale_down")) %>%
@@ -601,412 +655,9 @@ kable(example_3.df,
 
 
 
-### Modelling Approach
-
-One of the most common analyses of ordinal data would be related to modelling the preferences or opinions in various fields. In this regard, we can see the application of modelling in correlated ordinal data as multiple outcomes for a number of subjects or objects like participants responding to a questionnaire. Given these multivariate settings, models particularly multivariate ordinal regression models sound practical to deal with the correlation among ordinal outcomes. 
-
-The current study has used a similar application of bivariate ordinal regression models [@kenne2016pairwise] considering the gap between expected satisfaction and experienced service. It refers to two different blocks in that participants are asked to say to what extent the service has importance and in the second part they are required to reveal the actual feeling about the given service. 
-
-As can be seen in the study conducted by @hirk2020mvord the class of multivariate ordinal regression models implemented in mvord and can be applied to other applications such as having multiple or repeated ordinal observations. This research takes advantage of package mvord for R Studio which provides a flexible framework for analysing correlated ordinal data using the class of multivariate ordinal regression models. 
-
-This class of modelling assumes each ordinal response as a categorized version of an underlying continuous latent variable separated based on specific threshold parameters. This flexible framework contributes to imposing constraints on thresholds along with regression coefficients using arguments.  
-
-In this study, we implement a bivariate logit link for the class of multivariate ordinal regression models. In terms of identifiability, imposing some restrictions on the parameters is needed as the absolute scale and location are not identifiable in ordinal models. Therefore, in order to make the model identifiable, we use one of the options regarding constraining parameters set in the following way:
-
-[Fixing the intercept $\beta_{j0}$ (e.g., to zero), using flexible thresholds $\theta_j$ and fixing $\sigma_{ij}$ (e.g., to unity) $\forall j \in J_i$ and $forall i \in (1, \cdots, n)$].
-[@hirk2020mvord]
-
-
-## Analysis and Results
-
-In order to fit our bivariate ordinal regression model, we can use the mvord R package which has two different data structures of MMO and MMO2. As we are working with a wide data format and the covariates stored in different columns of the data set do not change during multiple measurements, using the MMO2 data structure is an appropriate way. In this data structure, each subject i refers to one row of the data frame and all the covariates are stored in different columns.
-
-At this point, we used the following formula to specify the model: 
-
-mod_bivariate <- mvord (formula = MMO2(r1A_STRESS,r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION + r0H_OCCUPATION  , 
-                       link = mvlogit(df = 8L)
-
-Where "mod_bivariate" is the name of the model, "mvord" is the function for fitting multivariate ordinal models, and "MMO2" is the data structure in accordance with the wide format of the data set. Predicators are demographic variables of the respondents namely their age, income, education and occupation level as well as their primary mode of commute.
-
-The correlation coefficient between H_Stress and H_Imp_stress represents the correlation between the error terms of the two dependent variables. In current study as table (see Table \ref{tab:Bivariate ordered model}) reveals, the estimated correlation coefficient is 0.250344, indicating a positive correlation between the error terms. This positive correlation coefficient suggests that there may be shared or common unobserved factors influencing both stress levels and the importance of stress levels. 
-
-Possibly, this phenomenon may be attributed to factors influencing stress levels and the perceived importance of stress that are not captured by the variables included in our model. These unobserved factors could be psychological, environmental, social, or other latent variables that affect individuals' perceptions of stress and its significance. Specifically, the presence of a positive correlation suggests that individuals who experience higher levels of stress may also perceive stress as more important or significant during their commutes. 
-
-```{r bivariate ordinal modelling, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
-
-mod_bivariate <- mvord(formula = MMO2(H_Stress, H_Imp_stress) ~ 0 + IC_Age + IC_Income + IC_Main_mode + IC_Education + IC_Occupation  ,
-                       link = mvlogit(df = 8L),
-                       # {mvord} does not like tbl or tbl_df objects:
-                       # convert to plain data.frame
-                       data = df)
-summary(mod_bivariate)
-
-```
-
-
-As the second step to make sure of the model's identifiability and reveal the latent correlation in the model, we used an argument to constrain the coefficients.
-
-
-
-```{r constraining the coefficients, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
-formula <- MMO2(H_Stress, H_Imp_stress) ~ 0 + IC_Age + IC_Income + IC_Main_mode + IC_Education + IC_Occupation  
-names_constraints(formula, data = df)
-coef.constraints = cbind(c(NA, 1), # Adults
-                         c(1, NA), # Seniors
-                         c(1, 2), # Middle Income
-                         c(1, NA), # High Income
-                         c(1, NA), # Private Transportation
-                         c(1, NA), # Public Transportation
-                         c(NA, 1), # Higher Education
-                         c(1, NA), # Working
-                         c(1, NA), # Student
-                         c(NA, NA)) #Non Professional
-# In this code 1 or 2 means yes to significant coefficient and doesn't matter if it refers to which equation. For specifying equation we have to consider which column is that.
-
-
-mod_bivariate <- mvord(formula = MMO2(H_Stress, H_Imp_stress) ~ 0 + IC_Age + IC_Income + IC_Main_mode + IC_Education + IC_Occupation  ,
-                       link = mvlogit(df = 8L),
-                       coef.constraints = coef.constraints,
-                       # {mvord} does not like tbl or tbl_df objects:
-                       # convert to plain data.frame
-                       data = df)
-summary(mod_bivariate)
-
-
-```
-
-## Discussion
-
-The results of the model analysis can be seen in table (see Table \ref{tab:Bivariate ordered model}). The analysis reveals that adult individuals aged between 35 to 54 are the most affected category when it comes to rating the importance of stress during commuting. There is a positive relation indicating that adults within this age range are more likely to assign importance to stress while commuting. 
-
-This trend holds until the age of 54, after which seniors aged 55 and above are significantly related to experiencing stress. The positive coefficient for this age group suggests that their stress level is decreasing compared to their younger counterparts. 
-
-This finding may seem incompatible with some previous research claiming that as people get older, they tend to avoid risks and tensions, especially while driving. However, it is important to consider that older individuals may also suffer from cognitive limitations as @westerman2000individual mentioned and have difficulties remembering their lapses, leading to potentially dangerous and stressful situations. This may put them at a higher risk of accidents or unpleasant commuting experiences with more stressful moments. The declining ability to self-monitor and remember specific errors could contribute to this phenomenon [@rabbitt1990age].
-
-Previous research has indicated that income groups play a significant role in the relationship between travel and satisfaction. It has been suggested that commute satisfaction is associated with commute enjoyment, commute stress, social comparisons, personality, and overall well-being [@ye2019determinants]. People with higher incomes are more likely to afford better modes of travel, such as personal drivers, and therefore experience fewer stressful situations. 
-
-As can be seen in the model, the higher income category is strongly associated with a negative and relatively large coefficient, even larger than the middle-income group, indicating less probability of experiencing stress. This could be attributed to their capability or overall well-being, enabling them to choose different modes of transportation to avoid stressful commuting experiences. These individuals may utilize problem-solving or emotion-based coping strategies. 
-
-As it has been indicated, the more people drive the less stress they experience as they become accustomed to it and this regularity helps them develop coping strategies and become more adept at the drive [@legrain2015stressed]. Interestingly, the middle-income group, despite having a positive coefficient, does not show a significant association with the experienced stress but it is still positive. However, it is worth noting that this group is highly and positively associated with assigning importance to the experienced stress during commute. 
-
-Previous work has also revealed that lower-income groups (which can be considered similar to middle-income) rated instrumental factors (e.g., cost, predictability, flexibility) higher than higher-income groups [@ye2019determinants]. This could explain why lower-income (middle-income in our study) individuals are not strongly associated with mentioning the importance of stress. They are more likely to choose public transportation or active modes of transportation due to the limited options available to them.
-
-Moreover, it has been indicated that the impact of commuting mode on stress should be considered by transportation and planning agencies in making decisions [@wener2011comparing]. Commuting specifies the level of perceived control over this process which has a reverse relation with stress [@gottholmseder2009stress]. 
-
-According to the current study, both public and private modes of transportation are positively associated with experiencing stress during commutes. A large coefficient indicates a more significant association between experiencing stress and those who choose public and private modes of transportation than active mode users. These findings are compatible with previous work indicating that commuting by car and public transit is considered to be more stressful and boring than active commuting. This has also been revealed that commuting satisfaction is associated with commute stress to a large extent and hence pedestrians, train travellers, and cyclists are significantly more satisfied with their commuting than car drivers, metro and bus users [@ye2019determinants].
-
-Having a higher level of education has been found to be associated with a positive and relatively significant coefficient leading to a higher probability of assigning importance to self-reported stress while commuting. As already has been mentioned, commute satisfaction has a strong effect on commute stress, and this is followed by the short distance factor[@ye2019determinants]. According to a previous study on the effect of telework on daily travel in Sweden, people with higher education are more likely to travel longer and this finding is willing to put travellers more at the exposure of experiencing stress [@ellder2020telework].
-
-In terms of occupation, the current study has shown that experiencing stress among those who have a profession or students is significantly associated. A negative coefficient for both groups implies that their stress level has a decreasing trend compared to their counterparts. In addition, an increasing trend of stress levels has been indicated in some professions like construction due to different reasons like having an unsafe workplace or occupational tensions [@loosemore2004gender].
-
-
-```{r coefficients, echo=FALSE, include = FALSE}
-coef.constraints <- coef.constraints |>
-  t() |>
-  data.frame() |>
-  filter(!is.na(X1) | !is.na(X2))
-
-# Initialize a table to present the model results with the names of the variables
-mod_table <- data.frame(variable = names(mod_bivariate$beta)) |>
-  # Remove the number corresponding to the coefficient constraint
-  mutate(variable = str_sub(variable, end = -2)) |>
-  # Unique variables
-  distinct() |>
-  # Now create columns with the coefficient constraints and name the variables in each of the equations
-  mutate(e1 = coef.constraints$X1,
-         e2 = coef.constraints$X2,
-         e1_var = ifelse(!is.na(e1), paste0(variable, "1"), ""),
-         e2_var = ifelse(!is.na(e1) & !is.na(e2), paste0(variable, "2"), paste0(variable, "1")),
-         e2_var = ifelse(!is.na(e2), e2_var, ""))
-```
-
-
-```{r storing thresholds (outcome variables), echo=FALSE, include = FALSE}
-mod_theta <- data.frame(thresholds1 = c("VLOW|LOW",
-                                     "LOW|MODERATE",
-                                     "MODERATE|HIGH",
-                                     "HIGH|VHIGH"),
-                        theta1 = mod_bivariate$theta$H_Stress, 
-                        setheta1 = mod_bivariate$setheta$H_Stress,
-                        
-                        thresholds2 = c("NOT IMPORTANT|SLIGHTLY IMPORTANT",
-                                     "SLIGHTLY IMPORTANT|MODERATELY IMPORTANT",
-                                     "MODERATELY IMPORTANT|IMPORTANT",
-                                     "IMPORTANT|VERY IMPORTANT"),
-                        theta2 = mod_bivariate$theta$H_Imp_stress,
-                        setheta2 = mod_bivariate$setheta$H_Imp_stress)
-
-
-
-```
-
-```{r Calculating Z and P values for thresholds (outcome variables), echo=FALSE, include = FALSE}
-z1 <- mod_theta$theta1/mod_theta$setheta1
-p1 <- (1 - pnorm(abs(z1), 0, 1)) * 2
-
-z2 <- mod_theta$theta2/mod_theta$setheta2
-p2 <- (1 - pnorm(abs(z2), 0, 1)) * 2
-```
- 
-```{r storing thresholds and P values for thresholds (outcome variables), echo=FALSE, include = FALSE}
-
-mod_theta1 <- data.frame(thresholds1 = c("VLOW|LOW",
-                                     "LOW|MODERATE",
-                                     "MODERATE|HIGH",
-                                     "HIGH|VHIGH"),
-                        theta1 = mod_bivariate$theta$H_Stress, 
-                        setheta1 = mod_bivariate$setheta$H_Stress,
-                        p1 = p1,
-                        
-                        
-                        thresholds2 = c("NOT IMPORTANT|SLIGHTLY IMPORTANT",
-                                     "SLIGHTLY IMPORTANT|MODERATELY IMPORTANT",
-                                     "MODERATELY IMPORTANT|IMPORTANT",
-                                     "IMPORTANT|VERY IMPORTANT"),
-                        theta2 = mod_bivariate$theta$H_Imp_stress,
-                        setheta2 = mod_bivariate$setheta$H_Imp_stress , 
-                        p2 = p2)
-
-```
-
-```{r, echo=FALSE, include=FALSE}
-rownames(mod_theta1) <- NULL
-```
-
-
-```{r Storing coefficients for exploratory variables, echo=FALSE, include = FALSE}
-
-(mod_beta <- coef(summary(mod_bivariate)))
-
-# # Copy mod_beta to mod_beta2
-# mod_beta2 <- mod_beta
-# 
-# # Define new variable names
-# new_row_names <- c("Adults Imp_stress",
-#                    "Seniors Stress", 
-#                    "Middle Income Stress","Middle Income Imp_stress", 
-#                    "High Income Stress", 
-#                    "Private Transportation Stress", 
-#                    "Public Transportation Stress",  
-#                    "Higher Education Stress",  
-#                    "OccupationWorking Stress", 
-#                    "OccupationStudent Stress")
-# 
-# # Assign new names to the variables
-# rownames(mod_beta2) <- new_row_names
-# 
-# # Print the modified coefficient summary
-# print(mod_beta2)
-
-```
-
-
-```{r Calculating Z and P values for exploratory variables, echo=FALSE, include = FALSE}
-
-# data_ <- as.data.frame(t(mod_bivariate))
-# mod_bivariate[["beta"]][["r0D_AGEAdults 1"]]
-# z_Seniors <- 'beta'$'r0D_AGESeniors 1'/'sebeta'$'r0D_AGESeniors 1'
-# p_Seniors <- (1 - pnorm(abs(z_Seniors), 0, 1)) * 2
-
-
-
-
-
-#for equation 1
-z_Seniors <- mod_bivariate$beta[2]/mod_bivariate$sebeta[2]
-p_Seniors <- (1 - pnorm(abs(z_Seniors), 0, 1)) * 2
-
-z_Middle_Income_Stress <- mod_bivariate$beta[3]/mod_bivariate$sebeta[3]
-p_Middle_Income_Stress <- (1 - pnorm(abs(z_Middle_Income_Stress), 0, 1)) * 2
-
-z_High_Income <-mod_bivariate$beta[5]/mod_bivariate$sebeta[5]
-p_High_Income <- (1 - pnorm(abs(z_High_Income), 0, 1)) * 2
-
-z_Private_T <- mod_bivariate$beta[6]/mod_bivariate$sebeta[6]
-p_Private_T <- (1 - pnorm(abs(z_Private_T), 0, 1)) * 2
-
-z_Public_T <- mod_bivariate$beta[7]/mod_bivariate$sebeta[7]
-p_Public_T<- (1 - pnorm(abs(z_Public_T), 0, 1)) * 2
-
-z1_Working <- mod_bivariate$beta[6]/mod_bivariate$sebeta[6]
-p_Working <- (1 - pnorm(abs(z1_Working), 0, 1)) * 2
-
-z_Student <- mod_bivariate$beta[10]/mod_bivariate$sebeta[10] 
-p_Student <- (1 - pnorm(abs(z_Student), 0, 1)) * 2
-
-
-
-#for equation 2
-z_Adults <- mod_bivariate$beta[1]/mod_bivariate$sebeta[1]
-p_Adults <- (1 - pnorm(abs(z_Adults), 0, 1)) * 2
-
-z_Middle_Income_imp_Stress <-mod_bivariate$beta[4]/mod_bivariate$sebeta[4] 
-p_Middle_Income_imp_Stress <- (1 - pnorm(abs(z_Middle_Income_imp_Stress), 0, 1)) * 2
-
-z_Higher_Education <- mod_bivariate$beta[8]/mod_bivariate$sebeta[8]
-p_Higher_Education <- (1 - pnorm(abs(z_Higher_Education), 0, 1)) * 2
-```
-
-
-```{r storing estimates and P values for exploratory variables, echo=FALSE, include = FALSE}
-mod_beta <- data.frame(Equation1 = c(NA,
-                                      "IC_AgeSeniors 1",
-                               "IC_IncomeMiddle Income 1",
-                               NA,
-                               "IC_IncomeHigh Income 1", 
-                               "IC_Main_modePrivate Transportation 1",
-                               "IC_Main_modePublic Transportation 1",
-                               NA,
-                               "IC_OccupationWorking 1", 
-                               "IC_OccupationStudent 1"),
-                        beta_equation1 = c( NA,
-                                            mod_bivariate[["beta"]][["IC_AgeSeniors 1"]],
-                                            mod_bivariate[["beta"]][["IC_IncomeMiddle Income 1"]],
-                                            NA,
-                                            mod_bivariate[["beta"]][["IC_IncomeHigh Income 1"]],
-                                            mod_bivariate[["beta"]][["IC_Main_modePrivate Transportation 1"]],
-                                            mod_bivariate[["beta"]][["IC_Main_modePublic Transportation 1"]],
-                                            NA,
-                                            mod_bivariate[["beta"]][["IC_OccupationWorking 1"]],
-                                            mod_bivariate[["beta"]][["IC_OccupationStudent 1"]]),
-                          
-                          
-                          
-                        se_equation1 = c( NA,
-                                            mod_bivariate[["sebeta"]][["IC_AgeSeniors 1"]],
-                                            mod_bivariate[["sebeta"]][["IC_IncomeMiddle Income 1"]],
-                                            NA,
-                                            mod_bivariate[["sebeta"]][["IC_IncomeHigh Income 1"]],
-                                            mod_bivariate[["sebeta"]][["IC_Main_modePrivate Transportation 1"]],
-                                            mod_bivariate[["sebeta"]][["IC_Main_modePublic Transportation 1"]],
-                                            NA,
-                                            mod_bivariate[["sebeta"]][["IC_OccupationWorking 1"]],
-                                            mod_bivariate[["sebeta"]][["IC_OccupationStudent 1"]]),
-                       
-                       p_values_E1 = c (NA, p_Seniors, p_Middle_Income_Stress, NA,  p_High_Income, p_Private_T, p_Public_T, NA, p_Working,p_Student),
-                        
-                        #  NA,
-                        # p_Seniors = p_Seniors,
-                        # p_Middle_Income_1 = p_Middle_Income_1,
-                        # NA,
-                        # p_High_Income = p_High_Income,
-                        # p_Private_T = p_Private_T,
-                        # p_Public_T = p_Public_T,
-                        # NA,
-                        # p_Working = p_Working,
-                        # p_Student = p_Student,
-                
-                        
-                
-                               
-                       Equation2 = c("IC_AgeAdults 1",
-                                      NA,
-                                      NA,
-                                "IC_IncomeMiddle Income 2",
-                                NA,
-                                NA,
-                                NA,
-                                "IC_EducationHigher Education 1",
-                                NA,
-                                NA),
-                                
-                              
-                        beta_equation2 = c (mod_bivariate[["beta"]][["IC_AgeAdults 1"]],
-                                            NA,
-                                            NA,
-                                            mod_bivariate[["beta"]][["IC_IncomeMiddle Income 2"]],
-                                            NA,
-                                            NA,
-                                            NA,
-                                            mod_bivariate[["beta"]][["IC_EducationHigher Education 1"]],
-                                            NA,
-                                            NA),
-                        
-                        
-                        se_equation2 = c( mod_bivariate[["sebeta"]][["IC_AgeAdults 1"]],
-                                         NA,
-                                         NA,
-                                         mod_bivariate[["sebeta"]][["IC_IncomeMiddle Income 2"]],
-                                         NA,
-                                         NA,
-                                         NA,
-                                         mod_bivariate[["sebeta"]][["IC_EducationHigher Education 1"]],
-                                         NA,
-                                         NA),
-                                        
-                        # p_Adults = p_Adults,
-                        # NA,
-                        # NA,
-                        # p_Middle_Income_2 = p_Middle_Income_2,
-                        # NA,
-                        # NA,
-                        # NA,
-                        # p_Higher_Education = p_Higher_Education,
-                        # NA,
-                        # NA)
-                         
-                        p_values_E2 = c (p_Adults, NA, NA, p_Middle_Income_imp_Stress, NA, NA, NA, p_Higher_Education, NA, NA))
-  
-```
-
-
-
-
-```{r collect-coefficients-and-thresholds, include=FALSE}
-# Check column names
-colnames(mod_beta)
-colnames(mod_theta1)
-
-# Rename columns to match
-colnames(mod_theta1) <- colnames(mod_beta)
-
-# Join table of coefficient estimates and thresholds
-mod_table1 <- rbind(mod_beta, mod_theta1)
-
-```
-
 
 
 \newpage
-\blandscape
-
-```{r, echo=FALSE}
-
-library(xtable)
-mod_table1 %>%
-  mutate(Equation1 = ifelse(is.na(Equation1), "-", Equation1),
-         beta_equation1 = ifelse(is.na(beta_equation1), "-", paste(round(beta_equation1, 4))),
-         se_equation1 = ifelse(is.na(se_equation1), "-", paste(round(se_equation1, 4))),
-         p_values_E1 = ifelse(is.na(p_values_E1),
-                         "-",
-                         ifelse(p_values_E1 <= 0.0001,
-                                paste(round(p_values_E1, 4)),
-                                "<0.0001")),
-         Equation2 = ifelse(is.na(Equation2), "-", Equation2),
-         beta_equation2 = ifelse(is.na(beta_equation2), "-", paste(round(beta_equation2, 4))),
-         se_equation2 = ifelse(is.na(se_equation2), "-", paste(round(se_equation2, 4))),
-         p_values_E2 = ifelse(is.na(p_values_E2),
-                         "-",
-                         ifelse(p_values_E2 <= 0.0001,
-                                paste(round(p_values_E2, 4)),
-                                "<0.0001"))) %>%
-  
-  kable(format = "latex", 
-        caption = "\\label{tab:Bivariate ordered model}Estimation Results",
-        booktabs = TRUE,
-        col.names = c("Equation1", "beta_equation1", "se_equation1", "p_values_E1", "Equation2", "beta_equation2", "se_equation2", "p_values_E2"),
-        align = c("l", "c", "c", "c", "l", "c", "c", "c")) %>%
-  kable_styling(font_size = 8, latex_options = c("scale_down"))
-# rownames(mod_table1)<- NULL
-
-```
-
-
-
-
-\elandscape
-\newpage
-
 Regarding analysis during our bivariate ordinal mode, we reclassified different modes of transportation into three general categories active transportation (walking and cycling), public transportation (taxi, collective, metro and bus) and private transportation (car and motorcycle). 
 
 As can be seen (see Figure \ref{fig:Modes of transport}), respondents mostly use public means of transportation with almost 285 out of 451 respondents as their main choice for commuting. Recent studies also have shown that using public transport has formed almost 50% of motorized trips as a salient example of the popularity of public transportation in Santiago, Chile over the recent years [@pezoa2023estimation]. 
@@ -1444,6 +1095,419 @@ df|>
 
 
 The analysis of the data (see Figure \ref{fig:Income-Age-stress}) presents a segmentation of stress levels based on income and age groups. Stress level categorized as "Very low" is highly associated with middle-income youth, low-income adults, and high-income seniors. "Low" stress level is prevalent among middle-income youth, adults, and seniors. The "Moderate" stress category can be seen more among high-income youth and seniors, as well as low-income adults. Stress level categorized as "High" is mainly linked to high-income youth, adults, and seniors. Lastly, the "Very high" stress category is primarily related to middle-income youth, low-income adults, and seniors. This comprehensive breakdown offers valuable insights into how stress perception is nuanced across distinct income and age groups.
+
+
+### Modelling Approach
+
+One of the most common analyses of ordinal data would be related to modelling the preferences or opinions in various fields. In this regard, we can see the application of modelling in correlated ordinal data as multiple outcomes for a number of subjects or objects like participants responding to a questionnaire. Given these multivariate settings, models particularly multivariate ordinal regression models sound practical to deal with the correlation among ordinal outcomes. 
+
+The current study has used a similar application of bivariate ordinal regression models [@kenne2016pairwise] considering the gap between expected satisfaction and experienced service. It refers to two different blocks in that participants are asked to say to what extent the service has importance and in the second part they are required to reveal the actual feeling about the given service. 
+
+As can be seen in the study conducted by @hirk2020mvord the class of multivariate ordinal regression models implemented in mvord and can be applied to other applications such as having multiple or repeated ordinal observations. This research takes advantage of package mvord for R Studio which provides a flexible framework for analysing correlated ordinal data using the class of multivariate ordinal regression models. 
+
+This class of modelling assumes each ordinal response as a categorized version of an underlying continuous latent variable separated based on specific threshold parameters. This flexible framework contributes to imposing constraints on thresholds along with regression coefficients using arguments.  
+
+In this study, we implement a bivariate logit link for the class of multivariate ordinal regression models. In terms of identifiability, imposing some restrictions on the parameters is needed as the absolute scale and location are not identifiable in ordinal models. Therefore, in order to make the model identifiable, we use one of the options regarding constraining parameters set in the following way:
+
+[Fixing the intercept $\beta_{j0}$ (e.g., to zero), using flexible thresholds $\theta_j$ and fixing $\sigma_{ij}$ (e.g., to unity) $\forall j \in J_i$ and $forall i \in (1, \cdots, n)$].
+[@hirk2020mvord]
+
+
+## Analysis and Results
+
+In order to fit our bivariate ordinal regression model, we can use the mvord R package which has two different data structures of MMO and MMO2. As we are working with a wide data format and the covariates stored in different columns of the data set do not change during multiple measurements, using the MMO2 data structure is an appropriate way. In this data structure, each subject i refers to one row of the data frame and all the covariates are stored in different columns.
+
+At this point, we used the following formula to specify the model: 
+
+mod_bivariate <- mvord (formula = MMO2(r1A_STRESS,r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION + r0H_OCCUPATION  , 
+                       link = mvlogit(df = 8L)
+
+Where "mod_bivariate" is the name of the model, "mvord" is the function for fitting multivariate ordinal models, and "MMO2" is the data structure in accordance with the wide format of the data set. Predicators are demographic variables of the respondents namely their age, income, education and occupation level as well as their primary mode of commute.
+
+The correlation coefficient between H_Stress and H_Imp_stress represents the correlation between the error terms of the two dependent variables. In current study as table (see Table \ref{tab:Bivariate ordered model}) reveals, the estimated correlation coefficient is 0.250344, indicating a positive correlation between the error terms. This positive correlation coefficient suggests that there may be shared or common unobserved factors influencing both stress levels and the importance of stress levels. 
+
+Possibly, this phenomenon may be attributed to factors influencing stress levels and the perceived importance of stress that are not captured by the variables included in our model. These unobserved factors could be psychological, environmental, social, or other latent variables that affect individuals' perceptions of stress and its significance. Specifically, the presence of a positive correlation suggests that individuals who experience higher levels of stress may also perceive stress as more important or significant during their commutes. 
+
+```{r bivariate ordinal modelling, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
+# Selecting variables up to "occupation" and renaming them
+selected_df <- df[, c("H_Stress", "H_Imp_stress", "IC_Age", "IC_Income", "IC_Main_mode", "IC_Education", "IC_Occupation")]
+colnames(selected_df) <- c("Stress", "Importance_Stress", "Age", "Income", "Main_mode", "Education", "Occupation")
+
+
+mod_bivariate <- mvord(formula = MMO2(Stress, Importance_Stress) ~ 0 + Age + Income + Main_mode + Education + Occupation  ,
+                       link = mvlogit(df = 8L),
+                       # {mvord} does not like tbl or tbl_df objects:
+                       # convert to plain data.frame
+                       data = selected_df)
+summary(mod_bivariate)
+
+```
+
+
+As the second step to make sure of the model's identifiability and reveal the latent correlation in the model, we used an argument to constrain the coefficients.
+
+
+
+```{r constraining the coefficients, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
+formula <- MMO2(Stress, Importance_Stress) ~ 0 + Age + Income + Main_mode + Education + Occupation  
+names_constraints(formula, data = selected_df)
+coef.constraints = cbind(c(NA, 1), # Adults
+                         c(1, NA), # Seniors
+                         c(1, 2), # Middle Income
+                         c(1, NA), # High Income
+                         c(1, NA), # Private Transportation
+                         c(1, NA), # Public Transportation
+                         c(NA, 1), # Higher Education
+                         c(1, NA), # Working
+                         c(1, NA), # Student
+                         c(NA, NA)) #Non Professional
+# In this code 1 or 2 means yes to significant coefficient and doesn't matter if it refers to which equation. For specifying equation we have to consider which column is that.
+
+
+mod_bivariate <- mvord(formula = MMO2(Stress, Importance_Stress) ~ 0 + Age + Income + Main_mode + Education + Occupation  ,
+                       link = mvlogit(df = 8L),
+                       coef.constraints = coef.constraints,
+                       # {mvord} does not like tbl or tbl_df objects:
+                       # convert to plain data.frame
+                       data = selected_df)
+summary(mod_bivariate)
+
+
+```
+
+## Discussion
+
+The results of the model analysis can be seen in table (see Table \ref{tab:Bivariate ordered model}). The analysis reveals that adult individuals aged between 35 to 54 are the most affected category when it comes to rating the importance of stress during commuting. There is a positive relation indicating that adults within this age range are more likely to assign importance to stress while commuting. 
+
+This trend holds until the age of 54, after which seniors aged 55 and above are significantly related to experiencing stress. The positive coefficient for this age group suggests that their stress level is decreasing compared to their younger counterparts. 
+
+This finding may seem incompatible with some previous research claiming that as people get older, they tend to avoid risks and tensions, especially while driving. However, it is important to consider that older individuals may also suffer from cognitive limitations as @westerman2000individual mentioned and have difficulties remembering their lapses, leading to potentially dangerous and stressful situations. This may put them at a higher risk of accidents or unpleasant commuting experiences with more stressful moments. The declining ability to self-monitor and remember specific errors could contribute to this phenomenon [@rabbitt1990age].
+
+Previous research has indicated that income groups play a significant role in the relationship between travel and satisfaction. It has been suggested that commute satisfaction is associated with commute enjoyment, commute stress, social comparisons, personality, and overall well-being [@ye2019determinants]. People with higher incomes are more likely to afford better modes of travel, such as personal drivers, and therefore experience fewer stressful situations. 
+
+As can be seen in the model, the higher income category is strongly associated with a negative and relatively large coefficient, even larger than the middle-income group, indicating less probability of experiencing stress. This could be attributed to their capability or overall well-being, enabling them to choose different modes of transportation to avoid stressful commuting experiences. These individuals may utilize problem-solving or emotion-based coping strategies. 
+
+As it has been indicated, the more people drive the less stress they experience as they become accustomed to it and this regularity helps them develop coping strategies and become more adept at the drive [@legrain2015stressed]. Interestingly, the middle-income group, despite having a positive coefficient, does not show a significant association with the experienced stress but it is still positive. However, it is worth noting that this group is highly and positively associated with assigning importance to the experienced stress during commute. 
+
+Previous work has also revealed that lower-income groups (which can be considered similar to middle-income) rated instrumental factors (e.g., cost, predictability, flexibility) higher than higher-income groups [@ye2019determinants]. This could explain why lower-income (middle-income in our study) individuals are not strongly associated with mentioning the importance of stress. They are more likely to choose public transportation or active modes of transportation due to the limited options available to them.
+
+Moreover, it has been indicated that the impact of commuting mode on stress should be considered by transportation and planning agencies in making decisions [@wener2011comparing]. Commuting specifies the level of perceived control over this process which has a reverse relation with stress [@gottholmseder2009stress]. 
+
+According to the current study, both public and private modes of transportation are positively associated with experiencing stress during commutes. A large coefficient indicates a more significant association between experiencing stress and those who choose public and private modes of transportation than active mode users. These findings are compatible with previous work indicating that commuting by car and public transit is considered to be more stressful and boring than active commuting. This has also been revealed that commuting satisfaction is associated with commute stress to a large extent and hence pedestrians, train travellers, and cyclists are significantly more satisfied with their commuting than car drivers, metro and bus users [@ye2019determinants].
+
+Having a higher level of education has been found to be associated with a positive and relatively significant coefficient leading to a higher probability of assigning importance to self-reported stress while commuting. As already has been mentioned, commute satisfaction has a strong effect on commute stress, and this is followed by the short distance factor[@ye2019determinants]. According to a previous study on the effect of telework on daily travel in Sweden, people with higher education are more likely to travel longer and this finding is willing to put travellers more at the exposure of experiencing stress [@ellder2020telework].
+
+In terms of occupation, the current study has shown that experiencing stress among those who have a profession or students is significantly associated. A negative coefficient for both groups implies that their stress level has a decreasing trend compared to their counterparts. In addition, an increasing trend of stress levels has been indicated in some professions like construction due to different reasons like having an unsafe workplace or occupational tensions [@loosemore2004gender].
+
+
+```{r coefficients, echo=FALSE, include = FALSE}
+coef.constraints <- coef.constraints |>
+  t() |>
+  data.frame() |>
+  filter(!is.na(X1) | !is.na(X2))
+
+# Initialize a table to present the model results with the names of the variables
+mod_table <- data.frame(variable = names(mod_bivariate$beta)) |>
+  # Remove the number corresponding to the coefficient constraint
+  mutate(variable = str_sub(variable, end = -2)) |>
+  # Unique variables
+  distinct() |>
+  # Now create columns with the coefficient constraints and name the variables in each of the equations
+  mutate(e1 = coef.constraints$X1,
+         e2 = coef.constraints$X2,
+         e1_var = ifelse(!is.na(e1), paste0(variable, "1"), ""),
+         e2_var = ifelse(!is.na(e1) & !is.na(e2), paste0(variable, "2"), paste0(variable, "1")),
+         e2_var = ifelse(!is.na(e2), e2_var, ""))
+```
+
+
+```{r storing thresholds (outcome variables), echo=FALSE, include = FALSE}
+mod_theta <- data.frame(thresholds1 = c("VLOW|LOW",
+                                     "LOW|MODERATE",
+                                     "MODERATE|HIGH",
+                                     "HIGH|VHIGH"),
+                        theta1 = mod_bivariate$theta$Stress, 
+                        setheta1 = mod_bivariate$setheta$Stress,
+                        
+                        thresholds2 = c("NOT IMPORTANT|SLIGHTLY IMPORTANT",
+                                     "SLIGHTLY IMPORTANT|MODERATELY IMPORTANT",
+                                     "MODERATELY IMPORTANT|IMPORTANT",
+                                     "IMPORTANT|VERY IMPORTANT"),
+                        theta2 = mod_bivariate$theta$Importance_Stress,
+                        setheta2 = mod_bivariate$setheta$Importance_Stress)
+
+
+
+```
+
+```{r Calculating Z and P values for thresholds (outcome variables), echo=FALSE, include = FALSE}
+z1 <- mod_theta$theta1/mod_theta$setheta1
+p1 <- (1 - pnorm(abs(z1), 0, 1)) * 2
+
+z2 <- mod_theta$theta2/mod_theta$setheta2
+p2 <- (1 - pnorm(abs(z2), 0, 1)) * 2
+```
+ 
+```{r storing thresholds and P values for thresholds (outcome variables), echo=FALSE, include = FALSE}
+
+mod_theta1 <- data.frame(thresholds1 = c("VLOW|LOW",
+                                     "LOW|MODERATE",
+                                     "MODERATE|HIGH",
+                                     "HIGH|VHIGH"),
+                        theta1 = mod_bivariate$theta$Stress, 
+                        setheta1 = mod_bivariate$setheta$Stress,
+                        p1 = p1,
+                        
+                        
+                        thresholds2 = c("NOT IMPORTANT|SLIGHTLY IMPORTANT",
+                                     "SLIGHTLY IMPORTANT|MODERATELY IMPORTANT",
+                                     "MODERATELY IMPORTANT|IMPORTANT",
+                                     "IMPORTANT|VERY IMPORTANT"),
+                        theta2 = mod_bivariate$theta$Importance_Stress,
+                        setheta2 = mod_bivariate$setheta$Importance_Stress , 
+                        p2 = p2)
+
+```
+
+```{r, echo=FALSE, include=FALSE}
+rownames(mod_theta1) <- NULL
+```
+
+
+```{r Storing coefficients for exploratory variables, echo=FALSE, include = FALSE}
+
+(mod_beta <- coef(summary(mod_bivariate)))
+
+# # Copy mod_beta to mod_beta2
+# mod_beta2 <- mod_beta
+# 
+# # Define new variable names
+# new_row_names <- c("Adults Imp_stress",
+#                    "Seniors Stress", 
+#                    "Middle Income Stress","Middle Income Imp_stress", 
+#                    "High Income Stress", 
+#                    "Private Transportation Stress", 
+#                    "Public Transportation Stress",  
+#                    "Higher Education Stress",  
+#                    "OccupationWorking Stress", 
+#                    "OccupationStudent Stress")
+# 
+# # Assign new names to the variables
+# rownames(mod_beta2) <- new_row_names
+# 
+# # Print the modified coefficient summary
+# print(mod_beta2)
+
+```
+
+
+```{r Calculating Z and P values for exploratory variables, echo=FALSE, include = FALSE}
+
+# data_ <- as.data.frame(t(mod_bivariate))
+# mod_bivariate[["beta"]][["r0D_AGEAdults 1"]]
+# z_Seniors <- 'beta'$'r0D_AGESeniors 1'/'sebeta'$'r0D_AGESeniors 1'
+# p_Seniors <- (1 - pnorm(abs(z_Seniors), 0, 1)) * 2
+
+
+
+
+
+#for equation 1
+z_Seniors <- mod_bivariate$beta[2]/mod_bivariate$sebeta[2]
+p_Seniors <- (1 - pnorm(abs(z_Seniors), 0, 1)) * 2
+
+z_Middle_Income_Stress <- mod_bivariate$beta[3]/mod_bivariate$sebeta[3]
+p_Middle_Income_Stress <- (1 - pnorm(abs(z_Middle_Income_Stress), 0, 1)) * 2
+
+z_High_Income <-mod_bivariate$beta[5]/mod_bivariate$sebeta[5]
+p_High_Income <- (1 - pnorm(abs(z_High_Income), 0, 1)) * 2
+
+z_Private_T <- mod_bivariate$beta[6]/mod_bivariate$sebeta[6]
+p_Private_T <- (1 - pnorm(abs(z_Private_T), 0, 1)) * 2
+
+z_Public_T <- mod_bivariate$beta[7]/mod_bivariate$sebeta[7]
+p_Public_T<- (1 - pnorm(abs(z_Public_T), 0, 1)) * 2
+
+z1_Working <- mod_bivariate$beta[6]/mod_bivariate$sebeta[6]
+p_Working <- (1 - pnorm(abs(z1_Working), 0, 1)) * 2
+
+z_Student <- mod_bivariate$beta[10]/mod_bivariate$sebeta[10] 
+p_Student <- (1 - pnorm(abs(z_Student), 0, 1)) * 2
+
+
+
+#for equation 2
+z_Adults <- mod_bivariate$beta[1]/mod_bivariate$sebeta[1]
+p_Adults <- (1 - pnorm(abs(z_Adults), 0, 1)) * 2
+
+z_Middle_Income_imp_Stress <-mod_bivariate$beta[4]/mod_bivariate$sebeta[4] 
+p_Middle_Income_imp_Stress <- (1 - pnorm(abs(z_Middle_Income_imp_Stress), 0, 1)) * 2
+
+z_Higher_Education <- mod_bivariate$beta[8]/mod_bivariate$sebeta[8]
+p_Higher_Education <- (1 - pnorm(abs(z_Higher_Education), 0, 1)) * 2
+```
+
+
+```{r storing estimates and P values for exploratory variables, echo=FALSE, include = FALSE}
+mod_beta <- data.frame(Equation1 = c(NA,
+                                      "AgeSeniors 1",
+                               "IncomeMiddle Income 1",
+                               NA,
+                               "IncomeHigh Income 1", 
+                               "Main_modePrivate Transportation 1",
+                               "Main_modePublic Transportation 1",
+                               NA,
+                               "OccupationWorking 1", 
+                               "OccupationStudent 1"),
+                        beta_equation1 = c( NA,
+                                            mod_bivariate[["beta"]][["AgeSeniors 1"]],
+                                            mod_bivariate[["beta"]][["IncomeMiddle Income 1"]],
+                                            NA,
+                                            mod_bivariate[["beta"]][["IncomeHigh Income 1"]],
+                                            mod_bivariate[["beta"]][["Main_modePrivate Transportation 1"]],
+                                            mod_bivariate[["beta"]][["Main_modePublic Transportation 1"]],
+                                            NA,
+                                            mod_bivariate[["beta"]][["OccupationWorking 1"]],
+                                            mod_bivariate[["beta"]][["OccupationStudent 1"]]),
+                          
+                          
+                          
+                        se_equation1 = c( NA,
+                                            mod_bivariate[["sebeta"]][["AgeSeniors 1"]],
+                                            mod_bivariate[["sebeta"]][["IncomeMiddle Income 1"]],
+                                            NA,
+                                            mod_bivariate[["sebeta"]][["IncomeHigh Income 1"]],
+                                            mod_bivariate[["sebeta"]][["Main_modePrivate Transportation 1"]],
+                                            mod_bivariate[["sebeta"]][["Main_modePublic Transportation 1"]],
+                                            NA,
+                                            mod_bivariate[["sebeta"]][["OccupationWorking 1"]],
+                                            mod_bivariate[["sebeta"]][["OccupationStudent 1"]]),
+                       
+                       p_values_E1 = c (NA, p_Seniors, p_Middle_Income_Stress, NA,  p_High_Income, p_Private_T, p_Public_T, NA, p_Working,p_Student),
+                        
+                        #  NA,
+                        # p_Seniors = p_Seniors,
+                        # p_Middle_Income_1 = p_Middle_Income_1,
+                        # NA,
+                        # p_High_Income = p_High_Income,
+                        # p_Private_T = p_Private_T,
+                        # p_Public_T = p_Public_T,
+                        # NA,
+                        # p_Working = p_Working,
+                        # p_Student = p_Student,
+                
+                        
+                
+                               
+                       Equation2 = c("AgeAdults 1",
+                                      NA,
+                                      NA,
+                                "IncomeMiddle Income 2",
+                                NA,
+                                NA,
+                                NA,
+                                "EducationHigher Education 1",
+                                NA,
+                                NA),
+                                
+                              
+                        beta_equation2 = c (mod_bivariate[["beta"]][["AgeAdults 1"]],
+                                            NA,
+                                            NA,
+                                            mod_bivariate[["beta"]][["IncomeMiddle Income 2"]],
+                                            NA,
+                                            NA,
+                                            NA,
+                                            mod_bivariate[["beta"]][["EducationHigher Education 1"]],
+                                            NA,
+                                            NA),
+                        
+                        
+                        se_equation2 = c( mod_bivariate[["sebeta"]][["AgeAdults 1"]],
+                                         NA,
+                                         NA,
+                                         mod_bivariate[["sebeta"]][["IncomeMiddle Income 2"]],
+                                         NA,
+                                         NA,
+                                         NA,
+                                         mod_bivariate[["sebeta"]][["EducationHigher Education 1"]],
+                                         NA,
+                                         NA),
+                                        
+                        # p_Adults = p_Adults,
+                        # NA,
+                        # NA,
+                        # p_Middle_Income_2 = p_Middle_Income_2,
+                        # NA,
+                        # NA,
+                        # NA,
+                        # p_Higher_Education = p_Higher_Education,
+                        # NA,
+                        # NA)
+                         
+                        p_values_E2 = c (p_Adults, NA, NA, p_Middle_Income_imp_Stress, NA, NA, NA, p_Higher_Education, NA, NA))
+  
+```
+
+
+
+
+```{r collect-coefficients-and-thresholds, include=FALSE}
+# Check column names
+colnames(mod_beta)
+colnames(mod_theta1)
+
+# Rename columns to match
+colnames(mod_theta1) <- colnames(mod_beta)
+
+# Join table of coefficient estimates and thresholds
+mod_table1 <- rbind(mod_beta, mod_theta1)
+
+```
+
+
+
+\newpage
+\blandscape
+
+```{r, echo=FALSE}
+
+library(xtable)
+mod_table1 %>%
+  mutate(Equation1 = ifelse(is.na(Equation1), "-", Equation1),
+         beta_equation1 = ifelse(is.na(beta_equation1), "-", paste(round(beta_equation1, 4))),
+         se_equation1 = ifelse(is.na(se_equation1), "-", paste(round(se_equation1, 4))),
+         p_values_E1 = ifelse(is.na(p_values_E1),
+                         "-",
+                         ifelse(p_values_E1 <= 0.0001,
+                                paste(round(p_values_E1, 4)),
+                                "<0.0001")),
+         Equation2 = ifelse(is.na(Equation2), "-", Equation2),
+         beta_equation2 = ifelse(is.na(beta_equation2), "-", paste(round(beta_equation2, 4))),
+         se_equation2 = ifelse(is.na(se_equation2), "-", paste(round(se_equation2, 4))),
+         p_values_E2 = ifelse(is.na(p_values_E2),
+                         "-",
+                         ifelse(p_values_E2 <= 0.0001,
+                                paste(round(p_values_E2, 4)),
+                                "<0.0001"))) %>%
+  
+  kable(format = "latex", 
+        caption = "\\label{tab:Bivariate ordered model}Estimation Results",
+        booktabs = TRUE,
+        col.names = c("Equation1", "beta_equation1", "se_equation1", "p_values_E1", "Equation2", "beta_equation2", "se_equation2", "p_values_E2"),
+        align = c("l", "c", "c", "c", "l", "c", "c", "c")) %>%
+  kable_styling(font_size = 8, latex_options = c("scale_down"))
+# rownames(mod_table1)<- NULL
+
+```
+
+
+
+
+\elandscape
+\newpage
+
+
 
 
 ## Conclusion
