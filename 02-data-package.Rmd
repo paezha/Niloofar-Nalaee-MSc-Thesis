@@ -117,7 +117,7 @@ Also calculating summary statistics for each split variable allows us to underst
 
 When starting from the raw data and following the same preprocessing and analysis steps, researchers could generally end up with similar tables and results. However, several factors can influence whether the results are exactly the same such as differences in data cleaning and handling missing data, parameters or thresholds according to the analysis, random sampling (if applicable).
 
-In summary, while exact replication is not always guaranteed, careful documentation, consistency in preprocessing, and transparent reporting of analysis steps contribute to the reproducibility of results. Additionally, using a GitHub repository and sharing code can facilitate collaboration and make it easier for future researchers to reproduce the results.
+In summary, while exact replication is not always guaranteed, careful documentation, consistency in preprocessing, and transparent reporting of analysis steps contribute to the reproducibility of results. Additionally, using the bSantiago GitHub repository and shared codes can facilitate collaboration and make it easier for future researchers to reproduce the results.
 
 
 \newpage
