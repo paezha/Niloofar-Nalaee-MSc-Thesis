@@ -287,7 +287,7 @@ As mentioned earlier in the study, previous researchers have applied various var
 
 ```{r echo=FALSE}
 
-definitions <- data.frame(Variable = c ("Age",
+definitions <- data.frame(Name = c ("Age",
                                         "Income",
                                         "Main_mode",
                                         "Education",
@@ -303,6 +303,7 @@ Note = c("Age of respondents in Santiago in 2016",
          "Occupation of respondents in Santiago in 2016",
          "How do respondents assess the level of stress they experience on their usual trips? On Likert scale",
          "What is the importance respondents assign to these aspects? On Likert scale"),
+Variable = c(NA),
 
 Subcategory = c ("[Less18], [from18to24years], [from25to34years], [from35to54years], [55to64year], [from65more]",
                                         "[Less423], [423to639], [639to977], [977to1550], [1550to2380], [2380more]pesos",
@@ -316,27 +317,23 @@ Subcategory = c ("[Less18], [from18to24years], [from25to34years], [from35to54yea
                                         
 ```
 
-\newpage
-\blandscape
-
 ```{r echo=FALSE}
 kable(definitions,
       "latex",
       caption = "\\label{tab:Definitions}Definitions of variables", 
       booktabs = T,
       digits = 1) %>%
-  kable_styling(latex_options = c("scale_down")) %>%
+  column_spec(2, width = "10em") %>% 
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em") %>%
+  kable_styling(font_size = 8) %>%
   pack_rows("Socio-Economic and Demographic Attributes", 1, 5) %>%
-  pack_rows("Stress Characteristics", 6, 7) 
+  pack_rows("Stress Characteristics", 6, 7)
   # pack_rows("Stress Characteristics", 8, 13)
   
   #row_spec(c(1, 16) - 1, extra_latex_after = "\\rowcolor{gray!20}") 
 
 ```
-
-
-\elandscape
-\newpage
 
 To initialize our bivariate ordinal model, we took advantage of previous studies about the importance of different independent variables within individual characteristics as can be seen in Table \ref{tab:Descriptive statistics of variables}.
 
