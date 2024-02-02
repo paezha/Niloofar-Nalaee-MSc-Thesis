@@ -189,6 +189,10 @@ knitr::kable(skim_IC,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:individual-characteristics-descriptive}Variables regarding individual characteristics of respondents") %>%
+  column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
+  column_spec(10, width = "10em") %>%
   kable_styling(font_size = 12, latex_options = c("scale_down"))
 ```
 
@@ -329,6 +333,9 @@ knitr::kable(skim_STW,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Travel-work-Descriptive}Variables regarding the commuting behavior of respondents") %>%
+column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
   kable_styling(font_size = 12, latex_options = c("scale_down"))
 ```
 
@@ -385,6 +392,9 @@ knitr::kable(skim_SSI,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Social-Interaction-Descriptives}Variables regarding social interactions of respondents") %>%
+    column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
   kable_styling(font_size = 8, latex_options = c("scale_down"))
 ```
 
@@ -472,6 +482,9 @@ knitr::kable(skim_SIS,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:ITC-Shifting-Descriptives}Variables regarding information and telecommunications and mode shifting of respondents") %>%
+   column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
   kable_styling(font_size = 8, latex_options = c("scale_down"))
 ```
 
@@ -644,6 +657,9 @@ knitr::kable(skim_SBE,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Built-Environment-Descriptives}Variables regarding the built environment at the place of residence of respondents") %>%
+column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
   kable_styling(font_size = 8, latex_options = c("scale_down"))
 ```
 
@@ -756,6 +772,9 @@ knitr::kable(skim_SH,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Health-Information-Descriptives}Variables regarding health information of respondents") %>%
+column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
   kable_styling(font_size = 8, latex_options = c("scale_down"))
 ```
 
@@ -902,6 +921,9 @@ knitr::kable(skim_SFE,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Feelings-Emotions-Descriptives}Variables regarding feelings and emotions of respondents") %>%
+column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
   kable_styling(font_size = 8, latex_options = c("scale_down"))
 ```
 
@@ -1074,6 +1096,9 @@ knitr::kable(skim_SRPD,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Reason-Planning-Decision-Descriptives}Variables regarding decision-making and planning of respondents") %>%
+  column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
   kable_styling(font_size = 8, latex_options = c("scale_down"))
 ```
 
@@ -1149,6 +1174,7 @@ skim_SNS$factor.top_counts[10] <- skim_SNS$factor.top_counts[10] |>
 #  kable(format = "latex")
 ```
 
+
 \newpage
 \blandscape
 
@@ -1158,6 +1184,9 @@ knitr::kable(skim_SNS,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Nature-Nustainability-Descriptives}Variables regarding perspectives about nature and sustainability of respondents") %>%
+  column_spec(2, width = "10em") %>% 
+  column_spec(4, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
   kable_styling(font_size = 8, latex_options = c("scale_down"))
 ```
 

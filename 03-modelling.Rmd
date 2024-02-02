@@ -207,7 +207,7 @@ This situation might be stressful for commuters, but they don't perceive these s
 
 In this condition commuters may experience a substantial amount of stress, and they also perceive this stress as highly important. This suggests that the stressors they face are not only impactful but are recognized and acknowledged as significant challenges during their commutes. This commuters might be dealing with major commuting stressors or facing situations that are emotionally, psychologically, or physically demanding, and there are no coping strategies available to them to reduce the effect of stress.
 
-```{r echo=FALSE}
+```{r hypothesis, echo=FALSE}
 data.frame(stress = c("Stress: Low", "Stress: Low", "Stress: High", "Stress: High"),
            importance = c("Low", "High", "Low", "High"),
            case = c("1", "2", "3", "4")) |>
@@ -227,7 +227,7 @@ The presented data in this article were gathered purposefully through a question
 
 The questionnaire covers different topics such as personal characteristics, work-related travel information, and perceptions of the built environment. Other themes include social interactions while using different modes of transportation, mode switching, and the use of information technologies. The questionnaire also addresses several self-reported health outcomes, feelings and emotions related to commuting experiences, attitudes toward transportation system satisfaction, and perceptions of nature and sustainability.
 
-This study focuses on both demographic and health-related information. To assess participants' views on stress during their commute, multiple questions were asked, including variable r1A_STRESS as one of our dependent variables, which reflects the level of stress experienced during regular trips using a 5-point Likert scale (very low, low, moderate, high, and very high). Its corresponding variable, r1GA_IMPSTRESS as the other one of our dependent variables, evaluates the importance of stress during commuting and is also assessed using a 5-point Likert scale (not important, slightly important, moderately important, important, and very important).
+This study focuses on both demographic and health-related information. To assess participants' views on stress during their commute, multiple questions were asked, including variable H_Stress as one of our dependent variables, which reflects the level of stress experienced during regular trips using a 5-point Likert scale (very low, low, moderate, high, and very high). Its corresponding variable, H_Imp_stress as the other one of our dependent variables, evaluates the importance of stress during commuting and is also assessed using a 5-point Likert scale (not important, slightly important, moderately important, important, and very important).
 
 Furthermore, health information can be useful in understanding the effects of transportation policy decisions on public health. Identifying the specific factors that contribute to stressful modes of transportation can help transportation and public health experts make commuting a safer, more enjoyable, and less stressful experience.
 
@@ -242,7 +242,7 @@ The data set contains essential socio-economic and demographic information about
 The data collection conducted a quota-sampling method based on the information from the Pre-census of 2012, and in total, 451 participants took part in the survey. This study considers the first two parts of the survey including individual characteristics and health information to figure out the relationship between personal attributes and stress-related variables. 
 
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.align='center',  fig.cap="\\label{fig:study boundaries}Santiago the case study"}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center',  fig.cap="\\label{fig:study boundaries}Santiago the case study"}
 
 labels_to_show <- c("ALHUE", "COLINA", "LA GRANJA", "SANTIAGO", "SAN BERNARDO", "PUDAHUEL","PUENTE ALTO", "QUILICURA", "MAIPU", "EL BOSQUE", "TILTIL", "SAN PEDRO", "MELIPILLA", "LO BARNECHEA", "SAN JOSE DE MAIPO", "PIRQUE", "BUIN", "PAINE", "ISLA DE MAIPO", "LAMPA", "MARIA PINTO", "CURACAVI")
 
@@ -280,63 +280,170 @@ San_area_plot
 ```
 
 
-### Descriptive Analysis
+### Descriptive Analysis 
 
 As mentioned earlier in the study, previous researchers have applied various variables for implementing the ordinal regression model. In this study, we employ a group of dependent and independent variables extracted from individual characteristics and health information parts of the surveys. According to Table \ref{tab:Definitions} for dependent variables, we chose the stress indicator of the level of stress experienced by respondents while commuting and another stress criterion revealing the importance level of stress experienced when travelling by participants. For independent variables, we selected respondents age and income level, occupation, and their primary mode of transportation while regular commuting. As can be seen in the Table \ref{tab:Definitions} there are multiple subcategories for each variable. Furthermore, there would be a regrouping process for the subcategories to reach a more efficient bivariate ordinal model.
 
 
-```{r echo=FALSE}
+```{r definition preparation, echo=FALSE}
 
-definitions <- data.frame(Variable = c ("Age",
+definitions <- data.frame(Name = c ("Age",
+                                    " ",
+                                    " ",
+                                    " ",
                                         "Income",
+                                    " ",
+                                    " ",
+                                    " ",
                                         "Main_mode",
+                                    " ",
+                                    " ",
+                                    " ",
                                         "Education",
+                                    " ",
+                                    " ",
                                         "Occupation",
+                                    " ",
+                                    " ",
+                                    " ",
+                                    " ",
                                         "Stress",
-                                        "Importance_Stress"
+                                    " ",
+                                    " ",
+                                    " ",
+                                    " ",
+                                    " ",
+                                        "Importance_Stress",
+                                    " ",
+                                    " ",
+                                    " ",
+                                    " ",
+                                    " "
 ),
 
 Note = c("Age of respondents in Santiago in 2016",
+         "Created by defining a dummy variable that takes the value of one when `IC_Age` in the package is (less than 18 to 34_",
+         "Created by defining a dummy variable that takes the value of one when `IC_Age` in the package is (35 to 54)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Age` in the package is (55 to more than 65)",
          "Level of income of respondents in Santiago in 2016",
+         "Created by defining a dummy variable that takes the value of one when `IC_Income` in the package is (less than 423 to 639 pesos)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Income` in the package is (639 to 1550 pesos)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Income` in the package is (1550 to more than 2380 pesos)",
          "Main transport mode used by respondents in Santiago in 2016 with eight levels: Car, Taxi, Collective, Motor, Metro, Bus, Bicycle, Walk",
+         "Created by defining a dummy variable that takes the value of one when `IC_Main_mode` in the package is  (Car) or (Moto)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Main_mode` in the package is  (Taxi), (Colectivo), (Metro) or (Bus)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Main_mode` in the package is  (Bicycle) or (Walk)",
          "Level of education of respondents in Santiago in 2016",
+         "Created by defining a dummy variable that takes the value of one when `IC_Education` in the package is  (Elementary)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Education` in the package is (Secondary), (College),(Profess-tech),(Postgrad)",
          "Occupation of respondents in Santiago in 2016",
+         "Created by defining a dummy variable that takes the value of one when `IC_Education` in the package is (Full-time), (Part-time),(Self-employed),(Student-work)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Education` in the package is (Unemployed), (Home-taker),(Retired)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Education` in the package is (Student)",
+         "Created by defining a dummy variable that takes the value of one when `IC_Education` in the package is (Non Professional)",
          "How do respondents assess the level of stress they experience on their usual trips? On Likert scale",
-         "What is the importance respondents assign to these aspects? On Likert scale"),
+         " ",
+         " ",
+         " ",
+         " ",
+         " ",
+         "What is the importance respondents assign to these aspects? On Likert scale",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "),
 
-Subcategory = c ("[Less18], [from18to24years], [from25to34years], [from35to54years], [55to64year], [from65more]",
+
+  Variable = c(                           " ", 
+                                          "AgeYouth",
+                                          "AgeAdults",
+                                          "AgeSeniors",
+                                          " ",
+                                          "IncomeLow Income",
+                                          "IncomeMiddle Income",
+                                          "IncomeHigh Income",
+                                          " ",
+                                          "EducationElementary Education",
+                                          "EducationHigher Education",
+                                          " ",
+                                          "Main_modePrivate Transportation",
+                                          "Main_modePublic Transportation",
+                                          "Main_modeActive Transportation", 
+                                          " ",
+                                          "OccupationWorking",
+                                          "OccupationNon Professional",
+                                          "OccupationStudent",
+                                          "OccupationWorkingOther",
+                                          " ",
+                                          "Stress",
+                                          "Stress",
+                                          "Stress",
+                                          "Stress",
+                                          "Stress",
+                                          " ",
+                                          "Importance_Stress",
+                                          "Importance_Stress",
+                                          "Importance_Stress",
+                                          "Importance_Stress",
+                                          "Importance_Stress" ),
+
+Subcategory = c (
+  "[Less18], [from18to24years], [from25to34years], [from35to54years], [55to64year], [from65more]",
+  " ",
+  " ",
+  " ",
                                         "[Less423], [423to639], [639to977], [977to1550], [1550to2380], [2380more]pesos",
+  " ",
+  " ",
+  " ",
                                         "Car, Taxi, Collective, Motor, Metro, Bus, Bicycle, Walk",
+  " ",
+  " ",
+  " ",
                                         "Elementary, Secondary, Professor, College, Postgrad",
+  " ",
+  " ",
                                         "Full time, Part time, Self employed, Unemployed, Home taker, Student, Student work, Retired, other",
+  " ",
+  " ",
+  " ",
+  " ",
                                         "Very low feeling of stress, Low feeling of stresS, Moderate feeling of stress, High feeling of stress, Very high feeling of stress",
-                                        "No importance feeling of stress, Slightly important feeling of stress,  Moderately important feeling of stress, Important feeling of stress, Very important feeling of stress")
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+                                        "No importance feeling of stress, Slightly important feeling of stress,  Moderately important feeling of stress, Important feeling of stress, Very important feeling of stress",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ")
          
 )
                                         
 ```
 
-\newpage
-\blandscape
-
-```{r echo=FALSE}
+```{r , echo=FALSE}
 kable(definitions,
       "latex",
       caption = "\\label{tab:Definitions}Definitions of variables", 
       booktabs = T,
-      digits = 1) %>%
-  kable_styling(latex_options = c("scale_down")) %>%
-  pack_rows("Socio-Economic and Demographic Attributes", 1, 5) %>%
-  pack_rows("Stress Characteristics", 6, 7) 
+      digits = 1,
+      longtable = T) %>%
+  column_spec(2, width = "10em") %>% 
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em") %>%
+  kable_styling(font_size = 8, latex_options = c("repeat_header")) %>%
+  pack_rows("Socio-Economic and Demographic Attributes", 1, 20) %>%
+  pack_rows("Stress Characteristics", 21, 32)
   # pack_rows("Stress Characteristics", 8, 13)
   
   #row_spec(c(1, 16) - 1, extra_latex_after = "\\rowcolor{gray!20}") 
 
 ```
-
-
-\elandscape
-\newpage
 
 To initialize our bivariate ordinal model, we took advantage of previous studies about the importance of different independent variables within individual characteristics as can be seen in Table \ref{tab:Descriptive statistics of variables}.
 
@@ -556,7 +663,7 @@ mutate(IC_Occupation = recode_factor(IC_Occupation,
 
 
 
-```{r new desctiptive statisticss, echo=FALSE}
+```{r , echo=FALSE}
 example_3.df <- data.frame(Variable = c("AgeYouth",
                                         "AgeAdults",
                                         "AgeSeniors",
@@ -592,7 +699,7 @@ Note = c("Age Less18 - 34 years",
          "Income 1550to2380 more",
          "Education Elementary",
          "Education Secondary to Postgrad",
-         "Primary Mode Car and Metro",
+         "Primary Mode Car and Moto",
          "Primary Mode Taxi, Collective, Metro, Bus",
          "Primary Mode Bicycle, Walk",
          "Occupation Full time, Part time, Self-employed, Student work",
@@ -640,7 +747,7 @@ Percentage = c(paste(round(sum(df$IC_Age == "Youth")/nrow(df)*100, 1), "%", sep 
 
 ```
 
-```{r, echo=FALSE}
+```{r , echo=FALSE}
 kable(example_3.df,
       "latex",
       caption = "\\label{tab:Descriptive statistics of variables}Descriptive statistics of variables", 
@@ -685,18 +792,12 @@ ggplot(df, aes(x=as.factor(IC_Main_mode), fill=as.factor(IC_Main_mode) )) +
 
 To have a better understanding of the interaction among the key variables of modes of transportation, age groups, income levels, experienced levels of stress and the importance assigned to the stress, some mosaic plots were adopted. 
 
-```{r sjplot, echo=FALSE, include = FALSE, message=FALSE, warning=FALSE}
-#req <- substitute(require(x, character.only = TRUE))
-#libs<-c("sjPlot")
-#sapply(libs, function(x) eval(req) || {install.packages(x); eval(req)})
-```
-
 
 Mode, age and income are the most crucial variables in our study. As has been studied in previous work, different modes of commuting can be effective on people's feelings and in general, subjective well-being referring to the importance of focusing on individuals' travel experiences such as stress [@smith2017commute].
 
 Income also is one of the significant variables as it determines people's options for commuting. According to the previous research if commuters are low-income workers they tend to use more public transportation in Santiago, Chile [@gomez2023urban] which is important as it echoes findings of this research about predominance of low and middle income groups in Santiago (see Figure \ref{fig:Income level}) . Another influential variable on people's experience of commuting is age which sometimes makes commuting difficult for older people especially when they choose walking according to the folks in La Cisterna district to the city center in Santiago [@tironi2016affects].   
 
-```{r , echo=FALSE, fig.align='center', fig.cap="\\label{fig:Income level}Income level"}
+```{r, echo=FALSE, fig.align='center', fig.cap="\\label{fig:Income level}Income level"}
 
 
 ggplot(df, aes(x=as.factor(IC_Income), fill=as.factor(IC_Income) )) + 
@@ -715,7 +816,7 @@ ggplot(df, aes(x=as.factor(IC_Income), fill=as.factor(IC_Income) )) +
 
 So we are analyzing these items in terms of their effect on each other.
 
-```{r display Age groupd by transportation modes, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r xtab Age groupd by transportation modes, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 xtab_age_transp <- sjPlot::tab_xtab(var.row = df$IC_Main_mode, 
                  var.col = df$IC_Age, 
                  title = "Table Title", 
@@ -730,7 +831,7 @@ According to the results from the cross-tabulation of modes of transport by age 
 
 Therefore as can be seen (see Figure \ref{fig:Transportation Mode by Age group}) youth respondents tend to use public and active modes, adults are more interested in private and active, and seniors use almost all modes in a similar way but more interested in private mode.
 
-```{r , echo=FALSE, warning=FALSE, fig.cap="\\label{fig:Transportation Mode by Age group}Transportation Mode by Age group"}
+```{r, echo=FALSE, warning=FALSE, fig.cap="\\label{fig:Transportation Mode by Age group}Transportation Mode by Age group"}
 ggplot(data = df) +
   geom_mosaic(aes(x = product(IC_Age, IC_Main_mode), fill=IC_Age)) + 
   labs(title = "Transportation Mode by Age group", y= "Age Groups", x = "Modes of Transportation") 
@@ -794,7 +895,7 @@ df %>%
 
 
 
-```{r , echo=FALSE, fig.cap="\\label{fig:stress and importance of stress and mode}Conditional Mosaic Plot of Stress Level, Importance of Stress and Mode of Transport"}
+```{r, echo=FALSE, fig.cap="\\label{fig:stress and importance of stress and mode}Conditional Mosaic Plot of Stress Level, Importance of Stress and Mode of Transport"}
 
 df|>
   filter(!is.na(H_Stress), !is.na(H_Imp_stress), !is.na(IC_Main_mode)) |>
@@ -852,7 +953,7 @@ df %>%
 ```
 
 
-```{r , echo=FALSE, fig.cap="\\label{fig:stress importance of stress and income}Conditional Mosaic Plot of Stress Level, Importance of Stress, and Income Level"}
+```{r, echo=FALSE, fig.cap="\\label{fig:stress importance of stress and income}Conditional Mosaic Plot of Stress Level, Importance of Stress, and Income Level"}
 df|>
   filter(!is.na(H_Stress), !is.na(H_Imp_stress), !is.na(IC_Income)) |>
   ggplot() +
@@ -903,7 +1004,7 @@ df %>%
 ```
 
 
-```{r , echo=FALSE, fig.cap="\\label{fig:stress importance of stress and age}Conditional Mosaic Plot of Stress Level and Importance of Stress and Age Groups"}
+```{r, echo=FALSE, fig.cap="\\label{fig:stress importance of stress and age}Conditional Mosaic Plot of Stress Level and Importance of Stress and Age Groups"}
 df|>
   filter(!is.na(H_Stress), !is.na(H_Imp_stress), !is.na(IC_Age)) |>
   ggplot() +
@@ -918,7 +1019,7 @@ df|>
 According to (see Figure \ref{fig:stress importance of stress and age}) youth and adults as the most populated groups incorporate 60% and 30% of whole respondents. A common trend among all groups is that around 30% of them felt moderate stress levels and seniors had the largest portion of feeling stress at a very high level compared to other users. 
 
 About youth and adults as the larger portion of respondents, there is a kind of similar dispersion of feeling stress ranging from low to high level with more than 70% of people in both age groups For the importance of stress, while almost all groups felt a high level of stress, the importance of stress was far more important for adults,and seniors and youth assigned mostly very high level of importance but slightly less than adults. 
-```{r percentages-for-mode-age-income, echo=FALSE, include=FALSE}
+```{r percentages for mode age Income, echo=FALSE, include=FALSE}
 df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
@@ -938,7 +1039,7 @@ df %>%
 
 
 
-```{r , echo=FALSE, fig.cap="\\label{fig:Income-mode-Age}Conditional Mosaic Plot of Mode,  Age and Income"}
+```{r, echo=FALSE, fig.cap="\\label{fig:Income-mode-Age}Conditional Mosaic Plot of Mode,  Age and Income"}
 df|>
   filter(!is.na(IC_Age), !is.na(IC_Main_mode), !is.na(IC_Income)) |>
   ggplot() +
@@ -955,7 +1056,7 @@ The analysis of the data(see Figure \ref{fig:Income-mode-Age}) reveals distinct 
 Among seniors, there's a prevalence of low-income status, with a preference for private transportation modes. These findings provide insights into the varying preferences and financial considerations that influence transportation choices across age groups.
 
 
-```{r percentages-for-Income-mode-and-stress, echo=FALSE ,include=FALSE, message=FALSE, warning=FALSE}
+```{r percentages for Income mode and stress, echo=FALSE ,include=FALSE, message=FALSE, warning=FALSE}
 df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
@@ -991,7 +1092,7 @@ df|>
 
 As it has been revealed (see Figure \ref{fig:IMS}), almost 80% of lower-level income people and 65% of middle-income level as the most populated group use public transport which has been indicated to be highly stressful, especially among low-income ones. High-income respondents where the most interested group in using private mode with 40 % of them and relatively less commuting stress but they highly rely on public mode with about 50% among all.
 
-```{r percentages-for-Income-mode-and-importance-stress, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
+```{r percentages for Income mode and importance-stress, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
@@ -1009,7 +1110,7 @@ df %>%
 ```
 
 
-```{r , echo=FALSE, fig.cap="\\label{fig:Income-mode-and-importance-stress}Conditional Mosaic Plot of Importance Stress and Income and Mode"}
+```{r, echo=FALSE, fig.cap="\\label{fig:Income-mode-and-importance-stress}Conditional Mosaic Plot of Importance Stress and Income and Mode"}
 df|>
   filter(!is.na(H_Imp_stress), !is.na(IC_Main_mode), !is.na(IC_Income)) |>
   ggplot() +
@@ -1026,7 +1127,7 @@ The analysis of the provided information reveals (see Figure \ref{fig:Income-mod
 
 In the middle-income group, "Active" transportation is most common (39.2%), while a majority experiences "Low" stress levels (43.2%). Notably, the "Very important" stress category (40.88%) is prominent. Conversely, high-income individuals tend to favour private transportation modes, coinciding with the highest occurrence of the "Very high" stress level (46.3%). The "Slightly important" stress category (75.48%) also stands out. This comprehensive analysis provides insights into the complex interplay between income, transportation choices, and stress levels and the importance of stress.
 
-```{r percentages for Income-Age-and-importance-stress, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
+```{r percentages for Income Age and importance-stress, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 df %>%
   # filter for recent years & limited ages
   # filter(year > 2009,
@@ -1045,7 +1146,7 @@ df %>%
 
 
 
-```{r , echo=FALSE,  fig.cap="\\label{fig:Income Age and importance of stress}Conditional Mosaic Plot of Importance Stress, Age and Income"}
+```{r, echo=FALSE,  fig.cap="\\label{fig:Income Age and importance of stress}Conditional Mosaic Plot of Importance Stress, Age and Income"}
 df|>
   filter(!is.na(H_Imp_stress), !is.na(IC_Income), !is.na(IC_Age)) |>
   ggplot() +
@@ -1062,7 +1163,7 @@ The analysis of the data (see Figure \ref{fig:Income Age and importance of stres
 
 The importance level categorized as "Moderately important" can be seen more among middle-income youth, as well as low-income adults and seniors. Among the "Important" stress category, high-income youth and adults, along with low-income seniors, stand out. Lastly, the "Very important" stress category is mainly linked to middle-income youth and adults, and high-income seniors. This comprehensive breakdown provides valuable insights into how stress perception varies across different income and age groups.
 
-```{r percentages for Income,Age, and  stress, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+```{r percentages for Income Age and  stress, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
 
 df %>%
   # filter for recent years & limited ages
@@ -1081,7 +1182,7 @@ df %>%
 
 
 
-```{r , echo=FALSE, fig.cap="\\label{fig:Income-Age-stress}Conditional Mosaic Plot of Experienced Stress, Income and Age"}
+```{r, echo=FALSE, fig.cap="\\label{fig:Income-Age-stress}Conditional Mosaic Plot of Experienced Stress, Income and Age"}
 df|>
   filter(!is.na(H_Stress), !is.na(IC_Income), !is.na(IC_Age)) |>
   ggplot() +
@@ -1269,7 +1370,7 @@ mod_theta1 <- data.frame(thresholds1 = c("VLOW|LOW",
 
 ```
 
-```{r, echo=FALSE, include=FALSE}
+```{r nvalues, echo=FALSE, include=FALSE}
 rownames(mod_theta1) <- NULL
 ```
 
@@ -1452,7 +1553,7 @@ mod_beta <- data.frame(Equation1 = c(NA,
 
 
 
-```{r collect-coefficients-and-thresholds, include=FALSE}
+```{r collect coefficients and thresholds, include=FALSE}
 # Check column names
 colnames(mod_beta)
 colnames(mod_theta1)
@@ -1494,20 +1595,16 @@ mod_table1 %>%
   kable(format = "latex", 
         caption = "\\label{tab:Bivariate ordered model}Estimation Results",
         booktabs = TRUE,
-        col.names = c("Equation1", "beta_equation1", "se_equation1", "p_values_E1", "Equation2", "beta_equation2", "se_equation2", "p_values_E2"),
+        col.names = c("Variables: Equation 1", "Estimate", "Standard Error", "p-value", "Variables: Equation 2", "Estimate", "Standard Error", "p-value"),
         align = c("l", "c", "c", "c", "l", "c", "c", "c")) %>%
   kable_styling(font_size = 8, latex_options = c("scale_down"))
 # rownames(mod_table1)<- NULL
 
+
 ```
-
-
-
 
 \elandscape
 \newpage
-
-
 
 
 ## Conclusion
