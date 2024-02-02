@@ -1,5 +1,5 @@
 ```{r load-packages, include=FALSE}
-remotes::install_github("paezha/bSantiago")
+#remotes::install_github("paezha/bSantiago")
 library(bSantiago) # A data package with the results of a travel and well-being survey conducted in Santiago in 2016
 library(dplyr) # A Grammar of Data Manipulation
 library(kableExtra)
@@ -189,11 +189,11 @@ knitr::kable(skim_IC,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:individual-characteristics-descriptive}Variables regarding individual characteristics of respondents") %>%
-  column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  column_spec(10, width = "10em") %>%
-  kable_styling(font_size = 12, latex_options = c("scale_down"))
+  #column_spec(2, width = "10em") %>% 
+  #column_spec(4, width = "10em") %>%
+  #column_spec(6, width = "10em") %>%
+  column_spec(11, width = "10em") %>%
+  kable_styling(font_size = 7)
 ```
 
 \elandscape
@@ -333,10 +333,10 @@ knitr::kable(skim_STW,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Travel-work-Descriptive}Variables regarding the commuting behavior of respondents") %>%
-column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  kable_styling(font_size = 12, latex_options = c("scale_down"))
+  #column_spec(2, width = "10em") %>% 
+  #column_spec(4, width = "10em") %>%
+  column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7)
 ```
 
 \elandscape
@@ -392,10 +392,10 @@ knitr::kable(skim_SSI,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Social-Interaction-Descriptives}Variables regarding social interactions of respondents") %>%
-    column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  kable_styling(font_size = 8, latex_options = c("scale_down"))
+  #  column_spec(2, width = "10em") %>% 
+  #column_spec(4, width = "10em") %>%
+  column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7)
 ```
 
 \elandscape
@@ -482,10 +482,10 @@ knitr::kable(skim_SIS,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:ITC-Shifting-Descriptives}Variables regarding information and telecommunications and mode shifting of respondents") %>%
-   column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  kable_styling(font_size = 8, latex_options = c("scale_down"))
+  #column_spec(2, width = "10em") %>% 
+  #column_spec(4, width = "10em") %>%
+  column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7)
 ```
 
 \elandscape
@@ -648,24 +648,29 @@ skim_SBE$factor.top_counts[22] <- skim_SBE$factor.top_counts[22] |>
 #  kable(format = "latex")
 ```
 
+<!--
 \newpage
 \blandscape
-
+-->
 ```{r , echo=FALSE}
   
 knitr::kable(skim_SBE,
              format = "latex",
+             digits = 2,
+             longtable = TRUE,
              booktabs = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
              caption = "\\label{tab:Built-Environment-Descriptives}Variables regarding the built environment at the place of residence of respondents") %>%
-column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  kable_styling(font_size = 8, latex_options = c("scale_down"))
+  column_spec(3, width = "3em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(6, width = "3em") %>%
+  column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
-
+<!--
 \elandscape
 \newpage
-
+-->
 Table `Santiago_H` contains responses to twelve questions related to health. 
 Health information could be useful in investigating the effects of transportation policy decisions on public health. Also being aware of specific factors making modes stressful will help transportation and public health experts make commuting a safer, more enjoyable and less stressful activity. Consequently, planners and transportation experts could mitigate the potentially serious health outcomes of a stressful commute [@legrain2015stressed]. Having such a detailed data set and understanding the relationship between health and mode choice in commuting would help them to adopt reform policies and management strategies in accordance with healthy modes of travel as active and public transportation [@mattisson2018modelling]. 
 
@@ -772,10 +777,10 @@ knitr::kable(skim_SH,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Health-Information-Descriptives}Variables regarding health information of respondents") %>%
-column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  kable_styling(font_size = 8, latex_options = c("scale_down"))
+  #column_spec(2, width = "10em") %>% 
+  #column_spec(4, width = "10em") %>%
+  #column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7)
 ```
 
 \elandscape
@@ -921,10 +926,10 @@ knitr::kable(skim_SFE,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Feelings-Emotions-Descriptives}Variables regarding feelings and emotions of respondents") %>%
-column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  kable_styling(font_size = 8, latex_options = c("scale_down"))
+  #column_spec(2, width = "10em") %>% 
+  #column_spec(4, width = "10em") %>%
+  #column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7)
 ```
 
 \elandscape
@@ -1096,10 +1101,10 @@ knitr::kable(skim_SRPD,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Reason-Planning-Decision-Descriptives}Variables regarding decision-making and planning of respondents") %>%
-  column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  kable_styling(font_size = 8, latex_options = c("scale_down"))
+  #column_spec(2, width = "10em") %>% 
+  #column_spec(4, width = "10em") %>%
+  #column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7)
 ```
 
 \elandscape
@@ -1184,10 +1189,10 @@ knitr::kable(skim_SNS,
              format = "latex",
              booktabs = TRUE,
              caption = "\\label{tab:Nature-Nustainability-Descriptives}Variables regarding perspectives about nature and sustainability of respondents") %>%
-  column_spec(2, width = "10em") %>% 
-  column_spec(4, width = "10em") %>%
-  column_spec(6, width = "10em") %>%
-  kable_styling(font_size = 8, latex_options = c("scale_down"))
+  #column_spec(2, width = "10em") %>% 
+  #column_spec(4, width = "10em") %>%
+  #column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7)
 ```
 
 \elandscape

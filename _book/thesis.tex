@@ -601,9 +601,8 @@ Other variables regarding the respondents include their height (cm) and weight (
 
 \caption{\label{tab:unnamed-chunk-6}\label{tab:individual-characteristics-descriptive}Variables regarding individual characteristics of respondents}
 \centering
-\resizebox{\linewidth}{!}{
-\fontsize{12}{14}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}rrr>{\raggedright\arraybackslash}p{10em}rlrrrrrrr}
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{llrrrrrrrl>{\raggedleft\arraybackslash}p{10em}lrrrrrrr}
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & character.min & character.max & character.empty & character.n\_unique & character.whitespace & factor.ordered & factor.n\_unique & factor.top\_counts & numeric.mean & numeric.sd & numeric.p0 & numeric.p25 & numeric.p50 & numeric.p75 & numeric.p100\\
 \midrule
@@ -633,7 +632,7 @@ numeric & IC\_Adults & 5 & 0.9889135 & NA & NA & NA & NA & NA & NA & NA & NA & 2
 \addlinespace
 numeric & IC\_Children & 6 & 0.9866962 & NA & NA & NA & NA & NA & NA & NA & NA & 0.6561798 & 0.9231696 & 0 & 0 & 0 & 1.00 & 6\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
@@ -675,9 +674,8 @@ The most common time of the day for commuting is between 7 am and 9 am, but ther
 
 \caption{\label{tab:unnamed-chunk-11}\label{tab:Travel-work-Descriptive}Variables regarding the commuting behavior of respondents}
 \centering
-\resizebox{\linewidth}{!}{
-\fontsize{12}{14}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}l>{\raggedleft\arraybackslash}p{10em}l}
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{llrrlr>{\raggedright\arraybackslash}p{10em}}
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
@@ -690,7 +688,7 @@ factor & TW\_Commute\_duration & 10 & 0.9778271 & TRUE & 4 & 1h and more : 133, 
 factor & TW\_Commute\_schedule & 171 & 0.6208426 & TRUE & 6 & 7:00 - 9:00: 168, Others: 47, 9:00 - 13:00: 39, 18:00 - 21:00: 14\\
 factor & TW\_Commute\_monthlycost & 7 & 0.9844789 & TRUE & 4 & 35,000-75,000: 199, LESS THAN 35,000: 166, 75,000-125,000: 46, MORE THAN 125,000: 33\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
@@ -711,9 +709,8 @@ We can see in Table \ref{tab:Social-Interaction-Descriptives}, that slightly few
 
 \caption{\label{tab:unnamed-chunk-12}\label{tab:Social-Interaction-Descriptives}Variables regarding social interactions of respondents}
 \centering
-\resizebox{\linewidth}{!}{
-\fontsize{8}{10}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}l>{\raggedleft\arraybackslash}p{10em}l}
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{llrrlr>{\raggedright\arraybackslash}p{10em}}
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
@@ -722,7 +719,7 @@ factor & SI\_Imp\_interaction & 12 & 0.9733925 & TRUE & 5 & MODERATELY IMPORTANT
 factor & SI\_Discrimination & 4 & 0.9911308 & FALSE & 2 & NO: 338, YES: 109\\
 factor & SI\_Discrim\_mode & 377 & 0.1640798 & FALSE & 7 & BUS: 33, METRO: 15, CAR: 8, TAXI: 7\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
@@ -741,9 +738,8 @@ Following this, car-use deduction has been turned into the political agenda arou
 
 \caption{\label{tab:unnamed-chunk-14}\label{tab:ITC-Shifting-Descriptives}Variables regarding information and telecommunications and mode shifting of respondents}
 \centering
-\resizebox{\linewidth}{!}{
-\fontsize{8}{10}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}l>{\raggedleft\arraybackslash}p{10em}l}
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{llrrlr>{\raggedright\arraybackslash}p{10em}}
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
@@ -758,7 +754,7 @@ factor & IS\_Techtool & 8 & 0.9822616 & FALSE & 2 & YES: 372, NO: 71\\
 factor & IS\_Info\_techtool & 15 & 0.9667406 & TRUE & 5 & GOOD: 153, VERY GOOD: 118, FAIR: 63, EXCELLENT: 63\\
 factor & IS\_Imp\_techtool & 10 & 0.9778271 & TRUE & 5 & VERY IMPORTANT: 198, IMPORTANT: 122, MODERATELY IMPORTANT: 68, SLIGHTLY IMPORTANT: 33\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
@@ -771,49 +767,50 @@ In this way, \texttt{r7AA\_AUTOSPACE} is about the perception of space for autos
 
 The descriptive statistics suggest that most respondents have positive evaluations of space for cars and parking spaces, at the same time that they assign a high level of importance to these attributes. Respondents also show a slight tendency to assess positively the space for pedestrians and the quality of sidewalks located near their home, and these features are also regarded as very important or important by a majority of respondents. In contrast, although respondents feel strongly about the importance of facilities related to buses and cycling, the perception of these attributes tends to be poor.
 
-\newpage
-\blandscape
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-15}\label{tab:Built-Environment-Descriptives}Variables regarding the built environment at the place of residence of respondents}
-\centering
-\resizebox{\linewidth}{!}{
-\fontsize{8}{10}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}l>{\raggedleft\arraybackslash}p{10em}l}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{ll>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{3em}l>{\raggedleft\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{10em}}
+\caption{\label{tab:unnamed-chunk-15}\label{tab:Built-Environment-Descriptives}Variables regarding the built environment at the place of residence of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
 \midrule
-factor & BE\_Autospace & 10 & 0.9778271 & TRUE & 5 & GOOD: 127, VERY GOOD: 117, FAIR: 72, EXCELLENT: 67\\
-factor & BE\_Parking\_num & 10 & 0.9778271 & TRUE & 5 & GOOD: 119, FAIR: 96, VERY GOOD: 88, POOR: 85\\
-factor & BE\_Quality\_highway & 11 & 0.9756098 & TRUE & 5 & VERY GOOD: 142, GOOD: 141, FAIR: 67, EXCELLENT: 49\\
-factor & BE\_Space\_pedestrian & 10 & 0.9778271 & TRUE & 5 & GOOD: 141, VERY GOOD: 102, FAIR: 82, EXCELLENT: 68\\
-factor & BE\_Quality\_sidewalk & 9 & 0.9800443 & TRUE & 5 & GOOD: 119, FAIR: 110, VERY GOOD: 99, POOR: 67\\
-\addlinespace
-factor & BE\_Clean\_busstop & 9 & 0.9800443 & TRUE & 5 & POOR: 129, FAIR: 108, GOOD: 102, VERY GOOD: 67\\
-factor & BE\_Seat\_busstop & 9 & 0.9800443 & TRUE & 5 & POOR: 142, FAIR: 122, GOOD: 94, VERY GOOD: 53\\
-factor & BE\_Climateprotection\_busstop & 10 & 0.9778271 & TRUE & 5 & POOR: 156, FAIR: 139, GOOD: 88, VERY GOOD: 36\\
-factor & BE\_cycloway\_num & 9 & 0.9800443 & TRUE & 5 & POOR: 189, FAIR: 96, GOOD: 84, VERY GOOD: 37\\
-factor & BE\_Quality\_cycloway & 9 & 0.9800443 & TRUE & 5 & POOR: 171, FAIR: 96, GOOD: 96, VERY GOOD: 44\\
-\addlinespace
-factor & BE\_Bikeshare & 9 & 0.9800443 & TRUE & 5 & POOR: 177, GOOD: 100, FAIR: 69, EXCELLENT: 49\\
-factor & BE\_Imp\_Autospace & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 140, MODERATELY IMPORTANT: 104, IMPORTANT: 95, SLIGHTLY IMPORTANT: 56\\
-factor & BE\_Imp\_Parking\_num & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 152, MODERATELY IMPORTANT: 102, IMPORTANT: 91, SLIGHTLY IMPORTANT: 51\\
-factor & BE\_Imp\_Quality\_highway & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 214, IMPORTANT: 100, MODERATELY IMPORTANT: 82, NOT IMPORTANT: 23\\
-factor & BE\_Imp\_Space\_pedestrian & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 278, IMPORTANT: 103, MODERATELY IMPORTANT: 41, NOT IMPORTANT: 10\\
-\addlinespace
-factor & BE\_Imp\_Quality\_sidewalk & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 297, IMPORTANT: 86, MODERATELY IMPORTANT: 35, SLIGHTLY IMPORTANT: 12\\
-factor & BE\_Imp\_Clean\_busstop & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 286, IMPORTANT: 92, MODERATELY IMPORTANT: 39, SLIGHTLY IMPORTANT: 13\\
-factor & BE\_Imp\_Seat\_busstop & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 92, MODERATELY IMPORTANT: 56, SLIGHTLY IMPORTANT: 19\\
-factor & BE\_Imp\_Climateprotection\_busstop & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 296, IMPORTANT: 83, MODERATELY IMPORTANT: 34, SLIGHTLY IMPORTANT: 14\\
-factor & BE\_Imp\_cycloway\_num & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 296, IMPORTANT: 76, MODERATELY IMPORTANT: 42, SLIGHTLY IMPORTANT: 19\\
-\addlinespace
-factor & BE\_Imp\_Quality\_cycloway & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 308, IMPORTANT: 67, MODERATELY IMPORTANT: 44, NOT IMPORTANT: 11\\
-factor & BE\_Imp\_Bikeshare & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANT: 259, IMPORTANT: 78, MODERATELY IMPORTANT: 66, SLIGHTLY IMPORTANT: 22\\
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-15}Variables regarding the built environment at the place of residence of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
+\midrule
+\endhead
+
+\endfoot
 \bottomrule
-\end{tabular}}
-\end{table}
-\elandscape
-\newpage
+\endlastfoot
+factor & BE\_Autospace & 10 & 0.98 & TRUE & 5 & GOOD: 127, VERY GOOD: 117, FAIR: 72, EXCELLENT: 67\\
+factor & BE\_Parking\_num & 10 & 0.98 & TRUE & 5 & GOOD: 119, FAIR: 96, VERY GOOD: 88, POOR: 85\\
+factor & BE\_Quality\_highway & 11 & 0.98 & TRUE & 5 & VERY GOOD: 142, GOOD: 141, FAIR: 67, EXCELLENT: 49\\
+factor & BE\_Space\_pedestrian & 10 & 0.98 & TRUE & 5 & GOOD: 141, VERY GOOD: 102, FAIR: 82, EXCELLENT: 68\\
+factor & BE\_Quality\_sidewalk & 9 & 0.98 & TRUE & 5 & GOOD: 119, FAIR: 110, VERY GOOD: 99, POOR: 67\\
+\addlinespace
+factor & BE\_Clean\_busstop & 9 & 0.98 & TRUE & 5 & POOR: 129, FAIR: 108, GOOD: 102, VERY GOOD: 67\\
+factor & BE\_Seat\_busstop & 9 & 0.98 & TRUE & 5 & POOR: 142, FAIR: 122, GOOD: 94, VERY GOOD: 53\\
+factor & BE\_Climateprotection\_busstop & 10 & 0.98 & TRUE & 5 & POOR: 156, FAIR: 139, GOOD: 88, VERY GOOD: 36\\
+factor & BE\_cycloway\_num & 9 & 0.98 & TRUE & 5 & POOR: 189, FAIR: 96, GOOD: 84, VERY GOOD: 37\\
+factor & BE\_Quality\_cycloway & 9 & 0.98 & TRUE & 5 & POOR: 171, FAIR: 96, GOOD: 96, VERY GOOD: 44\\
+\addlinespace
+factor & BE\_Bikeshare & 9 & 0.98 & TRUE & 5 & POOR: 177, GOOD: 100, FAIR: 69, EXCELLENT: 49\\
+factor & BE\_Imp\_Autospace & 12 & 0.97 & TRUE & 5 & VERY IMPORTANT: 140, MODERATELY IMPORTANT: 104, IMPORTANT: 95, SLIGHTLY IMPORTANT: 56\\
+factor & BE\_Imp\_Parking\_num & 12 & 0.97 & TRUE & 5 & VERY IMPORTANT: 152, MODERATELY IMPORTANT: 102, IMPORTANT: 91, SLIGHTLY IMPORTANT: 51\\
+factor & BE\_Imp\_Quality\_highway & 11 & 0.98 & TRUE & 5 & VERY IMPORTANT: 214, IMPORTANT: 100, MODERATELY IMPORTANT: 82, NOT IMPORTANT: 23\\
+factor & BE\_Imp\_Space\_pedestrian & 11 & 0.98 & TRUE & 5 & VERY IMPORTANT: 278, IMPORTANT: 103, MODERATELY IMPORTANT: 41, NOT IMPORTANT: 10\\
+\addlinespace
+factor & BE\_Imp\_Quality\_sidewalk & 11 & 0.98 & TRUE & 5 & VERY IMPORTANT: 297, IMPORTANT: 86, MODERATELY IMPORTANT: 35, SLIGHTLY IMPORTANT: 12\\
+factor & BE\_Imp\_Clean\_busstop & 11 & 0.98 & TRUE & 5 & VERY IMPORTANT: 286, IMPORTANT: 92, MODERATELY IMPORTANT: 39, SLIGHTLY IMPORTANT: 13\\
+factor & BE\_Imp\_Seat\_busstop & 11 & 0.98 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 92, MODERATELY IMPORTANT: 56, SLIGHTLY IMPORTANT: 19\\
+factor & BE\_Imp\_Climateprotection\_busstop & 11 & 0.98 & TRUE & 5 & VERY IMPORTANT: 296, IMPORTANT: 83, MODERATELY IMPORTANT: 34, SLIGHTLY IMPORTANT: 14\\
+factor & BE\_Imp\_cycloway\_num & 11 & 0.98 & TRUE & 5 & VERY IMPORTANT: 296, IMPORTANT: 76, MODERATELY IMPORTANT: 42, SLIGHTLY IMPORTANT: 19\\
+\addlinespace
+factor & BE\_Imp\_Quality\_cycloway & 11 & 0.98 & TRUE & 5 & VERY IMPORTANT: 308, IMPORTANT: 67, MODERATELY IMPORTANT: 44, NOT IMPORTANT: 11\\
+factor & BE\_Imp\_Bikeshare & 12 & 0.97 & TRUE & 5 & VERY IMPORTANT: 259, IMPORTANT: 78, MODERATELY IMPORTANT: 66, SLIGHTLY IMPORTANT: 22\\*
+\end{longtable}
+\endgroup{}
 
 Table \texttt{Santiago\_H} contains responses to twelve questions related to health.
 Health information could be useful in investigating the effects of transportation policy decisions on public health. Also being aware of specific factors making modes stressful will help transportation and public health experts make commuting a safer, more enjoyable and less stressful activity. Consequently, planners and transportation experts could mitigate the potentially serious health outcomes of a stressful commute (Legrain et al., 2015). Having such a detailed data set and understanding the relationship between health and mode choice in commuting would help them to adopt reform policies and management strategies in accordance with healthy modes of travel as active and public transportation (Mattisson et al., 2018).
@@ -830,9 +827,8 @@ This aspect of the experience is rated as very important or important by a major
 
 \caption{\label{tab:unnamed-chunk-16}\label{tab:Health-Information-Descriptives}Variables regarding health information of respondents}
 \centering
-\resizebox{\linewidth}{!}{
-\fontsize{8}{10}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}l>{\raggedleft\arraybackslash}p{10em}l}
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{llrrlrl}
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
@@ -851,7 +847,7 @@ factor & H\_Imp\_contam & 4 & 0.9911308 & TRUE & 5 & VERY IMPORTANT: 258, IMPORT
 factor & H\_Imp\_safety & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 311, IMPORTANT: 80, MODERATELY IMPORTANT: 35, SLIGHTLY IMPORTANT: 13\\
 factor & H\_Imp\_comfort & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 216, IMPORTANT: 111, MODERATELY IMPORTANT: 91, SLIGHTLY IMPORTANT: 15\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
@@ -868,9 +864,8 @@ Feelings and emotional information can be used to map and understand travel beha
 
 \caption{\label{tab:unnamed-chunk-17}\label{tab:Feelings-Emotions-Descriptives}Variables regarding feelings and emotions of respondents}
 \centering
-\resizebox{\linewidth}{!}{
-\fontsize{8}{10}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}l>{\raggedleft\arraybackslash}p{10em}l}
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{llrrlrl}
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
@@ -901,7 +896,7 @@ factor & FE\_Imp\_quality & 6 & 0.9866962 & TRUE & 5 & VERY LOW: 276, LOW: 99, M
 factor & FE\_Affect & 38 & 0.9157428 & FALSE & 8 & ALL OF THEM: 136, TRAVEL TIME: 89, CROWDNESS OF PASSENGERS: 87, COMFORT ABSENCE: 38\\
 factor & FE\_Facility & 34 & 0.9246120 & FALSE & 8 & ALL OF THEM: 164, REDUCTION OF TIME TRAVEL: 82, LESS CROWDNESS OF PASSENGERS: 66, BETTER QULALITY ON STREETS: 36\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
@@ -920,9 +915,8 @@ The most important role of the transportation network and public modes of travel
 
 \caption{\label{tab:unnamed-chunk-18}\label{tab:Reason-Planning-Decision-Descriptives}Variables regarding decision-making and planning of respondents}
 \centering
-\resizebox{\linewidth}{!}{
-\fontsize{8}{10}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}l>{\raggedleft\arraybackslash}p{10em}l}
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{llrrlrl}
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
@@ -954,7 +948,7 @@ factor & RPD\_Imp\_dispon\_mode & 17 & 0.9623060 & TRUE & 5 & NOT IMPORTANT: 297
 factor & RPD\_Imp\_imprv\_comfort & 14 & 0.9689579 & TRUE & 5 & NOT IMPORTANT: 300, IMPORTANT: 96, MODERATELY IMPORTANT: 34, SLIGHTLY IMPORTANT: 6\\
 factor & RPD\_Imp\_othermodes & 20 & 0.9556541 & TRUE & 5 & NOT IMPORTANT: 267, IMPORTANT: 82, MODERATELY IMPORTANT: 51, SLIGHTLY IMPORTANT: 16\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
@@ -971,9 +965,8 @@ Nature and sustainability information will help planners to provide people with 
 
 \caption{\label{tab:unnamed-chunk-19}\label{tab:Nature-Nustainability-Descriptives}Variables regarding perspectives about nature and sustainability of respondents}
 \centering
-\resizebox{\linewidth}{!}{
-\fontsize{8}{10}\selectfont
-\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{10em}r>{\raggedleft\arraybackslash}p{10em}l>{\raggedleft\arraybackslash}p{10em}l}
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{llrrlrl}
 \toprule
 skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
 \midrule
@@ -989,7 +982,7 @@ factor & NS\_Imp\_park & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANTORTANT: 254, 
 factor & NS\_Imp\_imprv\_sustainmode & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 236, IMPORTANT: 105, MODERATELY IMPORTANT: 63, SLIGHTLY IMPORTANT: 25\\
 factor & NS\_Imp\_increasesusmodes & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 102, MODERATELY IMPORTANT: 48, SLIGHTLY IMPORTANT: 22\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
@@ -1489,9 +1482,8 @@ In terms of occupation, the current study has shown that experiencing stress amo
 
 \caption{\label{tab:unnamed-chunk-35}\label{tab:Bivariate ordered model}Estimation Results}
 \centering
-\resizebox{\linewidth}{!}{
 \fontsize{8}{10}\selectfont
-\begin{tabular}[t]{lccclccc}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{10em}ccc>{\raggedright\arraybackslash}p{10em}ccc}
 \toprule
 Variables: Equation 1 & Estimate & Standard Error & p-value & Variables: Equation 2 & Estimate & Standard Error & p-value\\
 \midrule
@@ -1512,7 +1504,7 @@ LOW|MODERATE & -0.7954 & 0.4246 & <0.0001 & SLIGHTLY IMPORTANT|MODERATELY IMPORT
 MODERATE|HIGH & 0.6368 & 0.4283 & <0.0001 & MODERATELY IMPORTANT|IMPORTANT & 0.4615 & 0.7319 & <0.0001\\
 HIGH|VHIGH & 1.9855 & 0.4451 & 0 & IMPORTANT|VERY IMPORTANT & 1.6449 & 0.7367 & <0.0001\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
 \elandscape
 \newpage
