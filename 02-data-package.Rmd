@@ -184,16 +184,33 @@ skim_IC$factor.top_counts[12] <- skim_IC$factor.top_counts[12] |>
 \blandscape
 
 ```{r , echo=FALSE}
-  
+
 knitr::kable(skim_IC,
              format = "latex",
              booktabs = TRUE,
+             longtable = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ch Min", "Ch Max", "Empty", "Ch Levels", "W Space",  "Ordinal", "N Levels", "Counts", "Mean", "SD", "P0", "P25", "P50", "P75", "P100" ),
              caption = "\\label{tab:individual-characteristics-descriptive}Variables regarding individual characteristics of respondents") %>%
-  #column_spec(2, width = "10em") %>% 
-  #column_spec(4, width = "10em") %>%
-  #column_spec(6, width = "10em") %>%
-  column_spec(11, width = "10em") %>%
-  kable_styling(font_size = 7)
+  column_spec(1, width = "3em") %>%
+  column_spec(2, width = "3em") %>%
+  column_spec(3, width = "2em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(5, width = "2em") %>%
+  column_spec(6, width = "2em") %>%
+  column_spec(7, width = "2em") %>%
+  column_spec(8, width = "2em") %>%
+  column_spec(9, width = "2em") %>%
+  column_spec(10, width = "3em") %>%
+  column_spec(11, width = "2em") %>%
+  column_spec(12, width = "3em") %>%
+  column_spec(13, width = "2em") %>%
+  column_spec(14, width = "2em") %>%
+  column_spec(15, width = "2em") %>%
+  column_spec(16, width = "2em") %>%
+  column_spec(17, width = "2em") %>%
+  column_spec(18, width = "2em") %>%
+  column_spec(19, width = "2em") %>%
+ kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
 \elandscape
@@ -324,23 +341,26 @@ skim_STW |>
   kable(format = "latex")
 ```
 
-\newpage
-\blandscape
+<!-- \newpage -->
+<!-- \blandscape -->
 
 ```{r , echo=FALSE}
   
 knitr::kable(skim_STW,
              format = "latex",
              booktabs = TRUE,
+             longtable = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
              caption = "\\label{tab:Travel-work-Descriptive}Variables regarding the commuting behavior of respondents") %>%
-  #column_spec(2, width = "10em") %>% 
-  #column_spec(4, width = "10em") %>%
+  column_spec(3, width = "3em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(6, width = "3em") %>%
   column_spec(7, width = "10em") %>%
-  kable_styling(font_size = 7)
+  kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
-\elandscape
-\newpage
+<!-- \elandscape -->
+<!-- \newpage -->
 
 Table `Santiago_SI` includes five variables that capture various aspects of social interaction while commuting (see Table \ref{tab:Social-Interaction-Descriptives}). Social interaction is a topic of interest for mode-related choices given earlier evidence that for some commuters privacy is an important consideration and/or a way to manage social stressors [@gardner2007drives; @paez2010enjoyment; @lowe2016conceptual]. 
 
@@ -383,23 +403,26 @@ skim_SSI$factor.top_counts[4] <- skim_SSI$factor.top_counts[4] |>
 #  kable(format = "latex")
 ```
 
-\newpage
-\blandscape
+<!-- \newpage -->
+<!-- \blandscape -->
 
 ```{r , echo=FALSE}
   
 knitr::kable(skim_SSI,
              format = "latex",
              booktabs = TRUE,
+             longtable = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
              caption = "\\label{tab:Social-Interaction-Descriptives}Variables regarding social interactions of respondents") %>%
-  #  column_spec(2, width = "10em") %>% 
-  #column_spec(4, width = "10em") %>%
+  column_spec(3, width = "3em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(6, width = "3em") %>%
   column_spec(7, width = "10em") %>%
-  kable_styling(font_size = 7)
+  kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
-\elandscape
-\newpage
+<!-- \elandscape -->
+<!-- \newpage -->
 
 ```{r eval=FALSE}
 #| include: false
@@ -473,23 +496,26 @@ skim_SIS$factor.top_counts[9] <- skim_SIS$factor.top_counts[9] |>
 #  kable(format = "latex")
 ```
 
-\newpage
-\blandscape
+<!-- \newpage -->
+<!-- \blandscape -->
 
 ```{r , echo=FALSE}
   
 knitr::kable(skim_SIS,
              format = "latex",
              booktabs = TRUE,
+             longtable = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
              caption = "\\label{tab:ITC-Shifting-Descriptives}Variables regarding information and telecommunications and mode shifting of respondents") %>%
-  #column_spec(2, width = "10em") %>% 
-  #column_spec(4, width = "10em") %>%
+  column_spec(3, width = "3em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(6, width = "3em") %>%
   column_spec(7, width = "10em") %>%
-  kable_styling(font_size = 7)
+  kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
-\elandscape
-\newpage
+<!-- \elandscape -->
+<!-- \newpage -->
 
 The theme of table `Santiago_BE` is perceptions of the built environment. The way environments are perceived, and not just their objective attributes has been shown to correlate with travel behaviour [e.g., @jamal2020perceptions]. Surveying perceptions can be a valuable remedy for the lack of standardized or widely accepted canonical datasets serving as references, especially in regions of the world where attributes of the built environment are not systematically collected. 
 
@@ -768,23 +794,26 @@ skim_SH$factor.top_counts[12] <- skim_SH$factor.top_counts[12] |>
 #  kable(format = "latex")
 ```
 
-\newpage
-\blandscape
+<!-- \newpage -->
+<!-- \blandscape -->
 
 ```{r , echo=FALSE}
   
 knitr::kable(skim_SH,
              format = "latex",
              booktabs = TRUE,
+             longtable = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
              caption = "\\label{tab:Health-Information-Descriptives}Variables regarding health information of respondents") %>%
-  #column_spec(2, width = "10em") %>% 
-  #column_spec(4, width = "10em") %>%
-  #column_spec(7, width = "10em") %>%
-  kable_styling(font_size = 7)
+   column_spec(3, width = "3em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(6, width = "3em") %>%
+  column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
-\elandscape
-\newpage
+<!-- \elandscape -->
+<!-- \newpage -->
 
 The first part of the data set of feelings and emotions (see Table \ref{tab:Feelings-Emotions-Descriptives}) reveals factorial variables that people consider them pertain to a specific mode of travel. In terms of freedom, health and social interactions most people mention them related to walking as a transportation mode. Many people consider using a bus connected to unsafety, poverty, unpunctuality, congestion and uncomfortable conditions variables. In terms of using a car as the mode of travel, most respondents identified it as connected to functionality, safety, luxury and status. 
 
@@ -917,23 +946,26 @@ skim_SFE$factor.top_counts[22] <- skim_SFE$factor.top_counts[22] |>
 #  kable(format = "latex")
 ```
 
-\newpage
-\blandscape
+<!-- \newpage -->
+<!-- \blandscape -->
 
 ```{r , echo=FALSE}
   
 knitr::kable(skim_SFE,
              format = "latex",
              booktabs = TRUE,
+             longtable = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
              caption = "\\label{tab:Feelings-Emotions-Descriptives}Variables regarding feelings and emotions of respondents") %>%
-  #column_spec(2, width = "10em") %>% 
-  #column_spec(4, width = "10em") %>%
-  #column_spec(7, width = "10em") %>%
-  kable_styling(font_size = 7)
+  column_spec(3, width = "3em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(6, width = "3em") %>%
+  column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
-\elandscape
-\newpage
+<!-- \elandscape -->
+<!-- \newpage -->
 
 The table of decision-making and planning of respondents (see Table \ref{tab:Reason-Planning-Decision-Descriptives}) includes different factorial variables using the Likert scale and has two parts of an assessment of a variable and its importance from respondents' viewpoints. Most people assign a level of good when they assess their access to employment opportunities through public transport and presume a good level about their access to public transport which allows them to access the employment they need. 
 
@@ -1092,23 +1124,26 @@ skim_SRPD$factor.top_counts[23] <- skim_SRPD$factor.top_counts[23] |>
 #  kable(format = "latex")
 ```
 
-\newpage
-\blandscape
+<!-- \newpage -->
+<!-- \blandscape -->
 
 ```{r , echo=FALSE}
   
 knitr::kable(skim_SRPD,
              format = "latex",
              booktabs = TRUE,
+              longtable = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
              caption = "\\label{tab:Reason-Planning-Decision-Descriptives}Variables regarding decision-making and planning of respondents") %>%
-  #column_spec(2, width = "10em") %>% 
-  #column_spec(4, width = "10em") %>%
-  #column_spec(7, width = "10em") %>%
-  kable_styling(font_size = 7)
+  column_spec(3, width = "3em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(6, width = "3em") %>%
+  column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
-\elandscape
-\newpage
+<!-- \elandscape -->
+<!-- \newpage -->
 
 It can be seen there are different variables in the nature and sustainability table (see Table \ref{tab:Nature-Nustainability-Descriptives}) more through using the Likert scale to organize respondents' answers to variables. We can see lots of missing values for changing the mode because most people do not tend to change their main mode of travel when it comes to a climatic event like heavy rain or flood and for those who want to change, using a car has the most priority. 
 
@@ -1180,23 +1215,26 @@ skim_SNS$factor.top_counts[10] <- skim_SNS$factor.top_counts[10] |>
 ```
 
 
-\newpage
-\blandscape
+<!-- \newpage -->
+<!-- \blandscape -->
 
 ```{r , echo=FALSE}
   
 knitr::kable(skim_SNS,
              format = "latex",
              booktabs = TRUE,
+              longtable = TRUE,
+             col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
              caption = "\\label{tab:Nature-Nustainability-Descriptives}Variables regarding perspectives about nature and sustainability of respondents") %>%
-  #column_spec(2, width = "10em") %>% 
-  #column_spec(4, width = "10em") %>%
-  #column_spec(7, width = "10em") %>%
-  kable_styling(font_size = 7)
+  column_spec(3, width = "3em") %>%
+  column_spec(4, width = "3em") %>%
+  column_spec(6, width = "3em") %>%
+  column_spec(7, width = "10em") %>%
+  kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
-\elandscape
-\newpage
+<!-- \elandscape -->
+<!-- \newpage -->
 
 ## Discussion and Conclusion 
 

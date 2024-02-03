@@ -1567,6 +1567,7 @@ mod_table1 <- rbind(mod_beta, mod_theta1)
 ```
 
 
+
 \newpage
 \blandscape
 
@@ -1596,13 +1597,15 @@ mod_table1 %>%
         booktabs = TRUE,
         col.names = c("Variables: Equation 1", "Estimate", "Standard Error", "p-value", "Variables: Equation 2", "Estimate", "Standard Error", "p-value"),
         align = c("l", "c", "c", "c", "l", "c", "c", "c")) %>%
-  kable_styling(font_size = 8) %>%
-  column_spec(1, width = "10em") %>% 
-  column_spec(5, width = "10em")
+  kable_styling(font_size = 8, latex_options = c("scale_down"))
+# rownames(mod_table1)<- NULL
+
+
 ```
 
 \elandscape
 \newpage
+
 
 ## Conclusion
 

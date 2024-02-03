@@ -597,15 +597,23 @@ Other variables regarding the respondents include their height (cm) and weight (
 
 \newpage
 \blandscape
-\begin{table}
 
-\caption{\label{tab:unnamed-chunk-6}\label{tab:individual-characteristics-descriptive}Variables regarding individual characteristics of respondents}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{llrrrrrrrl>{\raggedleft\arraybackslash}p{10em}lrrrrrrr}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedright\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{2em}>{\raggedright\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}>{\raggedleft\arraybackslash}p{2em}}
+\caption{\label{tab:unnamed-chunk-6}\label{tab:individual-characteristics-descriptive}Variables regarding individual characteristics of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & character.min & character.max & character.empty & character.n\_unique & character.whitespace & factor.ordered & factor.n\_unique & factor.top\_counts & numeric.mean & numeric.sd & numeric.p0 & numeric.p25 & numeric.p50 & numeric.p75 & numeric.p100\\
+Type & Variable & Missing & Complete Rate & Ch Min & Ch Max & Empty & Ch Levels & W Space & Ordinal & N Levels & Counts & Mean & SD & P0 & P25 & P50 & P75 & P100\\
 \midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-6}Variables regarding individual characteristics of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ch Min & Ch Max & Empty & Ch Levels & W Space & Ordinal & N Levels & Counts & Mean & SD & P0 & P25 & P50 & P75 & P100\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
 character & IC\_Residence & 0 & 1.0000000 & 4 & 16 & 0 & 43 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
 character & IC\_Macro\_res & 0 & 1.0000000 & 3 & 12 & 0 & 7 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
 character & IC\_Home\_St & 38 & 0.9157428 & 4 & 24 & 0 & 200 & 0 & NA & NA & NA & NA & NA & NA & NA & NA & NA & NA\\
@@ -630,10 +638,10 @@ numeric & IC\_Weight & 29 & 0.9356984 & NA & NA & NA & NA & NA & NA & NA & NA & 
 numeric & IC\_Height & 20 & 0.9556541 & NA & NA & NA & NA & NA & NA & NA & NA & 167.2111369 & 9.4617697 & 146 & 160 & 167 & 174.00 & 197\\
 numeric & IC\_Adults & 5 & 0.9889135 & NA & NA & NA & NA & NA & NA & NA & NA & 2.8116592 & 1.2879558 & 1 & 2 & 3 & 4.00 & 7\\
 \addlinespace
-numeric & IC\_Children & 6 & 0.9866962 & NA & NA & NA & NA & NA & NA & NA & NA & 0.6561798 & 0.9231696 & 0 & 0 & 0 & 1.00 & 6\\
-\bottomrule
-\end{tabular}
-\end{table}
+numeric & IC\_Children & 6 & 0.9866962 & NA & NA & NA & NA & NA & NA & NA & NA & 0.6561798 & 0.9231696 & 0 & 0 & 0 & 1.00 & 6\\*
+\end{longtable}
+\endgroup{}
+
 \elandscape
 \newpage
 \begin{figure}
@@ -668,17 +676,22 @@ In terms of the level of satisfaction with their current job, we see that almost
 
 The most common time of the day for commuting is between 7 am and 9 am, but there are also 171 missing responses in this column, so not much can be read from it. Finally, we note that many people spend 35,000-75,000 peso monthly on their transportation expenditure.
 
-\newpage
-\blandscape
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-11}\label{tab:Travel-work-Descriptive}Variables regarding the commuting behavior of respondents}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{llrrlr>{\raggedright\arraybackslash}p{10em}}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{ll>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{3em}l>{\raggedleft\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{10em}}
+\caption{\label{tab:unnamed-chunk-11}\label{tab:Travel-work-Descriptive}Variables regarding the commuting behavior of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
 \midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-11}Variables regarding the commuting behavior of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
 factor & TW\_JobAccess & 15 & 0.9667406 & TRUE & 5 & SOME IMPACT: 124, NO IMPACT : 123, MINOR IMPACT: 66, MAJOR IMPACT: 64\\
 factor & TW\_Job\_Opportunity & 11 & 0.9756098 & TRUE & 5 & GOOD: 169, POOR: 86, FAIR: 85, VERY GOOD: 64\\
 factor & TW\_Interested\_Access & 15 & 0.9667406 & TRUE & 5 & EXCELLENT: 184, VERY GOOD: 109, GOOD: 93, FAIR: 27\\
@@ -686,12 +699,9 @@ factor & TW\_Jobsatisfaction & 37 & 0.9179601 & TRUE & 5 & HIGH SATISF: 135, VER
 factor & TW\_Commute\_duration & 10 & 0.9778271 & TRUE & 4 & 1h and more : 133, 40-60 min: 113, 20-40 min: 103, 0-20 min: 92\\
 \addlinespace
 factor & TW\_Commute\_schedule & 171 & 0.6208426 & TRUE & 6 & 7:00 - 9:00: 168, Others: 47, 9:00 - 13:00: 39, 18:00 - 21:00: 14\\
-factor & TW\_Commute\_monthlycost & 7 & 0.9844789 & TRUE & 4 & 35,000-75,000: 199, LESS THAN 35,000: 166, 75,000-125,000: 46, MORE THAN 125,000: 33\\
-\bottomrule
-\end{tabular}
-\end{table}
-\elandscape
-\newpage
+factor & TW\_Commute\_monthlycost & 7 & 0.9844789 & TRUE & 4 & 35,000-75,000: 199, LESS THAN 35,000: 166, 75,000-125,000: 46, MORE THAN 125,000: 33\\*
+\end{longtable}
+\endgroup{}
 
 Table \texttt{Santiago\_SI} includes five variables that capture various aspects of social interaction while commuting (see Table \ref{tab:Social-Interaction-Descriptives}). Social interaction is a topic of interest for mode-related choices given earlier evidence that for some commuters privacy is an important consideration and/or a way to manage social stressors (Gardner \& Abraham, 2007; Lowe \& Mosby, 2016; Páez \& Whalen, 2010).
 
@@ -703,26 +713,28 @@ The next two variables in this table deal with feelings and the experience of di
 
 We can see in Table \ref{tab:Social-Interaction-Descriptives}, that slightly fewer than one-quarter of respondents (24.2\%) report having felt discriminated while commuting (only 4 responses are missing), and of those close to half (44\%) had that experience in public transportation (however, note that about 58\% of those who felt discriminated against did not state the mode).
 
-\newpage
-\blandscape
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-12}\label{tab:Social-Interaction-Descriptives}Variables regarding social interactions of respondents}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{llrrlr>{\raggedright\arraybackslash}p{10em}}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{ll>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{3em}l>{\raggedleft\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{10em}}
+\caption{\label{tab:unnamed-chunk-12}\label{tab:Social-Interaction-Descriptives}Variables regarding social interactions of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
 \midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-12}Variables regarding social interactions of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
 factor & SI\_Interactionlevel & 13 & 0.9711752 & TRUE & 5 & GOOD: 178, FAIR: 102, POOR: 85, VERY GOOD: 53\\
 factor & SI\_Imp\_interaction & 12 & 0.9733925 & TRUE & 5 & MODERATELY IMPORTANT: 150, NOT IMPORTANT: 88, IMPORTANT: 83, SLIGHTLY IMPORTANT: 69\\
 factor & SI\_Discrimination & 4 & 0.9911308 & FALSE & 2 & NO: 338, YES: 109\\
-factor & SI\_Discrim\_mode & 377 & 0.1640798 & FALSE & 7 & BUS: 33, METRO: 15, CAR: 8, TAXI: 7\\
-\bottomrule
-\end{tabular}
-\end{table}
-\elandscape
-\newpage
+factor & SI\_Discrim\_mode & 377 & 0.1640798 & FALSE & 7 & BUS: 33, METRO: 15, CAR: 8, TAXI: 7\\*
+\end{longtable}
+\endgroup{}
 
 The information, telecommunications and mode shifting of respondents (see Table \ref{tab:ITC-Shifting-Descriptives}) reveal numerous factorial variables using the Likert scale to identify the exact level of respondents' viewpoints. We can see a considerable number of missing values in the quality of changing mode of travel because of people's decision on mostly saying yes to shift between transport modes on their usual trips and for those who changed the quality of these interchanges was good.
 
@@ -732,17 +744,22 @@ This section will give insights on designing a strong transportation network to 
 
 Following this, car-use deduction has been turned into the political agenda around the world due to the increasing negative effects of motorized modes of travel on the environment and public health. Therefore, improvements in the public transportation sector are needed to achieve this goal regarding previous studies that have shown participants are more likely to use buses with increased frequencies, shorter travel time, and high access to bus stops(Ettema et al., 2011).
 
-\newpage
-\blandscape
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-14}\label{tab:ITC-Shifting-Descriptives}Variables regarding information and telecommunications and mode shifting of respondents}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{llrrlr>{\raggedright\arraybackslash}p{10em}}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{ll>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{3em}l>{\raggedleft\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{10em}}
+\caption{\label{tab:unnamed-chunk-14}\label{tab:ITC-Shifting-Descriptives}Variables regarding information and telecommunications and mode shifting of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
 \midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-14}Variables regarding information and telecommunications and mode shifting of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
 factor & IS\_Shiftmode & 11 & 0.9756098 & FALSE & 2 & YES: 247, NO: 193\\
 factor & IS\_Qualityshift & 198 & 0.5609756 & TRUE & 5 & GOOD: 107, FAIR: 61, VERY GOOD: 38, POOR: 34\\
 factor & IS\_Waitingtime & 41 & 0.9090909 & TRUE & 5 & GOOD: 124, POOR: 101, FAIR: 94, VERY GOOD: 61\\
@@ -752,12 +769,9 @@ factor & IS\_Travel\_time & 28 & 0.9379157 & TRUE & 5 & GOOD: 138, POOR: 113, FA
 factor & IS\_Difficulty\_modechange & 76 & 0.8314856 & FALSE & 7 & ALL THE PREVIOUS ONES: 107, TOO LONG SHIFTS: 89, UNCOMFORTABLE SHIFTING: 87, BAD INFRASTRUCTURE FOR WAITING TIMES: 33\\
 factor & IS\_Techtool & 8 & 0.9822616 & FALSE & 2 & YES: 372, NO: 71\\
 factor & IS\_Info\_techtool & 15 & 0.9667406 & TRUE & 5 & GOOD: 153, VERY GOOD: 118, FAIR: 63, EXCELLENT: 63\\
-factor & IS\_Imp\_techtool & 10 & 0.9778271 & TRUE & 5 & VERY IMPORTANT: 198, IMPORTANT: 122, MODERATELY IMPORTANT: 68, SLIGHTLY IMPORTANT: 33\\
-\bottomrule
-\end{tabular}
-\end{table}
-\elandscape
-\newpage
+factor & IS\_Imp\_techtool & 10 & 0.9778271 & TRUE & 5 & VERY IMPORTANT: 198, IMPORTANT: 122, MODERATELY IMPORTANT: 68, SLIGHTLY IMPORTANT: 33\\*
+\end{longtable}
+\endgroup{}
 
 The theme of table \texttt{Santiago\_BE} is perceptions of the built environment. The way environments are perceived, and not just their objective attributes has been shown to correlate with travel behaviour (e.g., Jamal, Mohiuddin, \& Paez, 2020). Surveying perceptions can be a valuable remedy for the lack of standardized or widely accepted canonical datasets serving as references, especially in regions of the world where attributes of the built environment are not systematically collected.
 
@@ -821,17 +835,22 @@ For example, variable \texttt{r1A\_STRESS} refers to the level of stress that re
 
 This aspect of the experience is rated as very important or important by a majority of respondents. Other variables in this table contain information about the physical effort involved in their regular trips (to work or home) (\texttt{r1B\_EFFORT} and \texttt{r1GB\_IMPEFFORT}); proximity to other travellers in their usual trips (\texttt{r1C\_PROX} and \texttt{r1GC\_IMPPROX}); the environmental pollution they are exposed to in their usual trips (\texttt{r1D\_CONTAM} and \texttt{r1GD\_IMPCONTAM}); how safe they feel in their usual trips (\texttt{r1E\_SAFETY} and \texttt{r1GE\_IMPSAFETY}); and finally how comfortable their trips are (\texttt{r1F\_COMFORT} and \texttt{r1GF\_IMPCOMFORT}).
 
-\newpage
-\blandscape
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-16}\label{tab:Health-Information-Descriptives}Variables regarding health information of respondents}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{llrrlrl}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{ll>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{3em}l>{\raggedleft\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{10em}}
+\caption{\label{tab:unnamed-chunk-16}\label{tab:Health-Information-Descriptives}Variables regarding health information of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
 \midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-16}Variables regarding health information of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
 factor & H\_Stress & 2 & 0.9955654 & TRUE & 5 & MOD: 145, LOW: 107, HIGH: 92, VERY HIGH: 54\\
 factor & H\_Effort & 2 & 0.9955654 & TRUE & 5 & NEUTRAL: 152, POSITIVE: 117, VPOSITVE: 72, NEGATIVE: 67\\
 factor & H\_Proximity & 8 & 0.9822616 & TRUE & 5 & POOR: 130, GOOD: 103, FAIR: 95, EXCELLENT: 60\\
@@ -845,12 +864,9 @@ factor & H\_Imp\_prox & 7 & 0.9844789 & TRUE & 5 & VERY IMPORTANT: 169, IMPORTAN
 factor & H\_Imp\_contam & 4 & 0.9911308 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 86, MODERATELY IMPORTANT: 64, SLIGHTLY IMPORTANT: 23\\
 \addlinespace
 factor & H\_Imp\_safety & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 311, IMPORTANT: 80, MODERATELY IMPORTANT: 35, SLIGHTLY IMPORTANT: 13\\
-factor & H\_Imp\_comfort & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 216, IMPORTANT: 111, MODERATELY IMPORTANT: 91, SLIGHTLY IMPORTANT: 15\\
-\bottomrule
-\end{tabular}
-\end{table}
-\elandscape
-\newpage
+factor & H\_Imp\_comfort & 5 & 0.9889135 & TRUE & 5 & VERY IMPORTANT: 216, IMPORTANT: 111, MODERATELY IMPORTANT: 91, SLIGHTLY IMPORTANT: 15\\*
+\end{longtable}
+\endgroup{}
 
 The first part of the data set of feelings and emotions (see Table \ref{tab:Feelings-Emotions-Descriptives}) reveals factorial variables that people consider them pertain to a specific mode of travel. In terms of freedom, health and social interactions most people mention them related to walking as a transportation mode. Many people consider using a bus connected to unsafety, poverty, unpunctuality, congestion and uncomfortable conditions variables. In terms of using a car as the mode of travel, most respondents identified it as connected to functionality, safety, luxury and status.
 
@@ -858,17 +874,22 @@ A large group of people declare that bike riding is related to enjoyment, low co
 
 Feelings and emotional information can be used to map and understand travel behaviour and would lead to a more sustainable transportation network. Additionally, this information can make policymakers aware to make targeted choices about where to make physical amelioration as well as on which characteristics to attempt to influence perceptions of alternative modes(Anable \& Gatersleben, 2005). Similarly, by trying to identify a correlation between feelings, emotions and modes of transportation, planners would be able to persuade people to use more active modes of travel or public transport will result in making our transportation system more sustainable.
 
-\newpage
-\blandscape
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-17}\label{tab:Feelings-Emotions-Descriptives}Variables regarding feelings and emotions of respondents}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{llrrlrl}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{ll>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{3em}l>{\raggedleft\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{10em}}
+\caption{\label{tab:unnamed-chunk-17}\label{tab:Feelings-Emotions-Descriptives}Variables regarding feelings and emotions of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
 \midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-17}Variables regarding feelings and emotions of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
 factor & FE\_Freedom & 218 & 0.5166297 & FALSE & 8 & WALK: 96, CAR: 79, BICYCLE: 43, MOTO: 8\\
 factor & FE\_Unsafety & 217 & 0.5188470 & FALSE & 8 & BUS: 94, MOTO: 73, WALK: 22, BICYCLE: 21\\
 factor & FE\_Functionality & 196 & 0.5654102 & FALSE & 8 & CAR: 90, MOTOO: 86, BICYCLE: 26, MOTO: 18\\
@@ -894,12 +915,9 @@ factor & FE\_Daily\_enjoy & 4 & 0.9911308 & TRUE & 5 & MEDIUM: 146, HIGH: 114, V
 factor & FE\_Imp\_quality & 6 & 0.9866962 & TRUE & 5 & VERY LOW: 276, LOW: 99, MEDIUM: 46, HIGH: 14\\
 \addlinespace
 factor & FE\_Affect & 38 & 0.9157428 & FALSE & 8 & ALL OF THEM: 136, TRAVEL TIME: 89, CROWDNESS OF PASSENGERS: 87, COMFORT ABSENCE: 38\\
-factor & FE\_Facility & 34 & 0.9246120 & FALSE & 8 & ALL OF THEM: 164, REDUCTION OF TIME TRAVEL: 82, LESS CROWDNESS OF PASSENGERS: 66, BETTER QULALITY ON STREETS: 36\\
-\bottomrule
-\end{tabular}
-\end{table}
-\elandscape
-\newpage
+factor & FE\_Facility & 34 & 0.9246120 & FALSE & 8 & ALL OF THEM: 164, REDUCTION OF TIME TRAVEL: 82, LESS CROWDNESS OF PASSENGERS: 66, BETTER QULALITY ON STREETS: 36\\*
+\end{longtable}
+\endgroup{}
 
 The table of decision-making and planning of respondents (see Table \ref{tab:Reason-Planning-Decision-Descriptives}) includes different factorial variables using the Likert scale and has two parts of an assessment of a variable and its importance from respondents' viewpoints. Most people assign a level of good when they assess their access to employment opportunities through public transport and presume a good level about their access to public transport which allows them to access the employment they need.
 
@@ -909,17 +927,22 @@ For different aspects of the public transport system most people mention that it
 
 The most important role of the transportation network and public modes of travel is to provide people with access to different destinations in order to travel for business, reunite with other people, do grocery shopping and so on. This data set gives us a wide range of variables helpful for identifying people's travel patterns and what level of importance people assign. So it would be useful for transport-related experts to have an insight into people's movement to provide network systems with an appropriate level of performance to increase efficiency and promote urban transportation systems.
 
-\newpage
-\blandscape
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-18}\label{tab:Reason-Planning-Decision-Descriptives}Variables regarding decision-making and planning of respondents}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{llrrlrl}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{ll>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{3em}l>{\raggedleft\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{10em}}
+\caption{\label{tab:unnamed-chunk-18}\label{tab:Reason-Planning-Decision-Descriptives}Variables regarding decision-making and planning of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
 \midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-18}Variables regarding decision-making and planning of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
 factor & RPD\_Access & 11 & 0.9756098 & TRUE & 5 & GOOD: 186, FAIR: 91, VERY GOOD: 63, POOR: 57\\
 factor & RPD\_Acc\_Employment & 18 & 0.9600887 & TRUE & 5 & GOOD: 134, POOR: 108, VERY GOOD: 83, FAIR: 60\\
 factor & RPD\_Family\_vis & 11 & 0.9756098 & TRUE & 5 & SOMWTIMEs: 117, OFTEN: 105, ALWAYS: 100, NEVER: 60\\
@@ -946,12 +969,9 @@ factor & RPD\_Imp\_commercial & 20 & 0.9556541 & TRUE & 5 & NOT IMPORTANT: 195, 
 \addlinespace
 factor & RPD\_Imp\_dispon\_mode & 17 & 0.9623060 & TRUE & 5 & NOT IMPORTANT: 297, IMPORTANT: 91, MODERATELY IMPORTANT: 38, SLIGHTLY IMPORTANT: 6\\
 factor & RPD\_Imp\_imprv\_comfort & 14 & 0.9689579 & TRUE & 5 & NOT IMPORTANT: 300, IMPORTANT: 96, MODERATELY IMPORTANT: 34, SLIGHTLY IMPORTANT: 6\\
-factor & RPD\_Imp\_othermodes & 20 & 0.9556541 & TRUE & 5 & NOT IMPORTANT: 267, IMPORTANT: 82, MODERATELY IMPORTANT: 51, SLIGHTLY IMPORTANT: 16\\
-\bottomrule
-\end{tabular}
-\end{table}
-\elandscape
-\newpage
+factor & RPD\_Imp\_othermodes & 20 & 0.9556541 & TRUE & 5 & NOT IMPORTANT: 267, IMPORTANT: 82, MODERATELY IMPORTANT: 51, SLIGHTLY IMPORTANT: 16\\*
+\end{longtable}
+\endgroup{}
 
 It can be seen there are different variables in the nature and sustainability table (see Table \ref{tab:Nature-Nustainability-Descriptives}) more through using the Likert scale to organize respondents' answers to variables. We can see lots of missing values for changing the mode because most people do not tend to change their main mode of travel when it comes to a climatic event like heavy rain or flood and for those who want to change, using a car has the most priority.
 
@@ -959,17 +979,22 @@ Most people have a poor level of access to the currently available sustainable m
 
 Nature and sustainability information will help planners to provide people with a safe, convenient and environment-friendly transportation system. This will also boost the quality of life, and people's mobility and goods and enhance economic growth through efficient transportation services. Moreover, policymakers would put in place environmental laws and excessive charges for personal car use and ownership (Alyavina, Nikitas, \& Njoya, 2020).
 
-\newpage
-\blandscape
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-19}\label{tab:Nature-Nustainability-Descriptives}Variables regarding perspectives about nature and sustainability of respondents}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{llrrlrl}
+\begingroup\fontsize{7}{9}\selectfont
+\begin{longtable}[t]{ll>{\raggedleft\arraybackslash}p{3em}>{\raggedleft\arraybackslash}p{3em}l>{\raggedleft\arraybackslash}p{3em}>{\raggedright\arraybackslash}p{10em}}
+\caption{\label{tab:unnamed-chunk-19}\label{tab:Nature-Nustainability-Descriptives}Variables regarding perspectives about nature and sustainability of respondents}\\
 \toprule
-skim\_type & skim\_variable & n\_missing & complete\_rate & factor.ordered & factor.n\_unique & factor.top\_counts\\
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
 \midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-19}Variables regarding perspectives about nature and sustainability of respondents \textit{(continued)}}\\
+\toprule
+Type & Variable & Missing & Complete Rate & Ordinal & Levels & Counts\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
 factor & NS\_Change\_mode & 6 & 0.9866962 & FALSE & 2 & NO: 256, YES: 189\\
 factor & NS\_Change\_type & 284 & 0.3702882 & FALSE & 8 & CAR: 79, METRO: 34, TAXI: 27, COLECTIVO: 13\\
 factor & NS\_Sustain\_mode & 7 & 0.9844789 & TRUE & 5 & POOR: 189, FAIR: 97, GOOD: 86, VERY GOOD: 42\\
@@ -980,12 +1005,9 @@ factor & NS\_Pay\_sustaintype & 236 & 0.4767184 & TRUE & 2 & 5-15\%: 144, 15-30\
 factor & NS\_Imp\_tree & 16 & 0.9645233 & TRUE & 5 & VERY IMPORTANT: 236, IMPORTANT: 91, MODERATELY IMPORTANT: 74, NOT IMPORTANT: 19\\
 factor & NS\_Imp\_park & 12 & 0.9733925 & TRUE & 5 & VERY IMPORTANTORTANT: 254, IMPORTANT: 106, MODERATELY IMPORTANT: 58, SLIGHTLY IMPORTANT: 11\\
 factor & NS\_Imp\_imprv\_sustainmode & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 236, IMPORTANT: 105, MODERATELY IMPORTANT: 63, SLIGHTLY IMPORTANT: 25\\
-factor & NS\_Imp\_increasesusmodes & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 102, MODERATELY IMPORTANT: 48, SLIGHTLY IMPORTANT: 22\\
-\bottomrule
-\end{tabular}
-\end{table}
-\elandscape
-\newpage
+factor & NS\_Imp\_increasesusmodes & 11 & 0.9756098 & TRUE & 5 & VERY IMPORTANT: 258, IMPORTANT: 102, MODERATELY IMPORTANT: 48, SLIGHTLY IMPORTANT: 22\\*
+\end{longtable}
+\endgroup{}
 
 \hypertarget{discussion-and-conclusion}{%
 \section{Discussion and Conclusion}\label{discussion-and-conclusion}}
@@ -1482,8 +1504,9 @@ In terms of occupation, the current study has shown that experiencing stress amo
 
 \caption{\label{tab:unnamed-chunk-35}\label{tab:Bivariate ordered model}Estimation Results}
 \centering
+\resizebox{\linewidth}{!}{
 \fontsize{8}{10}\selectfont
-\begin{tabular}[t]{>{\raggedright\arraybackslash}p{10em}ccc>{\raggedright\arraybackslash}p{10em}ccc}
+\begin{tabular}[t]{lccclccc}
 \toprule
 Variables: Equation 1 & Estimate & Standard Error & p-value & Variables: Equation 2 & Estimate & Standard Error & p-value\\
 \midrule
@@ -1504,7 +1527,7 @@ LOW|MODERATE & -0.7954 & 0.4246 & <0.0001 & SLIGHTLY IMPORTANT|MODERATELY IMPORT
 MODERATE|HIGH & 0.6368 & 0.4283 & <0.0001 & MODERATELY IMPORTANT|IMPORTANT & 0.4615 & 0.7319 & <0.0001\\
 HIGH|VHIGH & 1.9855 & 0.4451 & 0 & IMPORTANT|VERY IMPORTANT & 1.6449 & 0.7367 & <0.0001\\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 \elandscape
 \newpage
