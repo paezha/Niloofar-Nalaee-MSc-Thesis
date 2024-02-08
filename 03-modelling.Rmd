@@ -99,7 +99,7 @@ As @koslowsky1997commuting has identified, the first group indicates objectives 
 
 The concept of commute impedance was specified as a behavioural control on movement or reaching a target. In other words, it contains anything that imposes frustration on the goal to be reached at a certain time at a particular place such as distance, slow speed or traffic congestion. Speed would not have a direct effect as an impedance, but some other extraneous factors may split from that. 
 
-To make a clarification on that we can assume two drivers first driving at 56 km/hour and second driving at 80 km/hour. The former one may be driving on local roads, at the maximum possible speed and without experiencing any barrier while the former one may be driving on a highway, facing congestion (on superhighways like German autobahn) and finding negative stimuli on the road. In the current study identifying these, help us understand how stressors affect commuters' feeling and mode selection mostly for daily routines. 
+To make a clarification on that we can assume two drivers first driving at 56 km/hour and second driving at 80 km/hour. The former one may be driving on local roads, at the maximum possible speed and without experiencing any barrier while the former one may be driving on a highway, facing congestion (on superhighways like German autobahn) and finding negative stimuli on the road. In the current study identifying these, helps us understand how stressors affect commuters' feelings and mode selection mostly for daily routines. 
  
 Based on the findings of @koslowsky1997commuting, the second cluster contains subjective variables like the perception of control over the commute (commuting mode), predictability of commuting conditions and personal characteristics namely gender or family specifications.  
 
@@ -187,9 +187,9 @@ Previous research has shown that professional drivers chose a group of both prob
 
 ### Hypotheses
 
-Coping strategies are not directly observed. Instead, we have data on self-reported stress levels, and the importance that respondents assign to feelings of stress. We hypothesize that various combinations of these two variables map to coping strategies as discussed next and shown in Table \ref{tab:hypotheses}.
+Coping strategies are not directly observed. Instead, we have data on self-reported stress levels and the importance that respondents assign to feelings of stress. We hypothesize that various combinations of these two variables map to coping strategies as discussed next and shown in Table \ref{tab:hypotheses}.
 
-In order to have a better understanding of coping strategies that commuter have used, if we consider four situations with different levels of experienced stress and the given importance to that, we can figure out the way of dealing with stress by commuters in Santiago.
+In order to have a better understanding of coping strategies that commuters have used, if we consider four situations with different levels of experienced stress and the given importance to that, we can figure out the way of dealing with stress by commuters in Santiago.
 
 1-Low Stress, Low Importance:
 
@@ -197,15 +197,15 @@ Individuals in this category experience relatively low stress during commute, an
 
 2-Low Stress, High Importance:
 
-Commuters in this condition may not be experiencing a significant amount of stress, but they attach a high level of importance to the stressors they do encounter. This could be due to the perceived significance or impact of specific stressors while commuting, even if the overall stress level is low. This kind of travelers might be particularly sensitive to certain stressors, possibly viewing them as crucial to their well-being. 
+Commuters in this condition may not be experiencing a significant amount of stress, but they attach a high level of importance to the stressors they do encounter. This could be due to the perceived significance or impact of specific stressors while commuting, even if the overall stress level is low. This kind of travellers might be particularly sensitive to certain stressors, possibly viewing them as crucial to their well-being. 
 
 3-High Stress, Low Importance:
 
-This situation might be stressful for commuters, but they don't perceive these stressors as critically important or impactful. This could be due to coping mechanisms such as normalization, resilience, or a belief that the stressors are temporary or manageable. It may indicate that although they are aware of stressors, they may not view them as significant contributors to their overall well-being. For example, this happens when people who are using public transport as one the stressful modes of transportation in Santiago according to the current research, continue using that even when feel high level of stress. This can be due to limited options for them to use for daily commute and they prefer stay with the same mode and at least reach to workplace, home and all the regular destinations. 
+This situation might be stressful for commuters, but they don't perceive these stressors as critically important or impactful. This could be due to coping mechanisms such as normalization, resilience, or a belief that the stressors are temporary or manageable. It may indicate that although they are aware of stressors, they may not view them as significant contributors to their overall well-being. For example, this happens when people who are using public transport as one the stressful modes of transportation in Santiago according to the current research, continue using that even when feel high level of stress. This can be due to limited options for them to use for daily commute and they prefer to stay with the same mode and at least reach to workplace, home and all the regular destinations. 
 
 4-High Stress, High Importance:
 
-In this condition commuters may experience a substantial amount of stress, and they also perceive this stress as highly important. This suggests that the stressors they face are not only impactful but are recognized and acknowledged as significant challenges during their commutes. This commuters might be dealing with major commuting stressors or facing situations that are emotionally, psychologically, or physically demanding, and there are no coping strategies available to them to reduce the effect of stress.
+In this condition, commuters may experience a substantial amount of stress, and they also perceive this stress as highly important. This suggests that the stressors they face are not only impactful but are recognized and acknowledged as significant challenges during their commutes. These commuters might be dealing with major commuting stressors or facing situations that are emotionally, psychologically, or physically demanding, and there are no coping strategies available to them to reduce the effect of stress.
 
 ```{r hypothesis, echo=FALSE}
 data.frame(stress = c("Stress: Low", "Stress: Low", "Stress: High", "Stress: High"),
@@ -214,7 +214,7 @@ data.frame(stress = c("Stress: Low", "Stress: Low", "Stress: High", "Stress: Hig
   pivot_wider(names_from = "importance", values_from = "case") |>
   kable("latex",
         booktabs = TRUE,
-        caption = "\\label{tab:hypotheses}Dependent variables and hypothesized coping strategies",
+        caption = "\\label{tab:hypotheses}Dependent Variables and Hypothesized Coping Strategies",
         col.names = c("", "Low", "High")) |>
   add_header_above(c("", "Importance of Stress" = 2)) %>%
   kable_styling(latex_options = "hold_position")
@@ -242,7 +242,7 @@ The data set contains essential socio-economic and demographic information about
 The data collection conducted a quota-sampling method based on the information from the Pre-census of 2012, and in total, 451 participants took part in the survey. This study considers the first two parts of the survey including individual characteristics and health information to figure out the relationship between personal attributes and stress-related variables. 
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center',  fig.cap="\\label{fig:study boundaries}Santiago the case study"}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center',  fig.cap="\\label{fig:study boundaries}Santiago the Case Study"}
 
 labels_to_show <- c("ALHUE", "COLINA", "LA GRANJA", "SANTIAGO", "SAN BERNARDO", "PUDAHUEL","PUENTE ALTO", "QUILICURA", "MAIPU", "EL BOSQUE", "TILTIL", "SAN PEDRO", "MELIPILLA", "LO BARNECHEA", "SAN JOSE DE MAIPO", "PIRQUE", "BUIN", "PAINE", "ISLA DE MAIPO", "LAMPA", "MARIA PINTO", "CURACAVI")
 
@@ -282,7 +282,7 @@ San_area_plot
 
 ### Descriptive Analysis 
 
-As mentioned earlier in the study, previous researchers have applied various variables for implementing the ordinal regression model. In this study, we employ a group of dependent and independent variables extracted from individual characteristics and health information parts of the surveys. According to Table \ref{tab:Definitions} for dependent variables, we chose the stress indicator of the level of stress experienced by respondents while commuting and another stress criterion revealing the importance level of stress experienced when travelling by participants. For independent variables, we selected respondents age and income level, occupation, and their primary mode of transportation while regular commuting. As can be seen in the Table \ref{tab:Definitions} there are multiple subcategories for each variable. Furthermore, there would be a regrouping process for the subcategories to reach a more efficient bivariate ordinal model.
+As mentioned earlier in the study, previous researchers have applied various variables for implementing the ordinal regression model. In this study, we employ a group of dependent and independent variables extracted from individual characteristics and health information parts of the surveys. According to Table \ref{tab:Definitions} for dependent variables, we chose the stress indicator of the level of stress experienced by respondents while commuting and another stress criterion revealing the importance level of stress experienced when travelling by participants. For independent variables, we selected respondents age and income level, occupation, and their primary mode of transportation while regular commuting. As can be seen in Table \ref{tab:Definitions} there are multiple subcategories for each variable. Furthermore, there would be a regrouping process for the subcategories to reach a more efficient bivariate ordinal model.
 
 
 ```{r definition preparation, echo=FALSE}
@@ -429,7 +429,7 @@ Subcategory = c (
 ```{r , echo=FALSE}
 kable(definitions,
       "latex",
-      caption = "\\label{tab:Definitions}Definitions of variables", 
+      caption = "\\label{tab:Definitions}Definitions of Variables", 
       booktabs = T,
       digits = 1,
       longtable = T) %>%
@@ -750,7 +750,7 @@ Percentage = c(paste(round(sum(df$IC_Age == "Youth")/nrow(df)*100, 1), "%", sep 
 ```{r , echo=FALSE}
 kable(example_3.df,
       "latex",
-      caption = "\\label{tab:Descriptive statistics of variables}Descriptive statistics of variables", 
+      caption = "\\label{tab:Descriptive statistics of variables}Descriptive Statistics of Variables", 
       booktabs = T,
       digits = 1) %>%
   kable_styling(latex_options = c("scale_down")) %>%
@@ -773,7 +773,7 @@ Regarding this popularity and to make it more productive, it has been mentioned 
 
 Following this, the second popular mode of transportation can be assigned to private mode with around 25% of the whole population or 120 persons. Some users also were interested in eco-friendly modes like walking and cycling with slightly more than 40 people and 10 % of the whole respondents.
 
-```{r , echo=FALSE, fig.align='center', fig.cap="\\label{fig:Modes of transport}Modes of transport"}
+```{r , echo=FALSE, fig.align='center', fig.cap="\\label{fig:Modes of Transport}Modes of Transport"}
 
 
 ggplot(df, aes(x=as.factor(IC_Main_mode), fill=as.factor(IC_Main_mode) )) + 
@@ -795,9 +795,9 @@ To have a better understanding of the interaction among the key variables of mod
 
 Mode, age and income are the most crucial variables in our study. As has been studied in previous work, different modes of commuting can be effective on people's feelings and in general, subjective well-being referring to the importance of focusing on individuals' travel experiences such as stress [@smith2017commute].
 
-Income also is one of the significant variables as it determines people's options for commuting. According to the previous research if commuters are low-income workers they tend to use more public transportation in Santiago, Chile [@gomez2023urban] which is important as it echoes findings of this research about predominance of low and middle income groups in Santiago (see Figure \ref{fig:Income level}) . Another influential variable on people's experience of commuting is age which sometimes makes commuting difficult for older people especially when they choose walking according to the folks in La Cisterna district to the city center in Santiago [@tironi2016affects].   
+Income also is one of the significant variables as it determines people's options for commuting. According to the previous research if commuters are low-income workers they tend to use more public transportation in Santiago, Chile [@gomez2023urban] which is important as it echoes findings of this research about the predominance of low and middle-income groups in Santiago (see Figure \ref{fig:Income level}). Another influential variable on people's experience of commuting is age which sometimes makes commuting difficult for older people especially when they choose walking according to the folks in La Cisterna district to the city center in Santiago [@tironi2016affects].   
 
-```{r, echo=FALSE, fig.align='center', fig.cap="\\label{fig:Income level}Income level"}
+```{r, echo=FALSE, fig.align='center', fig.cap="\\label{fig:Income level}Income Level"}
 
 
 ggplot(df, aes(x=as.factor(IC_Income), fill=as.factor(IC_Income) )) + 
@@ -831,7 +831,7 @@ According to the results from the cross-tabulation of modes of transport by age 
 
 Therefore as can be seen (see Figure \ref{fig:Transportation Mode by Age group}) youth respondents tend to use public and active modes, adults are more interested in private and active, and seniors use almost all modes in a similar way but more interested in private mode.
 
-```{r, echo=FALSE, warning=FALSE, fig.cap="\\label{fig:Transportation Mode by Age group}Transportation Mode by Age group"}
+```{r, echo=FALSE, warning=FALSE, fig.cap="\\label{fig:Transportation Mode by Age group}Transportation Mode by Age Group"}
 ggplot(data = df) +
   geom_mosaic(aes(x = product(IC_Age, IC_Main_mode), fill=IC_Age)) + 
   labs(title = "Transportation Mode by Age group", y= "Age Groups", x = "Modes of Transportation") 
@@ -915,7 +915,7 @@ To be more in detail, more than 60% of those who feel very low and low level of 
 
 According to (see Figure \ref{fig:stress and importance of stress and mode}) almost more than 70 % of public and private users who felt high and very high levels of stress, mentioned that was important to them. Similarly, assigning importance to the rest of these people who felt stress in lower levels slopes to more medium and low levels as the stress level is going to decrease. 
 
-It is also an interesting fact that although all users have assigned high levels of importance to stress, private and public transport users felt relatively higher levels of stress compared to their active mode counterparts. Also, these public and private groups comprise almost 90% of the whole respondents.
+It is also an interesting fact that although all users have assigned high levels of importance to stress, private and public transport users felt relatively higher levels of stress compared to their active mode counterparts. Also, these public and private groups comprise almost 90% of the respondents.
 
 
 ```{r counts for income, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
@@ -968,7 +968,7 @@ df|>
 
 As (see Figure \ref{fig:stress importance of stress and income}) indicates people in all of the income groups have assigned high levels of importance to stress when commuting. This trend has been indicated from the table (number) that 80 % of all groups have assigned important and very important levels of feeling stress when commuting. Moreover, the highest rate of giving a high level of importance is associated with the middle-income group all feeling stress levels as the most populated group (almost 33% of the whole respondents). 
 
-It is also interesting that among all of the income groups, low-income users felt the highest level of stress over all of the important stages. On the contrary, a huge number of people belonging to the middle level of income (almost 60 % of the middle group) felt low and moderate levels of experiencing stress and less than 20 % of them felt high and very high levels of stress commuting. This can be considered in a similar way for high-income level people as well because the largest part of people felt a range of low to high levels of stress with almost similar percentages to the middle group. 
+It is also interesting that among all of the income groups, low-income users felt the highest level of stress over all of the important stages. On the contrary, a huge number of people belonging to the middle level of income (almost 60 % of the middle group) felt low and moderate levels of stress and less than 20 % of them felt high and very high levels of stress commuting. This can be considered similar for high-income level people as well because the largest part of people felt a range of low to high levels of stress with almost similar percentages to the middle group. 
 
 Generally, while almost all people considered high levels of importance about stress, the larger portion of them including middle and high income felt less challenging ranges of stress in comparison to low income levels.
 
@@ -1018,7 +1018,7 @@ df|>
 
 According to (see Figure \ref{fig:stress importance of stress and age}) youth and adults as the most populated groups incorporate 60% and 30% of whole respondents. A common trend among all groups is that around 30% of them felt moderate stress levels and seniors had the largest portion of feeling stress at a very high level compared to other users. 
 
-About youth and adults as the larger portion of respondents, there is a kind of similar dispersion of feeling stress ranging from low to high level with more than 70% of people in both age groups For the importance of stress, while almost all groups felt a high level of stress, the importance of stress was far more important for adults,and seniors and youth assigned mostly very high level of importance but slightly less than adults. 
+About youth and adults as the larger portion of respondents, there is a kind of similar dispersion of feeling stress ranging from low to high level with more than 70% of people in both age groups For the importance of stress, while almost all groups felt a high level of stress, the importance of stress was far more important for adults, and seniors and youth assigned mostly very high level of importance but slightly less than adults. 
 ```{r percentages for mode age Income, echo=FALSE, include=FALSE}
 df %>%
   # filter for recent years & limited ages
@@ -1053,7 +1053,7 @@ df|>
  
 The analysis of the data(see Figure \ref{fig:Income-mode-Age}) reveals distinct trends among different age groups in terms of income levels and preferred modes of transportation. The youth category primarily aligns with high-income levels and active transportation modes. In contrast, adults show a notable association with middle income, alongside a relatively minor difference in low income, often opting for private modes of transportation.
 
-Among seniors, there's a prevalence of low-income status, with a preference for private transportation modes. These findings provide insights into the varying preferences and financial considerations that influence transportation choices across age groups.
+Among seniors, low-income status is prevalent, with a preference for private transportation modes. These findings provide insights into the varying preferences and financial considerations that influence transportation choices across age groups.
 
 
 ```{r percentages for Income mode and stress, echo=FALSE ,include=FALSE, message=FALSE, warning=FALSE}
@@ -1090,7 +1090,7 @@ df|>
 ```
 
 
-As it has been revealed (see Figure \ref{fig:IMS}), almost 80% of lower-level income people and 65% of middle-income level as the most populated group use public transport which has been indicated to be highly stressful, especially among low-income ones. High-income respondents where the most interested group in using private mode with 40 % of them and relatively less commuting stress but they highly rely on public mode with about 50% among all.
+As it has been revealed (see Figure \ref{fig:IMS}), almost 80% of lower-level income people and 65% of middle-income level as the most populated group use public transport which has been indicated to be highly stressful, especially among low-income ones. High-income respondents were the most interested group in using private mode with 40 % of them and relatively less commuting stress but they highly rely on public mode with about 50% among all.
 
 ```{r percentages for Income mode and importance-stress, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 df %>%
@@ -1225,7 +1225,7 @@ mod_bivariate <- mvord (formula = MMO2(r1A_STRESS,r1GA_IMPSTRESS) ~ 0 + r0D_AGE 
 
 Where "mod_bivariate" is the name of the model, "mvord" is the function for fitting multivariate ordinal models, and "MMO2" is the data structure in accordance with the wide format of the data set. Predicators are demographic variables of the respondents namely their age, income, education and occupation level as well as their primary mode of commute.
 
-The correlation coefficient between H_Stress and H_Imp_stress represents the correlation between the error terms of the two dependent variables. In current study as table (see Table \ref{tab:Bivariate ordered model}) reveals, the estimated correlation coefficient is 0.250344, indicating a positive correlation between the error terms. This positive correlation coefficient suggests that there may be shared or common unobserved factors influencing both stress levels and the importance of stress levels. 
+The correlation coefficient between H_Stress and H_Imp_stress represents the correlation between the error terms of the two dependent variables. In the current study as Table (see Table \ref{tab:Bivariate ordered model}) reveals, the estimated correlation coefficient is 0.250344, indicating a positive correlation between the error terms. This positive correlation coefficient suggests that there may be shared or common unobserved factors influencing both stress levels and the importance of stress levels. 
 
 Possibly, this phenomenon may be attributed to factors influencing stress levels and the perceived importance of stress that are not captured by the variables included in our model. These unobserved factors could be psychological, environmental, social, or other latent variables that affect individuals' perceptions of stress and its significance. Specifically, the presence of a positive correlation suggests that individuals who experience higher levels of stress may also perceive stress as more important or significant during their commutes. 
 
@@ -1278,7 +1278,7 @@ summary(mod_bivariate)
 
 ## Discussion
 
-The results of the model analysis can be seen in table (see Table \ref{tab:Bivariate ordered model}). The analysis reveals that adult individuals aged between 35 to 54 are the most affected category when it comes to rating the importance of stress during commuting. There is a positive relation indicating that adults within this age range are more likely to assign importance to stress while commuting. 
+The results of the model analysis can be seen in the Table (see Table \ref{tab:Bivariate ordered model}). The analysis reveals that adult individuals aged between 35 to 54 are the most affected category when it comes to rating the importance of stress during commuting. There is a positive relation indicating that adults within this age range are more likely to assign importance to stress while commuting. 
 
 This trend holds until the age of 54, after which seniors aged 55 and above are significantly related to experiencing stress. The positive coefficient for this age group suggests that their stress level is decreasing compared to their younger counterparts. 
 
@@ -1613,7 +1613,7 @@ This study has been conducted to investigate the effect of commuting stress on t
 
 Measuring stress entails an individual self-evaluation of a wide variety of variables when commuting preferably while commuting. There is a link between stress and commuting in the literature, which takes into account factors such as time commute as @evans2006rail mentioned, control and predictability according to @gottholmseder2009stress, as already has been found according to the previous studies about travel motives, especially instrumental ones. The component of stress level has a negative connotation in the context of this research (as no one would prefer to be stressed) and investigates the internal mental reaction of the traveller based on their commuting journeys. 
 
-In this research, we aimed to to investigate the perceived commuting stress among active and motorized commuters and the relevant coping strategies. Furthermore, we look into the significance that travellers place on their stress levels. This allows us to investigate the concept of "limited horizons," or how those who are less adaptable normalize subpar experiences. The current study on commuting stress focused on addressing the following questions: 
+In this research, we aimed to investigate the perceived commuting stress among active and motorized commuters and the relevant coping strategies. Furthermore, we look into the significance that travellers place on their stress levels. This allows us to investigate the concept of "limited horizons," or how those who are less adaptable normalize subpar experiences. The current study on commuting stress focused on addressing the following questions: 
 
 -How crucial it is for respondents to make a journey while feeling a sense of stress and to what scale they are going to evaluate this feeling?
 
@@ -1635,13 +1635,13 @@ Findings have shown that those who use public transport are mostly youth and the
 
 Adults are mostly interested in using private transportation and while they feel less commuting stress than public users, they care about it more than them. Seniors as the least populated group are also similar to adults in terms of getting interested in using private transport and they feel the same way as adults. It is interesting to note that active transport users include mostly middle and high-income youth category who don't feel stress that much while commuting but they care about stress more than any other group.
 
-As a study has shown, people associated with low-income levels mostly use public transport feel higher levels of stress while they do not care about that compared to middle-income ones who care about their feeling of stress more than any group. These low-income people are more youth who are more interested in active and public mode at all income levels but their highest experience of feeling stress is when they are using public and the most peaceful is when they use active mode. Although travel could be stressful, there should be a moderator feeling of normalization for them to overcome this stressful experience [@gustafson2014business].
+As a study has shown, people associated with low-income levels mostly use public transport feel higher levels of stress while they do not care about that compared to middle-income ones who care about their feeling of stress more than any group. These low-income people are more youth and are more interested in active and public mode at all income levels but their highest experience of feeling stress is when they are using public and the most peaceful is when they use active mode. Although travel could be stressful, there should be a moderator feeling of normalization for them to overcome this stressful experience [@gustafson2014business].
 
 Moreover, high-income people who are more dependent on private mode feel a very high level of stress and assign a slight rate of importance to their feelings. These people are also more young and adult commuters. The reasons behind why people would stay on their mode of transport choice can be various. 
 
 As it has been indicated, respondents in Santiago, Chile are mostly low-income and middle-income. So they probably do not have enough budget to have access to the mode which is less stressful and efficient. Previous findings such as @tironi2016affects support the fact that some commuters despite the anxiety and stress experienced by daily travels using "Transantiago" (modern public transportation of Santiago), would decide to sell their private car because of financial issues and stay on public transport. When facing the feeling of stress some people can deal with that or somehow get used to that experience by repeating more and more to develop a sense of "travel competence" arising from their attempts to reduce travel-related stress and inconvenience on the road. 
 
-While normalization can be beneficial in terms of reducing stress, it could lead to making travel less exciting. In this study we focused mostly on commutes to regular destinations like work, school and so on, we analyzed that these travels come from instrumental motives in which commuters care about their professional goals more than leisure and spare time. For travel to work, people consider factors like environment, cost, health and fitness, convenience and predictability flexibility and obviously, they feel more stress than in recreational travel. So, normalization is going to distinguish between normal travel and fun travel. For fun travel, people tend to commute to longer and unusual trips which seem more exciting whereas for normal travel all activities may become routine and repetitive.
+While normalization can be beneficial in terms of reducing stress, it could lead to making travel less exciting. In this study we focused mostly on commutes to regular destinations like work, school and so on, we analyzed that these travels come from instrumental motives in which commuters care about their professional goals more than leisure and spare time. For work travel, people consider factors like environment, cost, health and fitness, convenience and predictability flexibility and obviously, they feel more stress than in recreational travel. So, normalization is going to distinguish between normal travel and fun travel. For fun travel, people tend to commute to longer and unusual trips which seem more exciting whereas for normal travel all activities may become routine and repetitive.
 
 This research demonstrates that the normalization processes possess the capability to moderate and reshape the stressful experiences of travel in various ways. This process can be used as a coping strategy for those who are low-income and have poor access to urban facilities, enough budget and lack of urban fairness in Santiago, Chile. 
 

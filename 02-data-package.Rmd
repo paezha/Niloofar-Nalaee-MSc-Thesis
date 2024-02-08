@@ -36,7 +36,7 @@ data("comunas_1")
 
 Large-scale travel surveys are invaluable sources of information to understand travel behaviour and other aspects of the urban experience, such as the residential context. By their nature, they often shy away from overloading respondents with additional questions. 
 
-The data presented in this article result from an effort to purposefully collect data on various aspects of the experience of living and moving in a major city in the Global South. This data set comprises a wide range of sections which the health information section serves as the foundation for the analysis in the next chapter.
+The data presented in this article result from an effort to purposefully collect data on various aspects of the experience of living and moving in a major city in the Global South. This data set comprises a wide range of sections and the health information section serves as the foundation for the analysis in the next chapter.
 
 The data set contains essential socio-economic and demographic information about the respondents, as well as their built environment and commuting behaviours to work. 
 
@@ -46,7 +46,7 @@ Additionally, the survey (conducted during November and December 2016) includes 
 
 The study is based on a paper-based survey conducted face-to-face in Santiago in 2016 by Dr. Beatriz Mella-Lira. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behaviour, travel choices and planning, social interaction factors, built environment, and so on). 
 
-The data collection considered a quota-sampling method based on the information from the Pre-census of 2012, and with a total of 451 persons. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced while travelling.
+The data collection considered a quota-sampling method based on the information from the Pre-census of 2012 and with a total of 451 persons. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced while travelling.
 
 ## Data Cleaning and Preprocessing
 
@@ -66,7 +66,7 @@ In terms of data documentation, some comprehensive measures were taken to ensure
 
 ## Data Storage, Data Availability and Version Control
 
-To foster collaboration and version control, a dedicated GitHub repository for the data set was established and the Santiago data set is securely stored and publicly available on that using https://paezha.github.io/bSantiago/. The CSV format of survey is also available through the same link to the github repository. Researchers interested in using this data set for their own work can access it through the provided URL to the repository. For any inquiries or assistance related to data set access, please feel free to contact the data set creator at [Niloofar Nalaee](niloofar.nalaee@gmail.com). The version control using Git to track changes made to the data set and associated code. 
+To foster collaboration and version control, a dedicated GitHub repository for the data set was established and the Santiago data set is securely stored and publicly available on that using https://paezha.github.io/bSantiago/. The CSV format of the survey is also available through the same link to the GitHub repository. Researchers interested in using this data set for their own work can access it through the provided URL to the repository. For any inquiries or assistance related to data set access, please feel free to contact the data set creator at [Niloofar Nalaee](niloofar.nalaee@gmail.com). The version control using Git to track changes made to the data set and associated code. 
 
 ## Specifications Table
 
@@ -84,7 +84,7 @@ See Table 2.1 for details of the data set.
 | Data source location | Santiago, Chile | 
 | Data accessibility | https://paezha.github.io/bSantiago/ | 
 
-: Specifications table  
+: Specifications Table  
 
 ## Value of the Data 
 
@@ -99,23 +99,23 @@ The data set provides a wide range of travel-related issues such as socio-demogr
  
 The data package described in this paper contains 9 data objects in tabular format, which are listed in Table 2.2. Each object corresponds to a theme and includes information about the individual characteristics, travel-to-work related information, and perceptions of the built environment. 
 
-Furthermore, other themes include social interactions by mode of transportation, mode shifting and use of information technologies, a number of self-assessed health responses, feelings and emotions as they relate to the commute experience, attitudes with respect to how well transportation systems satisfy the needs of respondents, and attitudes about nature and sustainability. 
+Furthermore, other themes include social interactions by mode of transportation, mode shifting and use of information technologies, self-assessed health responses, feelings and emotions as they relate to the commute experience, attitudes concerning how well transportation systems satisfy the needs of respondents, and attitudes about nature and sustainability. 
 
-As seen in table 2.2, the number of variables in these tables ranges from 5 to 24. The tables share a common unique identifier (`ID`) that can be used to link several tables in a consistent way for multi-theme analysis of the data.
+As seen in Table 2.2, the number of variables in these tables ranges from 5 to 24. The tables share a common unique identifier (`ID`) that can be used to link several tables in a consistent way for multi-theme analysis of the data.
 
-## How data preprocessing contributes to reproducibility?
+## How does data preprocessing contribute to reproducibility?
 
-As mentioned earlier, the current study is based on a survey. In data preprocessing step we went through addressing some issues such as splitting multiple answers in a single cell of the survey. Having the answers separated into distinct columns, let future researchers gain flexibility in analyzing the data and generating tables tailored to their research questions or goals. The specific analyses and tables created will depend on the nature of the data and the research objectives. 
+As mentioned earlier, the current study is based on a survey. In the data preprocessing step we went through addressing some issues such as splitting multiple answers in a single cell of the survey. Having the answers separated into distinct columns, allows future researchers to gain flexibility in analyzing the data and generating tables tailored to their research questions or goals. The specific analyses and tables created will depend on the nature of the data and the research objectives. 
 
 When starting from scratch after splitting and reshaping the data, researchers can use various techniques for a more granular analysis of individual responses and choosing the specific answer among multiple ones in a single cell.
 
 One idea is using frequency tables as they can observe the occurrences of each response for each split variable useful in understanding the distribution of the response.
 
-The second approach way is to take advantage of cross-tabulations for split variables against each other, as it gives insights about relationships and patterns in the data.
+The second approach way is to take advantage of cross-tabulations for split variables against each other, as it gives insights into relationships and patterns in the data.
 
 Also calculating summary statistics for each split variable allows us to understand central tendency and variability. There are many other ways, such as visualization, comparisons, tests, and data exploration, to specify the appropriate answer out of multiple ones.
 
-When starting from the raw data and following the same preprocessing and analysis steps, researchers could generally end up with similar tables and results. However, several factors can influence whether the results are exactly the same such as differences in data cleaning and handling missing data, parameters or thresholds according to the analysis, random sampling (if applicable).
+When starting from the raw data and following the same preprocessing and analysis steps, researchers could generally end up with similar tables and results. However, several factors can influence whether the results are exactly the same such as differences in data cleaning and handling missing data, parameters or thresholds according to the analysis, and random sampling (if applicable).
 
 In summary, while exact replication is not always guaranteed, careful documentation, consistency in preprocessing, and transparent reporting of analysis steps contribute to the reproducibility of results. Additionally, using the bSantiago GitHub repository and shared codes can facilitate collaboration and make it easier for future researchers to reproduce the results.
 
@@ -150,7 +150,7 @@ Other variables regarding the respondents include their height (cm) and weight (
 
 
 ```{r  Summary-individual-characteristics, echo=FALSE, include=FALSE}
-#| tbl-cap: Variables regarding individual characteristics of respondents
+#| tbl-cap: Variables Regarding Individual Characteristics of Respondents
 #| tbl-cap-location: top
 # label: tbl-individual-characteristics-descriptive
 #| echo: false
@@ -190,7 +190,7 @@ knitr::kable(skim_IC,
              booktabs = TRUE,
              longtable = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ch Min", "Ch Max", "Empty", "Ch Levels", "W Space",  "Ordinal", "N Levels", "Counts", "Mean", "SD", "P0", "P25", "P50", "P75", "P100" ),
-             caption = "\\label{tab:individual-characteristics-descriptive}Variables regarding individual characteristics of respondents") %>%
+             caption = "\\label{tab:individual-characteristics-descriptive}Variables Regarding Individual Characteristics of Respondents") %>%
   column_spec(1, width = "3em") %>%
   column_spec(2, width = "4em") %>%
   column_spec(3, width = "4em") %>%
@@ -237,7 +237,7 @@ ggplot(Santiago_Ic_na,
 
 ```
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="\\label{fig:Education by gender}Education level by Gender"}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="\\label{fig:Education by gender}Education Level by Gender"}
 # Education bar graph
 Santiago_Ic_na <-Santiago_IC %>% drop_na(IC_Gender, IC_Education, IC_Age, IC_Occupation)
 qplot(Santiago_Ic_na$IC_Education,
@@ -280,9 +280,9 @@ The theme of the next table, `Santiago_TW`, deals with commuting and work variab
 
 This variable tracks to some extent with the responses to job opportunities in the commune of residence (`r8B_JOBOPP`), suggesting a possible correlation between local opportunities and the impact of the transportation network on job outcomes. When asked about their ideal level of accessibility in the commune of the residence (`r8C_ACC_COM`), a majority of respondents opt for excellent and very good.
 
-In terms of the level of satisfaction with their current job, we see that almost 60\% of respondents are at least highly satisfied. We also see that long commutes are frequent in this sample, with about one-third or respondents spending 1 h or more travelling and about one-quarter of respondents spending between 40 minutes and one hour in their daily commute. This distribution is noteworthy because time spent commuting has been recognized as a factor that can affect physical and mental health and well-being in particular in association with motorized transportation [@brutus2017cycling].
+In terms of the level of satisfaction with their current job, we see that almost 60\% of respondents are at least highly satisfied. We also see that long commutes are frequent in this sample, with about one-third of respondents spending 1 h or more travelling and about one-quarter of respondents spending between 40 minutes and one hour in their daily commute. This distribution is noteworthy because time spent commuting has been recognized as a factor that can affect physical and mental health and well-being in particular in association with motorized transportation [@brutus2017cycling].
 
-The most common time of the day for commuting is between 7 am and 9 am, but there are also 171 missing responses in this column, so not much can be read from it. Finally, we note that many people spend 35,000-75,000 peso monthly on their transportation expenditure.
+The most common time of the day for commuting is between 7 am and 9 am, but there are also 171 missing responses in this column, so not much can be read from it. Finally, we note that many people spend 35,000-75,000 pesos monthly on their transportation expenditure.
 
 ```{r , echo=FALSE, include=FALSE }
 
@@ -351,7 +351,7 @@ knitr::kable(skim_STW,
              booktabs = TRUE,
              longtable = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
-             caption = "\\label{tab:Travel-work-Descriptive}Variables regarding the commuting behavior of respondents") %>%
+             caption = "\\label{tab:Travel-work-Descriptive}Variables Regarding the Commuting Behavior of Respondents") %>%
   column_spec(3, width = "3em") %>%
   column_spec(4, width = "3em") %>%
   column_spec(6, width = "3em") %>%
@@ -364,16 +364,16 @@ knitr::kable(skim_STW,
 
 Table `Santiago_SI` includes five variables that capture various aspects of social interaction while commuting (see Table \ref{tab:Social-Interaction-Descriptives}). Social interaction is a topic of interest for mode-related choices given earlier evidence that for some commuters privacy is an important consideration and/or a way to manage social stressors [@gardner2007drives; @paez2010enjoyment; @lowe2016conceptual]. 
 
-When asked to rate the level of interaction with other people during their usual trips, respondents  in terms of the level of interaction people have with others during their usual trips, most of them presume a good level and they moderately feel it is important when they consider the presence of other people during their usual travels (`r4A_INTERACC`) a plurality of responses are "POOR" or "FAIR" (187) and only 73, that is 16.2\% of respondents, rate their level of interaction as "GOOD" or "EXCELLENT" report poor or fair (there are 13 missing responses).
+When asked to rate the level of interaction with other people during their usual trips, respondents  in terms of the level of interaction people have with others during their usual trips, most of them presumed a good level and they moderately feel it is important when they consider the presence of other people during their usual travels (`r4A_INTERACC`) a plurality of responses are "POOR" or "FAIR" (187) and only 73, that is 16.2\% of respondents, rate their level of interaction as "GOOD" or "EXCELLENT" report poor or fair (there are 13 missing responses).
 
-With respect to the presence of other people during their travels, the responses tend to be somewhat more ambivalent, and the difference between those for whom this is less or more important is smaller (157 responses are "NOT" or only "SLIGHTLY IMPORTANT" whereas 132 responses are "IMPORTANT" or "VERY IMPORTANT").
+Concerning the presence of other people during their travels, the responses tend to be somewhat more ambivalent, and the difference between those for whom this is less or more important is smaller (157 responses are "NOT" or only "SLIGHTLY IMPORTANT" whereas 132 responses are "IMPORTANT" or "VERY IMPORTANT").
 
 The next two variables in this table deal with feelings and the experience of discrimination: "Have you felt discriminated against while travelling?" (`r4C_DISCRIM`) and if so, "while using which mode of transportation" (`r4D_MODE`). 
 
 We can see in Table \ref{tab:Social-Interaction-Descriptives}, that slightly fewer than one-quarter of respondents (24.2\%) report having felt discriminated while commuting (only 4 responses are missing), and of those close to half (44\%) had that experience in public transportation (however, note that about 58% of those who felt discriminated against did not state the mode).
 
 ```{r summary-social-interaction, echo=FALSE, include=FALSE}
-#| tbl-cap: Variables regarding social interactions of respondents
+#| tbl-cap: Variables Regarding Social Interactions of Respondents
 #| tbl-cap-location: top
 #| label: tbl-Social-Interaction-Descriptives
 #| echo: false
@@ -413,7 +413,7 @@ knitr::kable(skim_SSI,
              booktabs = TRUE,
              longtable = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
-             caption = "\\label{tab:Social-Interaction-Descriptives}Variables regarding social interactions of respondents") %>%
+             caption = "\\label{tab:Social-Interaction-Descriptives}Variables Regarding Social Interactions of Respondents") %>%
   column_spec(3, width = "3em") %>%
   column_spec(4, width = "3em") %>%
   column_spec(6, width = "3em") %>%
@@ -444,7 +444,7 @@ This section will give insights on designing a strong transportation network to 
 Following this, car-use deduction has been turned into the political agenda around the world due to the increasing negative effects of motorized modes of travel on the environment and public health. Therefore, improvements in the public transportation sector are needed to achieve this goal regarding previous studies that have shown participants are more likely to use buses with increased frequencies, shorter travel time, and high access to bus stops[@ettema2011satisfaction].
 
 
-```{r summary-ITC-and-shifting, tbl-cap: Variables regarding information and telecommunications and mode shifting of respondents, tbl-cap-location: top, label: tbl-ITC-Shifting-Descriptives, echo: false, include=FALSE}
+```{r summary-ITC-and-shifting, tbl-cap: Variables Regarding Information, Telecommunications, and Mode Shifting of Respondents, tbl-cap-location: top, label: tbl-ITC-Shifting-Descriptives, echo: false, include=FALSE}
 
 skim_SIS <- Santiago_IS |>
   select(-ID) |>
@@ -506,7 +506,7 @@ knitr::kable(skim_SIS,
              booktabs = TRUE,
              longtable = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
-             caption = "\\label{tab:ITC-Shifting-Descriptives}Variables regarding information and telecommunications and mode shifting of respondents") %>%
+             caption = "\\label{tab:ITC-Shifting-Descriptives}Variables Regarding Information, Telecommunications, and Mode Shifting of Respondents") %>%
   column_spec(3, width = "3em") %>%
   column_spec(4, width = "3em") %>%
   column_spec(6, width = "3em") %>%
@@ -686,7 +686,7 @@ knitr::kable(skim_SBE,
              longtable = TRUE,
              booktabs = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
-             caption = "\\label{tab:Built-Environment-Descriptives}Variables regarding the built environment at the place of residence of respondents") %>%
+             caption = "\\label{tab:Built-Environment-Descriptives}Variables Regarding the Built Environment at the Place of Residence of Respondents") %>%
   column_spec(3, width = "3em") %>%
   column_spec(4, width = "3em") %>%
   column_spec(6, width = "3em") %>%
@@ -804,7 +804,7 @@ knitr::kable(skim_SH,
              booktabs = TRUE,
              longtable = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
-             caption = "\\label{tab:Health-Information-Descriptives}Variables regarding health information of respondents") %>%
+             caption = "\\label{tab:Health-Information-Descriptives}Variables Regarding Health Information of Respondents") %>%
    column_spec(3, width = "3em") %>%
   column_spec(4, width = "3em") %>%
   column_spec(6, width = "3em") %>%
@@ -956,7 +956,7 @@ knitr::kable(skim_SFE,
              booktabs = TRUE,
              longtable = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
-             caption = "\\label{tab:Feelings-Emotions-Descriptives}Variables regarding feelings and emotions of respondents") %>%
+             caption = "\\label{tab:Feelings-Emotions-Descriptives}Variables Regarding Feelings and Emotions of Respondents") %>%
   column_spec(3, width = "3em") %>%
   column_spec(4, width = "3em") %>%
   column_spec(6, width = "3em") %>%
@@ -1134,7 +1134,7 @@ knitr::kable(skim_SRPD,
              booktabs = TRUE,
               longtable = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
-             caption = "\\label{tab:Reason-Planning-Decision-Descriptives}Variables regarding decision-making and planning of respondents") %>%
+             caption = "\\label{tab:Reason-Planning-Decision-Descriptives}Variables Regarding Decision-making and Planning of Respondents") %>%
   column_spec(3, width = "3em") %>%
   column_spec(4, width = "3em") %>%
   column_spec(6, width = "3em") %>%
@@ -1225,7 +1225,7 @@ knitr::kable(skim_SNS,
              booktabs = TRUE,
               longtable = TRUE,
              col.names = c("Type", "Variable", "Missing", "Complete Rate", "Ordinal", "Levels", "Counts"),
-             caption = "\\label{tab:Nature-Nustainability-Descriptives}Variables regarding perspectives about nature and sustainability of respondents") %>%
+             caption = "\\label{tab:Nature-Nustainability-Descriptives}Variables Regarding Perspectives about Nature and Sustainability of Respondents") %>%
   column_spec(3, width = "3em") %>%
   column_spec(4, width = "3em") %>%
   column_spec(6, width = "3em") %>%
@@ -1238,11 +1238,11 @@ knitr::kable(skim_SNS,
 
 ## Discussion and Conclusion 
 
-The current summary of Santiago dataset reflects a commitment to ensuring reproducibility through various stages, including data collection, cleaning, preprocessing, documentation, storage, and version control. 
+The current summary of the Santiago dataset reflects a commitment to ensuring reproducibility through various stages, including data collection, cleaning, preprocessing, documentation, storage, and version control. 
 
 First of all, the inclusion of a specifications table provides a concise summary of key details related to the dataset. This table serves as a quick reference for researchers interested in understanding the dataset's subject area, data format, collection parameters, and accessibility. Such documentation aids in reproducibility by offering a high-level overview of the dataset's characteristics.
 
-Data collection and material in the form of a quota-sampling method serve as an essential aspect of the dataset's reproducibility. In fact, expalining the method by which the sample was obtained allows future researchers to understand the representativeness of the dataset concerning the population of Santiago in 2016. Therefore, replicating this sampling method in future studies or comparing it with alternative sampling strategies becomes feasible, contributing to the reproducibility of the research. Moreover, the detailed description of the paper-based survey, including associated content and focus areas such as demographics, health, feelings and emotions, and so on, enhances the reproducibility of the study. Researchers aiming to replicate or extend this work can gain insights into the survey structure, question types, and the breadth of topics covered. This transparency is crucial for ensuring that future studies can align with or build upon the original research structure.
+Data collection and material in the form of a quota-sampling method serve as an essential aspect of the dataset's reproducibility. In fact, explaining the method by which the sample was obtained allows future researchers to understand the representativeness of the dataset concerning the population of Santiago in 2016. Therefore, replicating this sampling method in future studies or comparing it with alternative sampling strategies becomes feasible, contributing to the reproducibility of the research. Moreover, the detailed description of the paper-based survey, including associated content and focus areas such as demographics, health, feelings and emotions, and so on, enhances the reproducibility of the study. Researchers aiming to replicate or extend this work can gain insights into the survey structure, question types, and the breadth of topics covered. This transparency is crucial for ensuring that future studies can align with or build upon the original research structure.
 
 The data cleaning process includes the rigorous data cleaning and preprocessing steps that play a pivotal role in reproducibility. By documenting the entire process, including the tools and packages used (such as the dplyr package in R), and addressing specific challenges like the translation of variables, the authors provide a roadmap for future researchers to follow. Replicating the same steps helps ensure that the processed dataset aligns with the intended quality standards.
 
@@ -1250,5 +1250,5 @@ Another important part would be the data documentation including the use of a Qu
 
 Furthermore, making the dataset publicly available on a dedicated GitHub repository (https://paezha.github.io/bSantiago/) is a commendable step toward enhancing reproducibility. The specified URL allows researchers to access the dataset, fostering transparency and openness. The use of version control with Git further ensures that changes made to the dataset are tracked over time, enabling a clear understanding of its evolution and facilitating reproducibility in subsequent analyses.
 
-In conclusion, discussion on the value of the data emphasizes its potential contributions to various research areas, including transportation policies, public sector development, and health-related policies. By highlighting the effect of commuting stress on travelers and addressing diverse travel-related issues, the dataset becomes a valuable resource for researchers interested in these domains. This acknowledgement of the dataset's value encourages others to explore its applications and contribute to the reproducibility of findings. Generally, the presented dataset and the associated research demonstrate a strong commitment to reproducibility through transparent methodologies, comprehensive documentation, and open data practices. This approach not only ensures the reliability of the current study but also provides a foundation for future research endeavours and collaborations in the scientific community.
+In conclusion, discussion on the value of the data emphasizes its potential contributions to various research areas, including transportation policies, public sector development, and health-related policies. By highlighting the effect of commuting stress on travellers and addressing diverse travel-related issues, the dataset becomes a valuable resource for researchers interested in these domains. This acknowledgement of the dataset's value encourages others to explore its applications and contribute to the reproducibility of findings. Generally, the presented dataset and the associated research demonstrate a strong commitment to reproducibility through transparent methodologies, comprehensive documentation, and open data practices. This approach not only ensures the reliability of the current study but also provides a foundation for future research endeavours and collaborations in the scientific community.
 
